@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DJ Radu | Petrecerea ta. Energia mea.</title>
+
+<meta name="description" content="DJ Radu - Nunți, botezuri, aniversări și petreceri private în toată Danemarca. Muzică românească și internațională.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#050505;
+--card:#111111;
+--blue:#00c8ff;
+--purple:#7b2cff;
+--pink:#ff3ea5;
+--text:#ffffff;
+--gray:#bfbfbf;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:'Montserrat',sans-serif;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,200,255,.08),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(123,44,255,.08),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(255,62,165,.08),transparent 30%);
+pointer-events:none;
+z-index:-1;
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.logo{
+font-family:'Bebas Neue',sans-serif;
+font-size:2rem;
+letter-spacing:3px;
+color:var(--blue);
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:.9rem;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--blue);
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-family:'Bebas Neue',sans-serif;
+font-size:clamp(5rem,12vw,10rem);
+line-height:.9;
+letter-spacing:6px;
+background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.3rem;
+color:var(--gray);
+}
+
+.btns{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 30px;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:.3s;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,var(--blue),var(--purple));
+color:white;
+}
+
+.btn-secondary{
+border:2px solid var(--blue);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+font-family:'Bebas Neue',sans-serif;
+font-size:4rem;
+letter-spacing:3px;
+margin-bottom:50px;
+text-align:center;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+border:1px solid rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--blue);
+box-shadow:0 0 30px rgba(0,200,255,.2);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:1.4rem;
+}
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:1.8;
+font-size:1.1rem;
+color:var(--gray);
+}
+
+.music-grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.music-item{
+padding:15px 25px;
+background:var(--card);
+border-radius:30px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.gallery-item{
+height:250px;
+background:linear-gradient(135deg,var(--blue),var(--purple));
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.2rem;
+font-weight:bold;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact-links{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.contact-links a{
+padding:15px 25px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+background:var(--card);
+border:1px solid rgba(255,255,255,.1);
+transition:.3s;
+}
+
+.contact-links a:hover{
+border-color:var(--blue);
+}
+
+footer{
+padding:40px;
+text-align:center;
+color:#777;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.section-title{
+font-size:3rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">DJ RADU</div>
+
+<ul>
+<li><a href="#despre">Despre</a></li>
+<li><a href="#servicii">Servicii</a></li>
+<li><a href="#muzica">Muzică</a></li>
+<li><a href="#galerie">Galerie</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>DJ RADU</h1>
+
+<p>
+Petrecerea ta. Energia mea.
+<br>
+Nunți • Botezuri • Aniversări • Corporate
+</p>
+
+<div class="btns">
+
+<a class="btn btn-primary"
+href="https://wa.me/4552712102"
+target="_blank">
+Rezervă acum
+</a>
+
+<a class="btn btn-secondary"
+href="https://www.instagram.com/djradug"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="despre" class="reveal">
+
+<h2 class="section-title">Despre Mine</h2>
+
+<div class="about">
+
+<p>
+Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca.
+</p>
+
+<br>
+
+<p>
+Pun muzică pentru comunitatea românească și moldovenească din întreaga Danemarcă și transform fiecare eveniment într-o experiență memorabilă.
+</p>
+
+<br>
+
+<p>
+De la hore și sârbe până la hituri internaționale, aleg muzica potrivită pentru fiecare generație.
+</p>
+
+</div>
+
+</section>
+
+<section id="servicii" class="reveal">
+
+<h2 class="section-title">Servicii</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>💍 Nunți</h3>
+<p>Muzică pentru toate generațiile și momentele importante ale serii.</p>
+</div>
+
+<div class="card">
+<h3>🕯️ Botezuri</h3>
+<p>Atmosferă perfectă pentru familie și invitați.</p>
+</div>
+
+<div class="card">
+<h3>🎂 Aniversări</h3>
+<p>Petreceri private memorabile și pline de energie.</p>
+</div>
+
+<div class="card">
+<h3>🏢 Corporate</h3>
+<p>Evenimente profesionale și team-building.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="muzica" class="reveal">
+
+<h2 class="section-title">Repertoriu</h2>
+
+<div class="music-grid">
+
+<div class="music-item">Populară Românească</div>
+<div class="music-item">Hore & Sârbe</div>
+<div class="music-item">Manele Selectate</div>
+<div class="music-item">Pop Românesc</div>
+<div class="music-item">Dance</div>
+<div class="music-item">House</div>
+<div class="music-item">Latino</div>
+<div class="music-item">Rock</div>
+<div class="music-item">Hituri Internaționale</div>
+
+</div>
+
+</section>
+
+<section id="galerie" class="reveal">
+
+<h2 class="section-title">Galerie</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">Foto Eveniment 1</div>
+<div class="gallery-item">Foto Eveniment 2</div>
+<div class="gallery-item">Foto Eveniment 3</div>
+<div class="gallery-item">Foto Eveniment 4</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact reveal">
+
+<h2 class="section-title">Contact</h2>
+
+<p>
+Disponibil în toată Danemarca
+</p>
+
+<div class="contact-links">
+
+<a href="https://wa.me/4552712102" target="_blank">
+WhatsApp
+</a>
+
+<a href="mailto:djradu@icloud.com">
+Email
+</a>
+
+<a href="https://www.facebook.com/share/18p8Yu8CUH/?mibextid=wwXIfr" target="_blank">
+Facebook
+</a>
+
+<a href="https://www.instagram.com/djradug" target="_blank">
+Instagram
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2025 DJ Radu • Juelsminde, Danemarca
+
+</footer>
+
+<script>
+
+const reveals=document.querySelectorAll('.reveal');
+
+function revealElements(){
+
+reveals.forEach(el=>{
+
+const top=el.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+el.classList.add('active');
+
+}
+
+});
+
+}
+
+window.addEventListener('scroll',revealElements);
+
+revealElements();
+
+</script>
+
+</body>
+</html>
