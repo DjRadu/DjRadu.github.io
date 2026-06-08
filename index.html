@@ -218,13 +218,20 @@ gap:20px;
 
 .gallery-item{
 height:250px;
-background:linear-gradient(135deg,var(--blue),var(--purple));
+overflow:hidden;
 border-radius:20px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:1.2rem;
-font-weight:bold;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.4s;
+}
+
+.gallery-item img:hover{
+transform:scale(1.05);
 }
 
 .contact{
@@ -416,8 +423,7 @@ De la hore și sârbe până la hituri internaționale, aleg muzica potrivită p
 
 <h2 class="section-title">Galerie</h2>
 
-<div class="gallery">
-  <div class="gallery-item">
+<div class="gallery-item">
 <img src="IMG_2364.JPG" alt="DJ Radu">
 </div>
 
@@ -431,9 +437,6 @@ De la hore și sârbe până la hituri internaționale, aleg muzica potrivită p
 
 <div class="gallery-item">
 <img src="IMG_2557.JPG" alt="DJ Radu">
-</div>
-
-  
 </div>
 
 </section>
