@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DJ Radu | Petrecerea ta. Energia mea.</title>
-<meta name="description" content="DJ Radu - DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca. Muzică românească și internațională.">
+<meta name="description" content="DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 --purple:#7b2cff;
 --pink:#ff3ea5;
 --text:#ffffff;
---gray:#bfbfbf;
+--gray:#c9c9c9;
 --border:rgba(255,255,255,.08);
 --shadow:0 10px 30px rgba(0,0,0,.35);
 }
@@ -46,18 +46,6 @@ body.menu-open{
 overflow:hidden;
 }
 
-body::before{
-content:'';
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 20%,rgba(0,200,255,.08),transparent 30%),
-radial-gradient(circle at 80% 30%,rgba(123,44,255,.08),transparent 30%),
-radial-gradient(circle at 50% 80%,rgba(255,62,165,.08),transparent 30%);
-pointer-events:none;
-z-index:-1;
-}
-
 a,button{
 -webkit-tap-highlight-color:transparent;
 }
@@ -76,10 +64,10 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.82);
+background:rgba(0,0,0,.78);
 backdrop-filter:blur(12px);
 z-index:1000;
-border-bottom:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
@@ -182,10 +170,26 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:140px 20px 100px;
+position:relative;
+background:
+linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.68)),
+url('IMG_2364.JPG') center center/cover no-repeat;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,200,255,.10),transparent 28%),
+radial-gradient(circle at 80% 30%,rgba(123,44,255,.10),transparent 30%);
+pointer-events:none;
 }
 
 .hero-content{
 max-width:960px;
+position:relative;
+z-index:2;
 }
 
 .hero h1{
@@ -193,53 +197,17 @@ font-family:'Bebas Neue',sans-serif;
 font-size:clamp(4.5rem,12vw,10rem);
 line-height:.9;
 letter-spacing:6px;
-background:linear-gradient(90deg,var(--blue),var(--purple),var(--pink));
+background:linear-gradient(90deg,#ffffff,#c8f6ff,#f2ddff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
 margin-top:22px;
-font-size:1.25rem;
-color:var(--gray);
+font-size:1.18rem;
+color:#f0f0f0;
 line-height:1.8;
-}
-
-.btns{
-margin-top:40px;
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 30px;
-text-decoration:none;
-border-radius:999px;
-font-weight:700;
-transition:.3s;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-min-width:160px;
-min-height:50px;
-}
-
-.btn-primary{
-background:linear-gradient(90deg,var(--blue),var(--purple));
-color:#fff;
-box-shadow:0 10px 25px rgba(0,200,255,.15);
-}
-
-.btn-secondary{
-border:2px solid var(--blue);
-color:#fff;
-background:transparent;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+text-shadow:0 2px 12px rgba(0,0,0,.35);
 }
 
 section{
@@ -255,10 +223,10 @@ text-align:center;
 }
 
 .about{
-max-width:900px;
+max-width:920px;
 margin:auto;
 text-align:center;
-line-height:1.9;
+line-height:1.95;
 font-size:1.08rem;
 color:var(--gray);
 }
@@ -414,36 +382,92 @@ transform:scale(1.05);
 text-align:center;
 }
 
-.contact p{
+.contact-intro{
+max-width:760px;
+margin:0 auto 26px;
 color:var(--gray);
-font-size:1.05rem;
+line-height:1.8;
 }
 
-.contact-links{
+.contact-card{
+max-width:860px;
+margin:0 auto;
+padding:34px 26px;
+border-radius:24px;
+background:linear-gradient(180deg,var(--card),var(--card-2));
+border:1px solid var(--border);
+box-shadow:var(--shadow);
+text-align:left;
+}
+
+.contact-list{
+display:grid;
+gap:14px;
+margin-bottom:28px;
+}
+
+.contact-row{
 display:flex;
-justify-content:center;
-gap:18px;
 flex-wrap:wrap;
-margin-top:40px;
+gap:10px;
+align-items:flex-start;
+line-height:1.7;
 }
 
-.contact-links a{
-padding:15px 24px;
+.contact-label{
+min-width:130px;
+font-weight:700;
+color:#fff;
+}
+
+.contact-value,
+.contact-value a{
+color:var(--gray);
+text-decoration:none;
+}
+
+.contact-value a:hover{
+color:var(--blue);
+}
+
+.phone-actions{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:8px;
+}
+
+.phone-actions a,
+.social-links a{
+padding:13px 18px;
 border-radius:999px;
 text-decoration:none;
 color:#fff;
-background:var(--card);
+background:#121212;
 border:1px solid rgba(255,255,255,.1);
 transition:.3s;
-min-height:50px;
 display:inline-flex;
 align-items:center;
 justify-content:center;
+min-height:48px;
 }
 
-.contact-links a:hover{
+.phone-actions a:hover,
+.social-links a:hover{
 border-color:var(--blue);
 transform:translateY(-3px);
+}
+
+.social-title{
+margin-bottom:14px;
+font-weight:700;
+font-size:1rem;
+}
+
+.social-links{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
 footer{
@@ -606,6 +630,9 @@ gap:16px;
 nav ul{
 gap:16px;
 }
+.contact-label{
+min-width:100%;
+}
 }
 
 @media(max-width:768px){
@@ -617,13 +644,12 @@ display:flex;
 }
 .hero{
 padding:130px 20px 90px;
+background:
+linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.74)),
+url('IMG_2364.JPG') center center/cover no-repeat;
 }
 .hero p{
 font-size:1rem;
-}
-.btn{
-width:100%;
-max-width:320px;
 }
 .gallery-item{
 height:220px;
@@ -700,50 +726,36 @@ display:none !important;
 <section class="hero">
 <div class="hero-content">
 <h1>DJ RADU</h1>
-
-<p data-i18n="heroText">
-Petrecerea ta. Energia mea.<br>
-Nunți • Botezuri • Aniversări • Evenimente corporate
-</p>
-
-<div class="btns">
-<a class="btn btn-primary" href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer" data-i18n="bookNow">Rezervă acum</a>
-<a class="btn btn-secondary" href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer">Instagram</a>
-</div>
+<p data-i18n="heroText">Petrecerea ta. Energia mea.<br>Nunți • Botezuri • Aniversări • Evenimente corporate</p>
 </div>
 </section>
 
 <section id="despre" class="reveal">
 <h2 class="section-title" data-i18n="aboutTitle">Despre mine</h2>
-
 <div class="about">
-<p data-i18n="about1">Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca.</p>
+<p data-i18n="about1">Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca, iar pentru mine muzica înseamnă mai mult decât un simplu playlist — înseamnă atmosferă, emoție și energie.</p>
 <br>
-<p data-i18n="about2">Pun muzică pentru comunitatea românească și moldovenească din toată Danemarca și transform fiecare eveniment într-o experiență memorabilă.</p>
+<p data-i18n="about2">La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.</p>
 <br>
-<p data-i18n="about3">De la hore și sârbe până la hituri internaționale, aleg muzica potrivită pentru fiecare generație și pentru fiecare moment al serii.</p>
+<p data-i18n="about3">De la nunți și botezuri până la aniversări și evenimente private, aleg cu grijă muzica potrivită pentru fiecare etapă a serii și pentru fiecare generație.</p>
 </div>
 </section>
 
 <section id="servicii" class="reveal">
 <h2 class="section-title" data-i18n="servicesTitle">Servicii</h2>
-
 <div class="services">
 <div class="card">
 <h3 data-i18n="service1Title">💍 Nunți</h3>
 <p data-i18n="service1Text">Muzică pentru toate generațiile și pentru toate momentele importante ale serii.</p>
 </div>
-
 <div class="card">
 <h3 data-i18n="service2Title">🕯️ Botezuri</h3>
 <p data-i18n="service2Text">Atmosfera potrivită pentru familie, invitați și o petrecere reușită.</p>
 </div>
-
 <div class="card">
 <h3 data-i18n="service3Title">🎂 Aniversări</h3>
 <p data-i18n="service3Text">Petreceri private memorabile, pline de energie și muzică bună.</p>
 </div>
-
 <div class="card">
 <h3 data-i18n="service4Title">🏢 Evenimente corporate</h3>
 <p data-i18n="service4Text">Evenimente profesionale, petreceri de firmă și seri de team-building.</p>
@@ -753,7 +765,6 @@ Nunți • Botezuri • Aniversări • Evenimente corporate
 
 <section id="muzica" class="reveal">
 <h2 class="section-title" data-i18n="musicTitle">Repertoriu</h2>
-
 <div class="music-grid">
 <div class="music-item" data-i18n="music1">Populară românească</div>
 <div class="music-item" data-i18n="music2">Hore &amp; sârbe</div>
@@ -831,17 +842,14 @@ Nunți • Botezuri • Aniversări • Evenimente corporate
 <h3 class="media-subtitle" style="margin-top:56px;" data-i18n="photoSubtitle">Foto</h3>
 <div class="gallery">
 <div class="gallery-item" data-image="IMG_2364.JPG">
-<img src="IMG_2364.JPG" alt="DJ Radu la eveniment" loading="lazy">
+<img src="IMG_2364.JPG" alt="DJ Radu logo și identitate vizuală" loading="lazy">
 </div>
-
 <div class="gallery-item" data-image="IMG_2529.JPG">
 <img src="IMG_2529.JPG" alt="Setup DJ Radu" loading="lazy">
 </div>
-
 <div class="gallery-item" data-image="IMG_2554.JPG">
 <img src="IMG_2554.JPG" alt="Atmosferă la eveniment" loading="lazy">
 </div>
-
 <div class="gallery-item" data-image="IMG_2557.JPG">
 <img src="IMG_2557.JPG" alt="DJ Radu în timpul unui eveniment" loading="lazy">
 </div>
@@ -850,21 +858,57 @@ Nunți • Botezuri • Aniversări • Evenimente corporate
 
 <section id="contact" class="contact reveal">
 <h2 class="section-title" data-i18n="contactTitle">Contact</h2>
+<p class="contact-intro" data-i18n="contactIntro">Pentru rezervări, colaborări sau informații suplimentare, mă poți contacta direct folosind datele de mai jos.</p>
 
-<p data-i18n="contactText">Disponibil în toată Danemarca</p>
+<div class="contact-card">
+<div class="contact-list">
+<div class="contact-row">
+<div class="contact-label" data-i18n="companyLabel">Companie</div>
+<div class="contact-value" data-i18n="companyName">DJ Radu</div>
+</div>
 
-<div class="contact-links">
-<a href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-<a href="mailto:djradu@icloud.com">Email</a>
+<div class="contact-row">
+<div class="contact-label">CVR</div>
+<div class="contact-value">46538560</div>
+</div>
+
+<div class="contact-row">
+<div class="contact-label" data-i18n="addressLabel">Adresă</div>
+<div class="contact-value">
+<span data-i18n="addressValue">Skrænten 21, Hosby, 7130 Juelsminde</span><br>
+<a href="https://maps.google.com/?q=Skr%C3%A6nten%2021%2C%20Hosby%2C%207130%20Juelsminde" target="_blank" rel="noopener noreferrer" data-i18n="openMaps">Deschide în Google Maps</a>
+</div>
+</div>
+
+<div class="contact-row">
+<div class="contact-label" data-i18n="emailLabel">Email</div>
+<div class="contact-value">
+<a href="mailto:djradu@icloud.com">djradu@icloud.com</a>
+</div>
+</div>
+
+<div class="contact-row">
+<div class="contact-label" data-i18n="phoneLabel">Telefon / WhatsApp</div>
+<div class="contact-value">
+<div>+45 51 71 21 02</div>
+<div class="phone-actions">
+<a href="tel:+4551712102" data-i18n="callNow">Sună</a>
+<a href="https://wa.me/4551712102" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="social-title" data-i18n="socialTitle">Social media</div>
+<div class="social-links">
 <a href="https://www.facebook.com/DJRaduG/" target="_blank" rel="noopener noreferrer">Facebook</a>
 <a href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer">Instagram</a>
 <a href="https://youtube.com/@djradug" target="_blank" rel="noopener noreferrer">YouTube</a>
 </div>
+</div>
 </section>
 
-<footer data-i18n="footerText">
-© 2025 DJ Radu • Juelsminde, Danemarca
-</footer>
+<footer data-i18n="footerText">© 2026 DJ Radu • Juelsminde, Danemarca</footer>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
 <div class="lightbox-inner">
@@ -883,11 +927,10 @@ const translations = {
     navGallery: "Galerie",
     navContact: "Contact",
     heroText: "Petrecerea ta. Energia mea.<br>Nunți • Botezuri • Aniversări • Evenimente corporate",
-    bookNow: "Rezervă acum",
     aboutTitle: "Despre mine",
-    about1: "Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca.",
-    about2: "Pun muzică pentru comunitatea românească și moldovenească din toată Danemarca și transform fiecare eveniment într-o experiență memorabilă.",
-    about3: "De la hore și sârbe până la hituri internaționale, aleg muzica potrivită pentru fiecare generație și pentru fiecare moment al serii.",
+    about1: "Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca, iar pentru mine muzica înseamnă mai mult decât un simplu playlist — înseamnă atmosferă, emoție și energie.",
+    about2: "La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.",
+    about3: "De la nunți și botezuri până la aniversări și evenimente private, aleg cu grijă muzica potrivită pentru fiecare etapă a serii și pentru fiecare generație.",
     servicesTitle: "Servicii",
     service1Title: "💍 Nunți",
     service1Text: "Muzică pentru toate generațiile și pentru toate momentele importante ale serii.",
@@ -918,8 +961,17 @@ const translations = {
     video4Title: "Mai mult vibe, mai mult dans",
     video5Title: "Momente și energie pe ringul de dans",
     contactTitle: "Contact",
-    contactText: "Disponibil în toată Danemarca",
-    footerText: "© 2025 DJ Radu • Juelsminde, Danemarca",
+    contactIntro: "Pentru rezervări, colaborări sau informații suplimentare, mă poți contacta direct folosind datele de mai jos.",
+    companyLabel: "Companie",
+    companyName: "DJ Radu",
+    addressLabel: "Adresă",
+    addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
+    openMaps: "Deschide în Google Maps",
+    emailLabel: "Email",
+    phoneLabel: "Telefon / WhatsApp",
+    callNow: "Sună",
+    socialTitle: "Social media",
+    footerText: "© 2026 DJ Radu • Juelsminde, Danemarca",
     fullscreen: "Fullscreen",
     openYoutube: "Deschide pe YouTube"
   },
@@ -930,11 +982,10 @@ const translations = {
     navGallery: "Gallery",
     navContact: "Contact",
     heroText: "Your party. My energy.<br>Weddings • Christenings • Birthdays • Corporate events",
-    bookNow: "Book now",
     aboutTitle: "About me",
-    about1: "I’m Radu Ghiorghiu, a Romanian DJ based in Denmark.",
-    about2: "I perform for the Romanian and Moldovan community across Denmark and turn every event into a memorable experience.",
-    about3: "From traditional dances to international hits, I choose the right music for every generation and every key moment of the night.",
+    about1: "I’m Radu Ghiorghiu, a Romanian DJ based in Denmark, and for me music means more than just a playlist — it means atmosphere, emotion and energy.",
+    about2: "At every event, my goal is to create a balance between elegance, good taste and genuine fun, so that every guest feels part of a truly special moment.",
+    about3: "From weddings and christenings to birthdays and private events, I carefully choose the right music for every part of the evening and for every generation.",
     servicesTitle: "Services",
     service1Title: "💍 Weddings",
     service1Text: "Music for all generations and for every important moment of the evening.",
@@ -965,8 +1016,17 @@ const translations = {
     video4Title: "More vibe, more dancing",
     video5Title: "Dance floor moments and energy",
     contactTitle: "Contact",
-    contactText: "Available throughout Denmark",
-    footerText: "© 2025 DJ Radu • Juelsminde, Denmark",
+    contactIntro: "For bookings, collaborations or additional information, you can contact me directly using the details below.",
+    companyLabel: "Company",
+    companyName: "DJ Radu",
+    addressLabel: "Address",
+    addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
+    openMaps: "Open in Google Maps",
+    emailLabel: "Email",
+    phoneLabel: "Phone / WhatsApp",
+    callNow: "Call",
+    socialTitle: "Social media",
+    footerText: "© 2026 DJ Radu • Juelsminde, Denmark",
     fullscreen: "Fullscreen",
     openYoutube: "Open on YouTube"
   },
@@ -977,11 +1037,10 @@ const translations = {
     navGallery: "Galleri",
     navContact: "Kontakt",
     heroText: "Din fest. Min energi.<br>Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
-    bookNow: "Book nu",
     aboutTitle: "Om mig",
-    about1: "Jeg hedder Radu Ghiorghiu og er en rumænsk DJ bosat i Danmark.",
-    about2: "Jeg spiller musik for det rumænske og moldoviske fællesskab i hele Danmark og gør hver fest til en mindeværdig oplevelse.",
-    about3: "Fra traditionelle danse til internationale hits vælger jeg den rigtige musik til alle generationer og til aftenens vigtigste øjeblikke.",
+    about1: "Jeg hedder Radu Ghiorghiu, er rumænsk DJ bosat i Danmark, og for mig er musik mere end bare en playliste — det er stemning, følelse og energi.",
+    about2: "Ved hvert arrangement er mit mål at skabe en balance mellem elegance, god smag og ægte feststemning, så hver gæst føler sig som en del af et helt særligt øjeblik.",
+    about3: "Fra bryllupper og barnedåb til fødselsdage og private arrangementer vælger jeg musikken med omhu til hver del af aftenen og til alle generationer.",
     servicesTitle: "Ydelser",
     service1Title: "💍 Bryllupper",
     service1Text: "Musik til alle generationer og til alle aftenens vigtige øjeblikke.",
@@ -1012,8 +1071,17 @@ const translations = {
     video4Title: "Mere vibe, mere dans",
     video5Title: "Øjeblikke og energi på dansegulvet",
     contactTitle: "Kontakt",
-    contactText: "Tilgængelig i hele Danmark",
-    footerText: "© 2025 DJ Radu • Juelsminde, Danmark",
+    contactIntro: "For booking, samarbejde eller yderligere information kan du kontakte mig direkte via oplysningerne nedenfor.",
+    companyLabel: "Virksomhed",
+    companyName: "DJ Radu",
+    addressLabel: "Adresse",
+    addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
+    openMaps: "Åbn i Google Maps",
+    emailLabel: "E-mail",
+    phoneLabel: "Telefon / WhatsApp",
+    callNow: "Ring op",
+    socialTitle: "Sociale medier",
+    footerText: "© 2026 DJ Radu • Juelsminde, Danmark",
     fullscreen: "Fullscreen",
     openYoutube: "Åbn på YouTube"
   }
@@ -1050,9 +1118,9 @@ function setLanguage(lang) {
   };
 
   const descriptions = {
-    ro: "DJ Radu - DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca. Muzică românească și internațională.",
-    en: "DJ Radu - DJ for weddings, christenings, birthdays and private events throughout Denmark. Romanian and international music.",
-    da: "DJ Radu - DJ til bryllupper, barnedåb, fødselsdage og private events i hele Danmark. Rumænsk og international musik."
+    ro: "DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca.",
+    en: "DJ Radu - professional DJ services for weddings, christenings, birthdays and private events throughout Denmark.",
+    da: "DJ Radu - professionelle DJ-services til bryllupper, barnedåb, fødselsdage og private events i hele Danmark."
   };
 
   document.title = titles[currentLang];
@@ -1097,17 +1165,12 @@ function openMenu() {
 }
 
 menuToggle.addEventListener("click", () => {
-  if (mobileMenu.classList.contains("active")) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
+  if (mobileMenu.classList.contains("active")) closeMenu();
+  else openMenu();
 });
 
 document.querySelectorAll('.mobile-menu a, nav a[href^="#"]').forEach(link => {
-  link.addEventListener("click", () => {
-    closeMenu();
-  });
+  link.addEventListener("click", () => closeMenu());
 });
 
 const lightbox = document.getElementById("lightbox");
