@@ -71,11 +71,40 @@ border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .logo{
-font-family:'Bebas Neue',sans-serif;
-font-size:2rem;
-letter-spacing:3px;
-color:var(--blue);
+display:flex;
+align-items:center;
+gap:10px;
 text-decoration:none;
+color:#fff;
+}
+
+.logo-mark{
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(0,200,255,.12));
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 6px 20px rgba(0,0,0,.25);
+flex-shrink:0;
+}
+
+.logo-mark svg{
+width:24px;
+height:24px;
+display:block;
+}
+
+.logo-text{
+font-family:'Bebas Neue',sans-serif;
+font-size:1.7rem;
+letter-spacing:2px;
+line-height:1;
+background:linear-gradient(90deg,#f6e2b3,#d6f6ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .nav-right{
@@ -172,8 +201,8 @@ text-align:center;
 padding:140px 20px 100px;
 position:relative;
 background:
-linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.68)),
-url('IMG_2364.JPG') center center/cover no-repeat;
+linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.72)),
+url('IMG_2529.JPG') center center/cover no-repeat;
 }
 
 .hero::after{
@@ -181,7 +210,7 @@ content:'';
 position:absolute;
 inset:0;
 background:
-radial-gradient(circle at 20% 20%,rgba(0,200,255,.10),transparent 28%),
+radial-gradient(circle at 20% 20%,rgba(0,200,255,.08),transparent 28%),
 radial-gradient(circle at 80% 30%,rgba(123,44,255,.10),transparent 30%);
 pointer-events:none;
 }
@@ -190,21 +219,31 @@ pointer-events:none;
 max-width:960px;
 position:relative;
 z-index:2;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
-.hero h1{
-font-family:'Bebas Neue',sans-serif;
-font-size:clamp(4.5rem,12vw,10rem);
-line-height:.9;
-letter-spacing:6px;
-background:linear-gradient(90deg,#ffffff,#c8f6ff,#f2ddff);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+.hero-logo{
+width:min(720px,92vw);
+margin:0 auto 26px;
+filter:drop-shadow(0 14px 40px rgba(0,0,0,.45));
+border-radius:18px;
 }
 
-.hero p{
-margin-top:22px;
-font-size:1.18rem;
+.hero-tagline{
+margin-top:6px;
+font-size:1.55rem;
+font-weight:700;
+color:#ffffff;
+line-height:1.4;
+text-shadow:0 2px 14px rgba(0,0,0,.35);
+}
+
+.hero-subtext{
+margin-top:14px;
+font-size:1.05rem;
 color:#f0f0f0;
 line-height:1.8;
 text-shadow:0 2px 12px rgba(0,0,0,.35);
@@ -643,13 +682,20 @@ display:none;
 display:flex;
 }
 .hero{
-padding:130px 20px 90px;
+padding:120px 18px 80px;
 background:
-linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.74)),
-url('IMG_2364.JPG') center center/cover no-repeat;
+linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.76)),
+url('IMG_2529.JPG') center center/cover no-repeat;
 }
-.hero p{
-font-size:1rem;
+.hero-logo{
+width:min(92vw,520px);
+margin-bottom:22px;
+}
+.hero-tagline{
+font-size:1.2rem;
+}
+.hero-subtext{
+font-size:.96rem;
 }
 .gallery-item{
 height:220px;
@@ -682,7 +728,24 @@ display:none !important;
 <body>
 
 <nav>
-<a href="#" class="logo">DJ RADU</a>
+<a href="#" class="logo" aria-label="DJ Radu">
+  <span class="logo-mark" aria-hidden="true">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 34V26C16 17.16 23.16 10 32 10C40.84 10 48 17.16 48 26V34" stroke="url(#g1)" stroke-width="5" stroke-linecap="round"/>
+      <rect x="10" y="30" width="10" height="18" rx="5" fill="url(#g1)"/>
+      <rect x="44" y="30" width="10" height="18" rx="5" fill="url(#g1)"/>
+      <path d="M24 42C24 42 26.5 46 32 46C37.5 46 40 42 40 42" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="g1" x1="10" y1="10" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F6E2B3"/>
+          <stop offset="0.55" stop-color="#D38BFF"/>
+          <stop offset="1" stop-color="#8CEBFF"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </span>
+  <span class="logo-text">DJ RADU</span>
+</a>
 
 <div class="nav-right">
 <ul>
@@ -724,10 +787,17 @@ display:none !important;
 </div>
 
 <section class="hero">
-<div class="hero-content">
-<h1>DJ RADU</h1>
-<p data-i18n="heroText">Petrecerea ta. Energia mea.<br>Nunți • Botezuri • Aniversări • Evenimente corporate</p>
-</div>
+  <div class="hero-content">
+    <img src="dj-radu-logo.jpg" alt="DJ Radu logo" class="hero-logo">
+
+    <div class="hero-tagline" data-i18n="heroTagline">
+      Petrecerea ta. Energia mea!
+    </div>
+
+    <div class="hero-subtext" data-i18n="heroSubtext">
+      Nunți • Botezuri • Aniversări • Evenimente corporate
+    </div>
+  </div>
 </section>
 
 <section id="despre" class="reveal">
@@ -926,7 +996,8 @@ const translations = {
     navMusic: "Muzică",
     navGallery: "Galerie",
     navContact: "Contact",
-    heroText: "Petrecerea ta. Energia mea.<br>Nunți • Botezuri • Aniversări • Evenimente corporate",
+    heroTagline: "Petrecerea ta. Energia mea!",
+    heroSubtext: "Nunți • Botezuri • Aniversări • Evenimente corporate",
     aboutTitle: "Despre mine",
     about1: "Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca, iar pentru mine muzica înseamnă mai mult decât un simplu playlist — înseamnă atmosferă, emoție și energie.",
     about2: "La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.",
@@ -981,7 +1052,8 @@ const translations = {
     navMusic: "Music",
     navGallery: "Gallery",
     navContact: "Contact",
-    heroText: "Your party. My energy.<br>Weddings • Christenings • Birthdays • Corporate events",
+    heroTagline: "Your party. My energy!",
+    heroSubtext: "Weddings • Christenings • Birthdays • Corporate events",
     aboutTitle: "About me",
     about1: "I’m Radu Ghiorghiu, a Romanian DJ based in Denmark, and for me music means more than just a playlist — it means atmosphere, emotion and energy.",
     about2: "At every event, my goal is to create a balance between elegance, good taste and genuine fun, so that every guest feels part of a truly special moment.",
@@ -1036,7 +1108,8 @@ const translations = {
     navMusic: "Musik",
     navGallery: "Galleri",
     navContact: "Kontakt",
-    heroText: "Din fest. Min energi.<br>Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
+    heroTagline: "Din fest. Min energi!",
+    heroSubtext: "Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
     aboutTitle: "Om mig",
     about1: "Jeg hedder Radu Ghiorghiu, er rumænsk DJ bosat i Danmark, og for mig er musik mere end bare en playliste — det er stemning, følelse og energi.",
     about2: "Ved hvert arrangement er mit mål at skabe en balance mellem elegance, god smag og ægte feststemning, så hver gæst føler sig som en del af et helt særligt øjeblik.",
