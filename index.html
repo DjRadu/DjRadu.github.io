@@ -14,24 +14,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DJ Radu | Petrecerea ta. Energia mea.</title>
-<meta name="description" content="DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca.">
+<meta name="description" content="DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca, Nord Germania și Europa.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
 
 <style>
 :root{
 --bg:#050505;
 --card:#111111;
 --card-2:#171717;
---blue:#00c8ff;
+--blue:#00d9ff;
+--blue-dark:#0099ff;
+--blue-light:#00f7ff;
 --purple:#7b2cff;
 --pink:#ff3ea5;
 --text:#ffffff;
 --gray:#c9c9c9;
---border:rgba(255,255,255,.08);
+--border:rgba(0,217,255,.15);
 --shadow:0 10px 30px rgba(0,0,0,.35);
+--glow:0 0 20px rgba(0,217,255,.25);
 }
 
 *{
@@ -73,10 +78,11 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,.78);
+background:rgba(0,0,0,.85);
 backdrop-filter:blur(12px);
 z-index:1000;
-border-bottom:1px solid rgba(255,255,255,.06);
+border-bottom:1px solid var(--border);
+box-shadow:0 0 15px rgba(0,217,255,.1);
 }
 
 .logo{
@@ -94,9 +100,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
-background:linear-gradient(135deg, rgba(255,255,255,.12), rgba(0,200,255,.12));
-border:1px solid rgba(255,255,255,.12);
-box-shadow:0 6px 20px rgba(0,0,0,.25);
+background:linear-gradient(135deg, rgba(0,217,255,.2), rgba(0,153,255,.2));
+border:1.5px solid var(--blue);
+box-shadow:var(--glow);
 flex-shrink:0;
 }
 
@@ -104,6 +110,7 @@ flex-shrink:0;
 width:24px;
 height:24px;
 display:block;
+filter:drop-shadow(0 0 8px rgba(0,217,255,.6));
 }
 
 .logo-text{
@@ -111,9 +118,10 @@ font-family: 'Brittany Signature', cursive;
 font-size:1.7rem;
 letter-spacing:2px;
 line-height:1;
-background:linear-gradient(90deg,#f6e2b3,#d6f6ff);
+background:linear-gradient(90deg, #00d9ff, #00f7ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+text-shadow:0 0 20px rgba(0,217,255,.3);
 }
 
 .nav-right{
@@ -134,6 +142,23 @@ color:#fff;
 text-decoration:none;
 font-size:.95rem;
 transition:.3s;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:-4px;
+left:0;
+width:0;
+height:2px;
+background:linear-gradient(90deg, var(--blue), var(--blue-light));
+transition:.3s;
+box-shadow:0 0 10px rgba(0,217,255,.5);
+}
+
+nav a:hover::after{
+width:100%;
 }
 
 nav a:hover{
@@ -148,7 +173,7 @@ align-items:center;
 
 .lang-btn{
 padding:8px 12px;
-border:1px solid rgba(255,255,255,.14);
+border:1.5px solid var(--border);
 background:transparent;
 color:#fff;
 border-radius:999px;
@@ -160,10 +185,15 @@ min-width:48px;
 min-height:40px;
 }
 
-.lang-btn:hover,
+.lang-btn:hover{
+border-color:var(--blue);
+box-shadow:0 0 10px rgba(0,217,255,.3);
+}
+
 .lang-btn.active{
-background:linear-gradient(90deg,var(--blue),var(--purple));
-border-color:transparent;
+background:linear-gradient(90deg, var(--blue), var(--blue-dark));
+border-color:var(--blue);
+box-shadow:var(--glow);
 }
 
 .menu-toggle{
@@ -171,7 +201,7 @@ display:none;
 width:46px;
 height:46px;
 border-radius:50%;
-border:1px solid rgba(255,255,255,.12);
+border:1.5px solid var(--border);
 background:transparent;
 color:#fff;
 cursor:pointer;
@@ -187,6 +217,7 @@ width:20px;
 height:2px;
 background:#fff;
 transition:.3s;
+box-shadow:0 0 8px rgba(0,217,255,.4);
 }
 
 .menu-toggle.active span:nth-child(1){
@@ -209,12 +240,21 @@ justify-content:center;
 text-align:center;
 padding:110px 0 70px;
 position:relative;
-background:
-linear-gradient(180deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.98) 100%);
+background:linear-gradient(180deg, rgba(0,0,0,.95) 0%, rgba(0,20,40,.95) 100%);
+overflow:hidden;
 }
 
-.hero::after{
-display:none;
+.hero::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:
+radial-gradient(circle at 20% 50%, rgba(0,217,255,.05) 0%, transparent 50%),
+radial-gradient(circle at 80% 80%, rgba(0,153,255,.05) 0%, transparent 50%);
+pointer-events:none;
 }
 
 .hero-content{
@@ -233,8 +273,8 @@ max-width:none;
 display:block;
 margin:0;
 border-radius:0;
-filter:none;
-box-shadow:none;
+filter:drop-shadow(0 0 30px rgba(0,217,255,.4));
+box-shadow:0 0 40px rgba(0,217,255,.2);
 }
 
 .hero-tagline{
@@ -243,7 +283,7 @@ font-size:1.7rem;
 font-weight:700;
 color:#ffffff;
 line-height:1.35;
-text-shadow:none;
+text-shadow:0 0 20px rgba(0,217,255,.3);
 padding:0 20px;
 }
 
@@ -252,12 +292,24 @@ margin-top:14px;
 font-size:1.08rem;
 color:#e8e8e8;
 line-height:1.8;
-text-shadow:none;
+text-shadow:0 0 15px rgba(0,217,255,.2);
 padding:0 20px;
 }
 
 section{
 padding:100px 8%;
+position:relative;
+}
+
+section::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:1px;
+background:linear-gradient(90deg, transparent, var(--blue), transparent);
+opacity:.3;
 }
 
 .section-title{
@@ -266,6 +318,10 @@ font-size:clamp(2.6rem,6vw,4rem);
 letter-spacing:3px;
 margin-bottom:50px;
 text-align:center;
+background:linear-gradient(90deg, #fff, var(--blue), #fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 30px rgba(0,217,255,.3);
 }
 
 .about{
@@ -284,28 +340,47 @@ gap:24px;
 }
 
 .card{
-background:linear-gradient(180deg,var(--card),var(--card-2));
-border:1px solid var(--border);
+background:linear-gradient(180deg, var(--card), var(--card-2));
+border:1.5px solid var(--border);
 padding:30px;
 border-radius:22px;
-transition:.3s;
+transition:.4s;
 box-shadow:var(--shadow);
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(0,217,255,.1) 0%, transparent 70%);
+opacity:0;
+transition:opacity .4s;
 }
 
 .card:hover{
 transform:translateY(-8px);
-border-color:rgba(0,200,255,.45);
-box-shadow:0 0 30px rgba(0,200,255,.18);
+border-color:var(--blue);
+box-shadow:0 0 30px rgba(0,217,255,.3), var(--shadow);
+}
+
+.card:hover::before{
+opacity:1;
 }
 
 .card h3{
 margin-bottom:15px;
 font-size:1.35rem;
+position:relative;
+z-index:1;
 }
 
 .card p{
 color:var(--gray);
 line-height:1.7;
+position:relative;
+z-index:1;
 }
 
 .music-grid{
@@ -319,13 +394,15 @@ gap:15px;
 padding:15px 24px;
 background:var(--card);
 border-radius:30px;
-border:1px solid var(--border);
+border:1.5px solid var(--border);
 transition:.3s;
+cursor:default;
 }
 
 .music-item:hover{
-border-color:rgba(0,200,255,.4);
+border-color:var(--blue);
 transform:translateY(-3px);
+box-shadow:0 0 15px rgba(0,217,255,.2);
 }
 
 .media-subtitle{
@@ -333,8 +410,43 @@ font-size:1.45rem;
 margin-bottom:18px;
 margin-top:12px;
 text-align:center;
-color:var(--blue);
+background:linear-gradient(90deg, var(--blue), var(--blue-light));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 font-weight:700;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:24px;
+margin-top:30px;
+}
+
+.testimonial{
+background:linear-gradient(180deg, var(--card), var(--card-2));
+border:1.5px solid var(--border);
+padding:24px;
+border-radius:20px;
+box-shadow:var(--shadow);
+}
+
+.testimonial-text{
+color:var(--gray);
+line-height:1.8;
+margin-bottom:16px;
+font-style:italic;
+}
+
+.testimonial-author{
+font-weight:700;
+color:var(--blue);
+font-size:.95rem;
+}
+
+.testimonial-rating{
+color:#ffc107;
+font-size:.85rem;
 }
 
 .video-grid,
@@ -349,8 +461,8 @@ margin-top:20px;
 .gallery-item{
 overflow:hidden;
 border-radius:22px;
-background:linear-gradient(180deg,var(--card),var(--card-2));
-border:1px solid var(--border);
+background:linear-gradient(180deg, var(--card), var(--card-2));
+border:1.5px solid var(--border);
 box-shadow:var(--shadow);
 cursor:pointer;
 transition:.3s;
@@ -360,7 +472,8 @@ position:relative;
 .video-card:hover,
 .gallery-item:hover{
 transform:translateY(-6px);
-border-color:rgba(0,200,255,.45);
+border-color:var(--blue);
+box-shadow:0 0 25px rgba(0,217,255,.3), var(--shadow);
 }
 
 .video-thumb{
@@ -384,14 +497,15 @@ transform:scale(1.04);
 .play-badge{
 position:absolute;
 inset:auto auto 16px 16px;
-background:rgba(0,0,0,.72);
-color:#fff;
+background:rgba(0,217,255,.9);
+color:#000;
 padding:10px 14px;
 border-radius:999px;
 font-size:.9rem;
 font-weight:700;
 backdrop-filter:blur(8px);
-border:1px solid rgba(255,255,255,.12);
+border:1px solid rgba(0,217,255,.3);
+box-shadow:0 0 15px rgba(0,217,255,.5);
 }
 
 .video-info{
@@ -435,15 +549,145 @@ color:var(--gray);
 line-height:1.8;
 }
 
+.booking-section{
+max-width:900px;
+margin:0 auto 50px;
+padding:30px;
+background:linear-gradient(180deg, rgba(0,217,255,.08), rgba(0,153,255,.05));
+border:1.5px solid var(--border);
+border-radius:24px;
+box-shadow:var(--shadow);
+}
+
+.booking-title{
+font-size:1.5rem;
+margin-bottom:20px;
+color:var(--blue);
+font-weight:700;
+}
+
+.booking-form{
+display:grid;
+gap:16px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+margin-bottom:8px;
+font-weight:600;
+font-size:.95rem;
+color:#fff;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+padding:12px 14px;
+background:var(--card);
+border:1.5px solid var(--border);
+border-radius:12px;
+color:#fff;
+font-family:inherit;
+font-size:1rem;
+transition:.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+outline:none;
+border-color:var(--blue);
+box-shadow:0 0 15px rgba(0,217,255,.2), inset 0 0 10px rgba(0,217,255,.05);
+background:var(--card-2);
+}
+
+.form-group textarea{
+resize:vertical;
+min-height:100px;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+.booking-submit{
+padding:14px 28px;
+background:linear-gradient(90deg, var(--blue), var(--blue-dark));
+color:#000;
+border:1.5px solid var(--blue);
+border-radius:12px;
+font-weight:700;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 20px rgba(0,217,255,.3);
+margin-top:16px;
+}
+
+.booking-submit:hover:not(:disabled){
+transform:translateY(-2px);
+box-shadow:0 0 30px rgba(0,217,255,.5);
+}
+
+.booking-submit:active:not(:disabled){
+transform:translateY(0);
+}
+
+.booking-submit:disabled{
+opacity:.6;
+cursor:not-allowed;
+}
+
+.form-message{
+padding:12px;
+border-radius:8px;
+margin-top:12px;
+text-align:center;
+font-weight:600;
+display:none;
+}
+
+.form-message.success{
+background:rgba(76,175,80,.2);
+color:#4caf50;
+border:1px solid rgba(76,175,80,.4);
+display:block;
+}
+
+.form-message.error{
+background:rgba(244,67,54,.2);
+color:#f44336;
+border:1px solid rgba(244,67,54,.4);
+display:block;
+}
+
 .contact-card{
 max-width:860px;
 margin:0 auto;
 padding:34px 26px;
 border-radius:24px;
-background:linear-gradient(180deg,var(--card),var(--card-2));
-border:1px solid var(--border);
+background:linear-gradient(180deg, var(--card), var(--card-2));
+border:1.5px solid var(--border);
 box-shadow:var(--shadow);
 text-align:left;
+}
+
+.contact-section-title{
+font-size:1.1rem;
+font-weight:700;
+color:var(--blue);
+margin-top:24px;
+margin-bottom:14px;
+}
+
+.contact-section-title:first-child{
+margin-top:0;
 }
 
 .contact-list{
@@ -472,8 +716,13 @@ color:var(--gray);
 text-decoration:none;
 }
 
-.contact-value a:hover{
+.contact-value a{
 color:var(--blue);
+}
+
+.contact-value a:hover{
+color:var(--blue-light);
+text-decoration:underline;
 }
 
 .phone-actions{
@@ -486,21 +735,24 @@ margin-top:8px;
 .phone-actions a,
 .social-links a{
 padding:13px 18px;
-border-radius:999px;
+border-radius:12px;
 text-decoration:none;
 color:#fff;
-background:#121212;
-border:1px solid rgba(255,255,255,.1);
+background:linear-gradient(135deg, var(--card), var(--card-2));
+border:1.5px solid var(--border);
 transition:.3s;
 display:inline-flex;
 align-items:center;
 justify-content:center;
+gap:8px;
 min-height:48px;
+font-weight:600;
 }
 
 .phone-actions a:hover,
 .social-links a:hover{
 border-color:var(--blue);
+box-shadow:0 0 15px rgba(0,217,255,.2);
 transform:translateY(-3px);
 }
 
@@ -508,6 +760,7 @@ transform:translateY(-3px);
 margin-bottom:14px;
 font-weight:700;
 font-size:1rem;
+color:var(--blue);
 }
 
 .social-links{
@@ -516,11 +769,15 @@ flex-wrap:wrap;
 gap:14px;
 }
 
+.social-links a i{
+font-size:1.2rem;
+}
+
 footer{
 padding:36px 20px 44px;
 text-align:center;
 color:#777;
-border-top:1px solid rgba(255,255,255,.08);
+border-top:1px solid var(--border);
 }
 
 .reveal{
@@ -537,7 +794,7 @@ transform:translateY(0);
 .lightbox{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.92);
+background:rgba(0,0,0,.96);
 display:flex;
 align-items:center;
 justify-content:center;
@@ -568,7 +825,8 @@ max-height:90vh;
 border-radius:18px;
 overflow:hidden;
 background:#000;
-box-shadow:0 20px 60px rgba(0,0,0,.45);
+box-shadow:0 0 40px rgba(0,217,255,.3);
+border:1.5px solid var(--blue);
 }
 
 .lightbox-content img{
@@ -593,14 +851,20 @@ right:-4px;
 width:48px;
 height:48px;
 border-radius:50%;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(17,17,17,.95);
-color:#fff;
+border:1.5px solid var(--blue);
+background:rgba(0,0,0,.95);
+color:var(--blue);
 font-size:1.3rem;
 cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
+box-shadow:0 0 15px rgba(0,217,255,.3);
+}
+
+.lightbox-close:hover{
+background:var(--blue);
+color:#000;
 }
 
 .lightbox-actions{
@@ -613,15 +877,21 @@ gap:10px;
 
 .lightbox-action{
 padding:12px 16px;
-border-radius:999px;
-border:1px solid rgba(255,255,255,.16);
-background:rgba(0,0,0,.72);
-color:#fff;
+border-radius:12px;
+border:1.5px solid var(--blue);
+background:rgba(0,217,255,.1);
+color:var(--blue);
 text-decoration:none;
 font-size:.9rem;
 font-weight:700;
 backdrop-filter:blur(8px);
 cursor:pointer;
+transition:.3s;
+}
+
+.lightbox-action:hover{
+background:var(--blue);
+color:#000;
 }
 
 .mobile-menu{
@@ -631,7 +901,7 @@ left:0;
 right:0;
 margin:0 16px;
 background:rgba(10,10,10,.96);
-border:1px solid rgba(255,255,255,.08);
+border:1.5px solid var(--border);
 border-radius:24px;
 padding:22px;
 z-index:1500;
@@ -679,6 +949,9 @@ gap:16px;
 .contact-label{
 min-width:100%;
 }
+.form-row{
+grid-template-columns:1fr;
+}
 }
 
 @media(max-width:768px){
@@ -724,6 +997,12 @@ flex-wrap:wrap;
 .lightbox-inner{
 flex-direction:column;
 }
+.booking-form{
+gap:12px;
+}
+.form-row{
+grid-template-columns:1fr;
+}
 }
 
 @media(min-width:769px){
@@ -745,9 +1024,9 @@ display:none !important;
       <path d="M24 42C24 42 26.5 46 32 46C37.5 46 40 42 40 42" stroke="url(#g1)" stroke-width="4" stroke-linecap="round"/>
       <defs>
         <linearGradient id="g1" x1="10" y1="10" x2="54" y2="48" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#F6E2B3"/>
-          <stop offset="0.55" stop-color="#D38BFF"/>
-          <stop offset="1" stop-color="#8CEBFF"/>
+          <stop stop-color="#00D9FF"/>
+          <stop offset="0.55" stop-color="#0099FF"/>
+          <stop offset="1" stop-color="#00F7FF"/>
         </linearGradient>
       </defs>
     </svg>
@@ -761,6 +1040,7 @@ display:none !important;
 <li><a href="#servicii" data-i18n="navServices">Servicii</a></li>
 <li><a href="#muzica" data-i18n="navMusic">Muzică</a></li>
 <li><a href="#galerie" data-i18n="navGallery">Galerie</a></li>
+<li><a href="#booking" data-i18n="navBooking">Rezervare</a></li>
 <li><a href="#contact" data-i18n="navContact">Contact</a></li>
 </ul>
 
@@ -784,6 +1064,7 @@ display:none !important;
 <li><a href="#servicii" data-i18n="navServices">Servicii</a></li>
 <li><a href="#muzica" data-i18n="navMusic">Muzică</a></li>
 <li><a href="#galerie" data-i18n="navGallery">Galerie</a></li>
+<li><a href="#booking" data-i18n="navBooking">Rezervare</a></li>
 <li><a href="#contact" data-i18n="navContact">Contact</a></li>
 </ul>
 
@@ -816,6 +1097,8 @@ display:none !important;
 <p data-i18n="about2">La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.</p>
 <br>
 <p data-i18n="about3">De la nunți și botezuri până la aniversări și evenimente private, aleg cu grijă muzica potrivită pentru fiecare etapă a serii și pentru fiecare generație.</p>
+<br>
+<p data-i18n="serviceAreaText" style="font-weight:700;color:var(--blue);margin-top:20px;">📍 Servicii disponibile: Toată Danemarca • Nord Germania • Europa (transport și cazare negociabile)</p>
 </div>
 </section>
 
@@ -853,6 +1136,24 @@ display:none !important;
 <div class="music-item" data-i18n="music7">Latino</div>
 <div class="music-item" data-i18n="music8">Rock</div>
 <div class="music-item" data-i18n="music9">Hituri internaționale</div>
+</div>
+</section>
+
+<section id="testimonials" class="reveal">
+<h2 class="section-title" data-i18n="testimonialsTitle">Recenzii &amp; Mărturii</h2>
+<div class="testimonials">
+<div class="testimonial">
+<div class="testimonial-text">"Radu a fost extraordinar! A readus energia la petrecerea noastră. Recomand cu mare încredere! 🎉"</div>
+<div class="testimonial-author">— Cristina Godina ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="testimonial">
+<div class="testimonial-text">"DJ Radu este la Det Ottekantede. Muzică bună, control profesional al atmosferei. Merită o invitație!"</div>
+<div class="testimonial-author">— Liviu Dobrescu ⭐⭐⭐⭐⭐</div>
+</div>
+<div class="testimonial">
+<div class="testimonial-text">"Skøn stemning la petrecerea din Kalkbraenderiet. Mai mult vibe, mai mult dans. Mulțumesc Radu! 👍"</div>
+<div class="testimonial-author">— Thomas Kåre Vinther ⭐⭐⭐⭐⭐</div>
+</div>
 </div>
 </section>
 
@@ -934,11 +1235,91 @@ display:none !important;
 </div>
 </section>
 
+<section id="booking" class="reveal">
+<h2 class="section-title" data-i18n="bookingTitle">Rezervați data</h2>
+<div class="booking-section">
+<h3 class="booking-title" data-i18n="bookingSubtitle">Completați formularul de mai jos pentru a-mi trimite o cerere de rezervare</h3>
+<form class="booking-form" id="bookingForm">
+<div class="form-row">
+<div class="form-group">
+<label for="firstName" data-i18n="bookingFirstName">Prenume</label>
+<input type="text" id="firstName" name="firstName" required>
+</div>
+<div class="form-group">
+<label for="lastName" data-i18n="bookingLastName">Nume</label>
+<input type="text" id="lastName" name="lastName" required>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label for="email" data-i18n="bookingEmail">Email</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-group">
+<label for="phone" data-i18n="bookingPhone">Telefon</label>
+<input type="tel" id="phone" name="phone" required>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label for="eventDate" data-i18n="bookingEventDate">Data evenimentului</label>
+<input type="date" id="eventDate" name="eventDate" required>
+</div>
+<div class="form-group">
+<label for="eventType" data-i18n="bookingEventType">Tip de eveniment</label>
+<select id="eventType" name="eventType" required>
+<option value="" data-i18n="bookingSelectType">Selectează tip...</option>
+<option data-i18n="eventWedding" value="Nuntă">Nuntă</option>
+<option data-i18n="eventChristening" value="Botez">Botez</option>
+<option data-i18n="eventBirthday" value="Aniversare">Aniversare</option>
+<option data-i18n="eventCorporate" value="Event Corporate">Event Corporate</option>
+<option data-i18n="eventOther" value="Altul">Altul</option>
+</select>
+</div>
+</div>
+
+<div class="form-row">
+<div class="form-group">
+<label for="location" data-i18n="bookingLocation">Locația</label>
+<input type="text" id="location" name="location" placeholder="Oraș, țară" required>
+</div>
+<div class="form-group">
+<label for="guests" data-i18n="bookingGuests">Număr de oaspeți (aproximativ)</label>
+<input type="number" id="guests" name="guests" min="10">
+</div>
+</div>
+
+<div class="form-group">
+<label for="message" data-i18n="bookingMessage">Mesaj suplimentar</label>
+<textarea id="message" name="message" placeholder="Spune-mi mai mult despre evenimentul tău..."></textarea>
+</div>
+
+<button type="submit" class="booking-submit" data-i18n="bookingSend" id="submitBtn">Trimite cerere de rezervare</button>
+<div class="form-message" id="formMessage"></div>
+</form>
+
+<p style="margin-top:20px;text-align:center;color:var(--gray);font-size:.9rem;" data-i18n="bookingInfo">Cererea ta va fi trimisă la booking@djradu.com. Voi răspunde în cel mai scurt timp.</p>
+</div>
+</section>
+
 <section id="contact" class="contact reveal">
 <h2 class="section-title" data-i18n="contactTitle">Contact</h2>
-<p class="contact-intro" data-i18n="contactIntro">Pentru rezervări, colaborări sau informații suplimentare, mă poți contacta direct folosind datele de mai jos.</p>
+<p class="contact-intro" data-i18n="contactIntro">Pentru informații suplimentare, colaborări sau alte întrebări, contactează-mă direct.</p>
 
 <div class="contact-card">
+<div class="contact-section-title" data-i18n="bookingContactTitle">📅 Pentru Rezervări</div>
+<div class="contact-list">
+<div class="contact-row">
+<div class="contact-label">Email</div>
+<div class="contact-value">
+<a href="mailto:booking@djradu.com">booking@djradu.com</a>
+</div>
+</div>
+</div>
+
+<div class="contact-section-title" data-i18n="generalContactTitle">💬 Contact General</div>
 <div class="contact-list">
 <div class="contact-row">
 <div class="contact-label" data-i18n="companyLabel">Companie</div>
@@ -959,9 +1340,9 @@ display:none !important;
 </div>
 
 <div class="contact-row">
-<div class="contact-label" data-i18n="emailLabel">Email</div>
+<div class="contact-label" data-i18n="emailLabel">Email (General)</div>
 <div class="contact-value">
-<a href="mailto:djradu@icloud.com">djradu@icloud.com</a>
+<a href="mailto:contact@djradu.com">contact@djradu.com</a>
 </div>
 </div>
 
@@ -970,18 +1351,20 @@ display:none !important;
 <div class="contact-value">
 <div>+45 52 71 21 02</div>
 <div class="phone-actions">
-<a href="tel:+4552712102" data-i18n="callNow">Sună</a>
-<a href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<a href="tel:+4552712102" data-i18n="callNow"><i class="fas fa-phone"></i> Sună</a>
+<a href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 </div>
 </div>
 </div>
 </div>
 
-<div class="social-title" data-i18n="socialTitle">Social media</div>
+<div class="contact-section-title" data-i18n="socialTitle">📱 Social media</div>
 <div class="social-links">
-<a href="https://www.facebook.com/DJRaduG/" target="_blank" rel="noopener noreferrer">Facebook</a>
-<a href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer">Instagram</a>
-<a href="https://youtube.com/@djradug" target="_blank" rel="noopener noreferrer">YouTube</a>
+<a href="https://www.facebook.com/DJRaduG/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://youtube.com/@djradug" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="#" title="TikTok (coming soon)" style="opacity:0.5;cursor:not-allowed;"><i class="fab fa-tiktok"></i></a>
+<a href="#" title="LinkedIn (coming soon)" style="opacity:0.5;cursor:not-allowed;"><i class="fab fa-linkedin-in"></i></a>
 </div>
 </div>
 </section>
@@ -997,12 +1380,18 @@ display:none !important;
 </div>
 
 <script>
+// Initialize EmailJS
+(function() {
+  emailjs.init("6-6hL4WpWGbFvtXD7");
+})();
+
 const translations = {
   ro: {
     navAbout: "Despre",
     navServices: "Servicii",
     navMusic: "Muzică",
     navGallery: "Galerie",
+    navBooking: "Rezervare",
     navContact: "Contact",
     heroTagline: "Petrecerea ta. Energia mea!",
     heroSubtext: "Nunți • Botezuri • Aniversări • Evenimente corporate",
@@ -1010,15 +1399,16 @@ const translations = {
     about1: "Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca, iar pentru mine muzica înseamnă mai mult decât un simplu playlist — înseamnă atmosferă, emoție și energie.",
     about2: "La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.",
     about3: "De la nunți și botezuri până la aniversări și evenimente private, aleg cu grijă muzica potrivită pentru fiecare etapă a serii și pentru fiecare generație.",
+    serviceAreaText: "📍 Servicii disponibile: Toată Danemarca • Nord germania • Europa (transport și cazare negociabile)",
     servicesTitle: "Servicii",
     service1Title: "💍 Nunți",
     service1Text: "Muzică pentru toate generațiile și pentru toate momentele importante ale serii.",
     service2Title: "🕯️ Botezuri",
-    service2Text: "Atmosfera potrivită pentru familie, invitați și o petrecere reușită.",
+    service2Text: "Atmosfera potrivită pentru familie, invitații și o petrecere reușită.",
     service3Title: "🎂 Aniversări",
     service3Text: "Petreceri private memorabile, pline de energie și muzică bună.",
     service4Title: "🏢 Evenimente corporate",
-    service4Text: "Evenimente profesionale, petreceri de firmă și seri de team-building.",
+    service4Text: "evenimente profesionale, petreceri de firmă și seri de team-building.",
     musicTitle: "Repertoriu",
     music1: "Populară românească",
     music2: "Hore & sârbe",
@@ -1039,33 +1429,59 @@ const translations = {
     video3Title: "Short dintr-un moment special",
     video4Title: "Mai mult vibe, mai mult dans",
     video5Title: "Momente și energie pe ringul de dans",
+    testimonialsTitle: "Recenzii & Mărturii",
+    bookingTitle: "Rezervați data",
+    bookingSubtitle: "Completați formularul de mai jos pentru a-mi trimite o cerere de rezervare",
+    bookingFirstName: "Prenume",
+    bookingLastName: "Nume",
+    bookingEmail: "Email",
+    bookingPhone: "Telefon",
+    bookingEventDate: "Data evenimentului",
+    bookingEventType: "Tip de eveniment",
+    bookingSelectType: "Selectează tip...",
+    eventWedding: "Nuntă",
+    eventChristening: "Botez",
+    eventBirthday: "Aniversare",
+    eventCorporate: "Event Corporate",
+    eventOther: "Altul",
+    bookingLocation: "Locația",
+    bookingGuests: "Număr de oaspeți (aproximativ)",
+    bookingMessage: "Mesaj suplimentar",
+    bookingSend: "Trimite cerere de rezervare",
+    bookingInfo: "Cererea ta va fi trimisă la booking@djradu.com. Voi răspunde în cel mai scurt timp.",
     contactTitle: "Contact",
-    contactIntro: "Pentru rezervări, colaborări sau informații suplimentare, mă poți contacta direct folosind datele de mai jos.",
+    contactIntro: "Pentru informații suplimentare, colaborări sau alte întrebări, contactează-mă direct.",
+    bookingContactTitle: "📅 Pentru Rezervări",
+    generalContactTitle: "💬 Contact General",
     companyLabel: "Companie",
     companyName: "DJ Radu",
     addressLabel: "Adresă",
     addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps: "Deschide în Google Maps",
-    emailLabel: "Email",
+    emailLabel: "Email (General)",
     phoneLabel: "Telefon / WhatsApp",
     callNow: "Sună",
-    socialTitle: "Social media",
+    socialTitle: "📱 Social media",
     footerText: "© 2026 DJ Radu • Juelsminde, Danemarca",
     fullscreen: "Fullscreen",
-    openYoutube: "Deschide pe YouTube"
+    openYoutube: "Deschide pe YouTube",
+    successMessage: "Cererea ta a fost trimisă cu succes! 🎉 Te voi contacta în cel mai scurt timp.",
+    errorMessage: "A apărut o eroare. Te rog încearcă din nou sau trimite-mi un email direct."
   },
   en: {
     navAbout: "About",
     navServices: "Services",
     navMusic: "Music",
     navGallery: "Gallery",
+    navBooking: "Book Now",
     navContact: "Contact",
     heroTagline: "Your party. My energy!",
     heroSubtext: "Weddings • Christenings • Birthdays • Corporate events",
     aboutTitle: "About me",
-    about1: "I’m Radu Ghiorghiu, a Romanian DJ based in Denmark, and for me music means more than just a playlist — it means atmosphere, emotion and energy.",
+    about1: "I'm Radu Ghiorghiu, a Romanian DJ based in Denmark, and for me music means more than just a playlist — it means atmosphere, emotion and energy.",
     about2: "At every event, my goal is to create a balance between elegance, good taste and genuine fun, so that every guest feels part of a truly special moment.",
     about3: "From weddings and christenings to birthdays and private events, I carefully choose the right music for every part of the evening and for every generation.",
+    serviceAreaText: "📍 Services available: All of Denmark • Northern Germany • Europe (transport & accommodation negotiable)",
     servicesTitle: "Services",
     service1Title: "💍 Weddings",
     service1Text: "Music for all generations and for every important moment of the evening.",
@@ -1095,26 +1511,51 @@ const translations = {
     video3Title: "Short from a special moment",
     video4Title: "More vibe, more dancing",
     video5Title: "Dance floor moments and energy",
+    testimonialsTitle: "Reviews & Testimonials",
+    bookingTitle: "Book Your Date",
+    bookingSubtitle: "Fill in the form below to send me a booking request",
+    bookingFirstName: "First Name",
+    bookingLastName: "Last Name",
+    bookingEmail: "Email",
+    bookingPhone: "Phone",
+    bookingEventDate: "Event Date",
+    bookingEventType: "Event Type",
+    bookingSelectType: "Select type...",
+    eventWedding: "Wedding",
+    eventChristening: "Christening",
+    eventBirthday: "Birthday",
+    eventCorporate: "Corporate Event",
+    eventOther: "Other",
+    bookingLocation: "Location",
+    bookingGuests: "Number of guests (approximately)",
+    bookingMessage: "Additional message",
+    bookingSend: "Send booking request",
+    bookingInfo: "Your request will be sent to booking@djradu.com. I will respond as soon as possible.",
     contactTitle: "Contact",
-    contactIntro: "For bookings, collaborations or additional information, you can contact me directly using the details below.",
+    contactIntro: "For additional information, collaborations or other questions, contact me directly.",
+    bookingContactTitle: "📅 For Bookings",
+    generalContactTitle: "💬 General Contact",
     companyLabel: "Company",
     companyName: "DJ Radu",
     addressLabel: "Address",
     addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps: "Open in Google Maps",
-    emailLabel: "Email",
+    emailLabel: "Email (General)",
     phoneLabel: "Phone / WhatsApp",
     callNow: "Call",
-    socialTitle: "Social media",
+    socialTitle: "📱 Social media",
     footerText: "© 2026 DJ Radu • Juelsminde, Denmark",
     fullscreen: "Fullscreen",
-    openYoutube: "Open on YouTube"
+    openYoutube: "Open on YouTube",
+    successMessage: "Your request has been sent successfully! 🎉 I will contact you as soon as possible.",
+    errorMessage: "An error occurred. Please try again or send me an email directly."
   },
   da: {
     navAbout: "Om mig",
     navServices: "Ydelser",
     navMusic: "Musik",
     navGallery: "Galleri",
+    navBooking: "Book nu",
     navContact: "Kontakt",
     heroTagline: "Din fest. Min energi!",
     heroSubtext: "Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
@@ -1122,6 +1563,7 @@ const translations = {
     about1: "Jeg hedder Radu Ghiorghiu, er rumænsk DJ bosat i Danmark, og for mig er musik mere end bare en playliste — det er stemning, følelse og energi.",
     about2: "Ved hvert arrangement er mit mål at skabe en balance mellem elegance, god smag og ægte feststemning, så hver gæst føler sig som en del af et helt særligt øjeblik.",
     about3: "Fra bryllupper og barnedåb til fødselsdage og private arrangementer vælger jeg musikken med omhu til hver del af aftenen og til alle generationer.",
+    serviceAreaText: "📍 Services tilgængelig: Hele Danmark • Nordjylland Tyskland • Europa (transport & overnatning forhandlingsbart)",
     servicesTitle: "Ydelser",
     service1Title: "💍 Bryllupper",
     service1Text: "Musik til alle generationer og til alle aftenens vigtige øjeblikke.",
@@ -1151,20 +1593,44 @@ const translations = {
     video3Title: "Short fra et særligt øjeblik",
     video4Title: "Mere vibe, mere dans",
     video5Title: "Øjeblikke og energi på dansegulvet",
+    testimonialsTitle: "Anmeldelser & Testimonier",
+    bookingTitle: "Book din dato",
+    bookingSubtitle: "Udfyld formularen nedenfor for at sende mig en bookingforespørgsel",
+    bookingFirstName: "Fornavn",
+    bookingLastName: "Efternavn",
+    bookingEmail: "E-mail",
+    bookingPhone: "Telefon",
+    bookingEventDate: "Eventdato",
+    bookingEventType: "Eventtype",
+    bookingSelectType: "Vælg type...",
+    eventWedding: "Bryllup",
+    eventChristening: "Barnedåb",
+    eventBirthday: "Fødselsdag",
+    eventCorporate: "Firmaevent",
+    eventOther: "Andet",
+    bookingLocation: "Lokation",
+    bookingGuests: "Antal gæster (cirka)",
+    bookingMessage: "Yderligere besked",
+    bookingSend: "Send bookingforespørgsel",
+    bookingInfo: "Din forespørgsel sendes til booking@djradu.com. Jeg vil svare så hurtigt som muligt.",
     contactTitle: "Kontakt",
-    contactIntro: "For booking, samarbejde eller yderligere information kan du kontakte mig direkte via oplysningerne nedenfor.",
+    contactIntro: "For yderligere information, samarbejde eller andre spørgsmål, kontakt mig direkte.",
+    bookingContactTitle: "📅 Til bookinger",
+    generalContactTitle: "💬 Generel kontakt",
     companyLabel: "Virksomhed",
     companyName: "DJ Radu",
     addressLabel: "Adresse",
     addressValue: "Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps: "Åbn i Google Maps",
-    emailLabel: "E-mail",
+    emailLabel: "E-mail (General)",
     phoneLabel: "Telefon / WhatsApp",
     callNow: "Ring op",
-    socialTitle: "Sociale medier",
+    socialTitle: "📱 Sociale medier",
     footerText: "© 2026 DJ Radu • Juelsminde, Danmark",
     fullscreen: "Fullscreen",
-    openYoutube: "Åbn på YouTube"
+    openYoutube: "Åbn på YouTube",
+    successMessage: "Din anmodning er sendt! 🎉 Jeg kontakter dig snarest.",
+    errorMessage: "Der opstod en fejl. Prøv venligst igen eller send mig en e-mail direkte."
   }
 };
 
@@ -1184,7 +1650,11 @@ function setLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[currentLang][key]) {
-      el.innerHTML = translations[currentLang][key];
+      if (el.tagName === "OPTION") {
+        el.textContent = translations[currentLang][key];
+      } else {
+        el.innerHTML = translations[currentLang][key];
+      }
     }
   });
 
@@ -1199,9 +1669,9 @@ function setLanguage(lang) {
   };
 
   const descriptions = {
-    ro: "DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca.",
-    en: "DJ Radu - professional DJ services for weddings, christenings, birthdays and private events throughout Denmark.",
-    da: "DJ Radu - professionelle DJ-services til bryllupper, barnedåb, fødselsdage og private events i hele Danmark."
+    ro: "DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca, Nord Germania și Europa.",
+    en: "DJ Radu - professional DJ services for weddings, christenings, birthdays and private events throughout Denmark, Northern Germany and Europe.",
+    da: "DJ Radu - professionelle DJ-services til bryllupper, barnedåb, fødselsdage og private events i hele Danmark, Nordjylland Tyskland og Europa."
   };
 
   document.title = titles[currentLang];
@@ -1334,6 +1804,57 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeLightbox();
     closeMenu();
+  }
+});
+
+// Booking form handler with EmailJS
+document.getElementById("bookingForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
+  const submitBtn = document.getElementById("submitBtn");
+  const formMessage = document.getElementById("formMessage");
+  const originalText = submitBtn.textContent;
+  
+  submitBtn.disabled = true;
+  submitBtn.textContent = currentLang === "ro" ? "Se trimite..." : currentLang === "en" ? "Sending..." : "Sender...";
+  formMessage.className = "form-message";
+  
+  const formData = {
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    eventDate: document.getElementById("eventDate").value,
+    eventType: document.getElementById("eventType").value,
+    location: document.getElementById("location").value,
+    guests: document.getElementById("guests").value || "N/A",
+    message: document.getElementById("message").value || "N/A"
+  };
+
+  try {
+    await emailjs.send("service_djradu", "template_booking", {
+      to_email: "booking@djradu.com",
+      from_name: formData.firstName + " " + formData.lastName,
+      from_email: formData.email,
+      phone: formData.phone,
+      event_date: formData.eventDate,
+      event_type: formData.eventType,
+      location: formData.location,
+      guests: formData.guests,
+      message: formData.message,
+      language: currentLang
+    });
+
+    formMessage.className = "form-message success";
+    formMessage.textContent = translations[currentLang].successMessage;
+    document.getElementById("bookingForm").reset();
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    formMessage.className = "form-message error";
+    formMessage.textContent = translations[currentLang].errorMessage;
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalText;
   }
 });
 </script>
