@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ Radu - Politica de Confidentialitate</title>
+  <style>
+    :root{--bg:#050505;--card:#111111;--text:#ffffff;--muted:#c9c9c9;--blue:#00c8ff;--border:rgba(255,255,255,.08);}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    .wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px;}
+    .topbar{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:32px;flex-wrap:wrap;}
+    h1{margin:0;font-size:2rem;color:var(--blue);}
+    .back{color:var(--blue);text-decoration:none;font-size:.95rem;}
+    .back:hover{text-decoration:underline;}
+    .lang-switch{display:flex;gap:8px;}
+    .lang-switch button{border:1px solid var(--border);background:transparent;color:var(--text);padding:10px 14px;cursor:pointer;border-radius:8px;font-size:.85rem;font-weight:700;}
+    .lang-switch button.active{background:var(--blue);color:#000;border-color:var(--blue);}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+    .lang{display:none;}
+    .lang.active{display:block;}
+    h2{color:var(--blue);margin-top:28px;margin-bottom:12px;}
+    p{color:var(--muted);margin-bottom:14px;}
+    a{color:var(--blue);}
+    footer{text-align:center;color:#555;padding:30px;border-top:1px solid var(--border);margin-top:40px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div>
+        <a href="/" class="back">← djradu.com</a>
+        <h1 style="margin-top:8px;">Politica de Confidentialitate</h1>
+      </div>
+      <div class="lang-switch">
+        <button class="active" onclick="setLang('ro',this)">RO</button>
+        <button onclick="setLang('en',this)">EN</button>
+        <button onclick="setLang('da',this)">DA</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="ro" class="lang active">
+        <h2>Politica de confidentialitate si protectia datelor personale</h2>
+        <p>DJ Radu (CVR: 46538560, Skraenten 21, 7130 Juelsminde, Danemarca) respecta confidentialitatea datelor personale si prelucreaza datele cu respectarea Regulamentului general privind protectia datelor (GDPR) si a legislatiei aplicabile din Danemarca si Uniunea Europeana.</p>
+        <p><strong style="color:#fff;">Date colectate:</strong> Datele personale colectate prin formularul de rezervare pot include: nume, prenume, numar de telefon, adresa de e-mail, locatia evenimentului, data evenimentului si alte informatii transmise voluntar de client.</p>
+        <p><strong style="color:#fff;">Scopul prelucrarii:</strong> Aceste date sunt colectate si utilizate exclusiv pentru analizarea cererii de rezervare, contactarea clientului, pregatirea si confirmarea evenimentului si desfasurarea serviciilor DJ solicitate.</p>
+        <p><strong style="color:#fff;">Temeiul legal:</strong> Temeiul legal al prelucrarii este, in principal, solicitarea de masuri precontractuale la cererea persoanei vizate (art. 6 alin. 1 lit. b GDPR) si, dupa caz, executarea contractului sau obligatii legale.</p>
+        <p><strong style="color:#fff;">Transfer catre terti:</strong> DJ Radu nu vinde, nu inchiriaza si nu transfera datele personale catre terti in scopuri comerciale sau de marketing. Datele nu sunt folosite ulterior pentru campanii promotionale fara acordul explicit al persoanei vizate.</p>
+        <p><strong style="color:#fff;">Durata stocarii:</strong> Datele transmise prin formular sunt pastrate doar atat timp cat este necesar pentru gestionarea cererii si desfasurarea evenimentului. Dupa finalizarea contractului si indeplinirea obligatiilor legale aplicabile, datele sunt sterse, cu exceptia informatiilor care trebuie pastrate conform legii pentru evidente contabile sau fiscale.</p>
+        <p><strong style="color:#fff;">Drepturile tale:</strong> Persoana vizata are dreptul de a solicita accesul la datele sale, rectificarea, stergerea, restrictionarea prelucrarii si opozitia, in conditiile prevazute de lege.</p>
+        <p>Contact: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+      </div>
+
+      <div id="en" class="lang">
+        <h2>Privacy Policy and Personal Data Protection</h2>
+        <p>DJ Radu (CVR: 46538560, Skraenten 21, 7130 Juelsminde, Denmark) respects the confidentiality of personal data and processes personal information in accordance with the General Data Protection Regulation (GDPR) and the applicable laws of Denmark and the European Union.</p>
+        <p><strong style="color:#fff;">Data collected:</strong> Personal data collected through the booking form may include: first name, last name, phone number, email address, event location, event date, and any other information voluntarily provided by the client.</p>
+        <p><strong style="color:#fff;">Purpose of processing:</strong> This data is collected and used exclusively for reviewing the booking request, contacting the client, preparing and confirming the event, and delivering the requested DJ services.</p>
+        <p><strong style="color:#fff;">Legal basis:</strong> The legal basis for processing is primarily pre-contractual measures requested by the data subject (Art. 6(1)(b) GDPR) and, where applicable, contract performance or legal obligations.</p>
+        <p><strong style="color:#fff;">Third-party transfers:</strong> DJ Radu does not sell, rent, or transfer personal data to third parties for commercial or marketing purposes. The data is not later used for promotional campaigns without the explicit consent of the data subject.</p>
+        <p><strong style="color:#fff;">Data retention:</strong> Data submitted through the form is retained only for as long as necessary to handle the request and carry out the event. After the contract has ended and any applicable legal obligations have been fulfilled, the data is deleted, except for information that must be retained under accounting or tax laws.</p>
+        <p><strong style="color:#fff;">Your rights:</strong> The data subject has the right to request access to their data, rectification, deletion, restriction of processing, and objection, in accordance with the law.</p>
+        <p>Contact: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+      </div>
+
+      <div id="da" class="lang">
+        <h2>Privatlivspolitik og beskyttelse af personoplysninger</h2>
+        <p>DJ Radu (CVR: 46538560, Skraenten 21, 7130 Juelsminde, Danmark) respekterer fortroligheden af personoplysninger og behandler data i overensstemmelse med databeskyttelsesforordningen (GDPR) samt gaeldende lovgivning i Danmark og EU.</p>
+        <p><strong style="color:#fff;">Indsamlede oplysninger:</strong> Personoplysninger, der indsamles via bookingformularen, kan omfatte: fornavn, efternavn, telefonnummer, e-mailadresse, arrangementssted, arrangementsdato og andre oplysninger, som kunden frivilligt oplyser.</p>
+        <p><strong style="color:#fff;">Formal med behandlingen:</strong> Disse oplysninger indsamles og bruges udelukkende til behandling af bookingforesprgslen, kontakt med kunden, forberedelse og bekraeftelse af arrangementet samt levering af de anskede DJ-ydelser.</p>
+        <p><strong style="color:#fff;">Retsligt grundlag:</strong> Det retlige grundlag for behandlingen er primaert foranstaltninger forud for en aftale, som den registrerede har anmodet om (art. 6, stk. 1, litra b, GDPR), og hvor det er relevant, opfyldelse af en kontrakt eller retlige forpligtelser.</p>
+        <p><strong style="color:#fff;">Videregivelse til tredjepart:</strong> DJ Radu saelger, udlejer eller videregiver ikke personoplysninger til tredjepart til kommercielle eller markedsfaringsmassige formal. Oplysningerne bruges ikke senere til reklamekampagner uden den registreredes udtrykkelige samtykke.</p>
+        <p><strong style="color:#fff;">Opbevaringsperiode:</strong> Data, der sendes via formularen, opbevares kun sa laenge, det er nadvendigt for at behandle foresprgslen og gennemfare arrangementet. Nar aftalen er afsluttet, og eventuelle lovpligtige forpligtelser er opfyldt, slettes oplysningerne.</p>
+        <p><strong style="color:#fff;">Dine rettigheder:</strong> Den registrerede har ret til indsigt i sine oplysninger, berigtigelse, sletning, begraensning af behandlingen og indsigelse i henhold til lovgivningen.</p>
+        <p>Kontakt: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2026 DJ Radu • Juelsminde, Danemarca • CVR: 46538560</footer>
+
+  <script>
+    function setLang(lang, btn) {
+      document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
+      document.getElementById(lang).classList.add('active');
+      btn.classList.add('active');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
