@@ -315,7 +315,11 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <h2 class="section-title" data-i18n="bookingTitle">Rezervați data</h2>
 <div class="booking-section">
 <h3 class="booking-title" data-i18n="bookingSubtitle">Completați formularul de mai jos pentru a-mi trimite o cerere de rezervare</h3>
-<form class="booking-form" id="bookingForm">
+<form class="booking-form" id="bookingForm" action="https://formsubmit.co/booking@djradu.com" method="POST">
+<input type="hidden" name="_subject" value="Rezervare noua - djradu.com">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://djradu.com/#booking">
+<input type="hidden" name="_template" value="table">
 <div class="form-row">
 <div class="form-group">
 <label for="firstName" data-i18n="bookingFirstName">Prenume</label>
@@ -624,36 +628,7 @@ lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeLightbox(); closeMenu(); } });
 
-document.getElementById("bookingForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const formData = {
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    eventDate: document.getElementById("eventDate").value,
-    eventType: document.getElementById("eventType").value,
-    location: document.getElementById("location").value,
-    guests: document.getElementById("guests").value,
-    message: document.getElementById("message").value,
-    language: currentLang
-  };
-  try {
-    const response = await fetch("https://formspree.io/f/mgvownyo", {
-      method: "POST",
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(formData)
-    });
-    if (response.ok) {
-      alert(translations[currentLang].alertSuccess);
-      document.getElementById("bookingForm").reset();
-    } else {
-      alert(translations[currentLang].alertError);
-    }
-  } catch (error) {
-    alert(translations[currentLang].alertError);
-  }
-});
+// Form handled natively by formsubmit.co
 </script>
 
 </body>
