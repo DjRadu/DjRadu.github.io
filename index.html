@@ -29,7 +29,6 @@ body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;
 body.menu-open{overflow:hidden;}
 a,button{-webkit-tap-highlight-color:transparent;}
 img{max-width:100%;display:block;}
-
 nav{position:fixed;top:0;left:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid var(--border);box-shadow:0 0 15px rgba(0,217,255,.1);}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
 .logo-mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,rgba(0,217,255,.2),rgba(0,153,255,.2));border:1.5px solid var(--blue);box-shadow:var(--glow);flex-shrink:0;}
@@ -50,14 +49,12 @@ nav a:hover{color:var(--blue);}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .menu-toggle.active span:nth-child(2){opacity:0;}
 .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 0 70px;position:relative;background:linear-gradient(180deg,rgba(0,0,0,.95) 0%,rgba(0,20,40,.95) 100%);overflow:hidden;}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(0,217,255,.05) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,153,255,.05) 0%,transparent 50%);pointer-events:none;}
 .hero-content{width:100%;position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .hero-logo{width:100%;max-width:none;display:block;margin:0;filter:drop-shadow(0 0 30px rgba(0,217,255,.4));}
 .hero-tagline{margin-top:28px;font-size:1.7rem;font-weight:700;color:#fff;line-height:1.35;padding:0 20px;}
 .hero-subtext{margin-top:14px;font-size:1.08rem;color:#e8e8e8;line-height:1.8;padding:0 20px;}
-
 section{padding:100px 8%;position:relative;}
 section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:.3;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,6vw,4rem);letter-spacing:3px;margin-bottom:50px;text-align:center;background:linear-gradient(90deg,#fff,var(--blue),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
@@ -88,7 +85,6 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .gallery-item{height:260px;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.45s;}
 .gallery-item:hover img{transform:scale(1.05);}
-
 .contact{text-align:center;}
 .contact-intro{max-width:760px;margin:0 auto 26px;color:var(--gray);line-height:1.8;}
 .booking-section{max-width:900px;margin:0 auto 50px;padding:30px;background:linear-gradient(180deg,rgba(0,217,255,.08),rgba(0,153,255,.05));border:1.5px solid var(--border);border-radius:24px;box-shadow:var(--shadow);}
@@ -101,14 +97,11 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .form-group select option{background:#111;color:#fff;}
 .form-group textarea{resize:vertical;min-height:100px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-
-/* GDPR checkboxes */
 .form-check{display:flex;align-items:flex-start;gap:12px;padding:6px 0;}
 .form-check input[type="checkbox"]{width:18px;height:18px;margin-top:3px;accent-color:var(--blue);flex-shrink:0;cursor:pointer;}
 .form-check label{font-size:.88rem;color:var(--gray);line-height:1.6;cursor:pointer;}
 .form-check a{color:var(--blue);text-decoration:none;}
 .form-check a:hover{text-decoration:underline;}
-
 .booking-submit{padding:14px 28px;background:linear-gradient(90deg,var(--blue),var(--blue-dark));color:#000;border:1.5px solid var(--blue);border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:.3s;box-shadow:0 0 20px rgba(0,217,255,.3);margin-top:16px;}
 .booking-submit:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,217,255,.5);}
 .contact-card{max-width:860px;margin:0 auto;padding:34px 26px;border-radius:24px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);box-shadow:var(--shadow);text-align:left;}
@@ -126,8 +119,6 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .social-title{margin-bottom:14px;font-weight:700;font-size:1rem;color:var(--blue);}
 .social-links{display:flex;flex-wrap:wrap;gap:14px;}
 .social-links a i{font-size:1.2rem;}
-
-/* FOOTER */
 footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,217,255,.03));}
 .footer-logo{width:180px;margin:0 auto 16px;opacity:.85;filter:drop-shadow(0 0 10px rgba(0,217,255,.3));}
 .footer-info{color:#888;font-size:.85rem;line-height:1.9;}
@@ -137,7 +128,6 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .footer-legal{display:flex;justify-content:center;gap:20px;margin-top:10px;flex-wrap:wrap;}
 .footer-legal a{color:#555;font-size:.78rem;text-decoration:none;}
 .footer-legal a:hover{color:var(--blue);}
-
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease;}
 .reveal.active{opacity:1;transform:translateY(0);}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);display:flex;align-items:center;justify-content:center;padding:30px;z-index:3000;opacity:0;pointer-events:none;transition:.3s;}
@@ -156,7 +146,6 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:18px;}
 .mobile-menu a{text-decoration:none;color:#fff;font-size:1rem;}
 .mobile-lang{display:flex;gap:10px;flex-wrap:wrap;}
-
 @media(max-width:960px){nav{padding:16px 5%;}section{padding:90px 5%;}.nav-right{gap:16px;}nav ul{gap:16px;}.contact-label{min-width:100%;}.form-row{grid-template-columns:1fr;}}
 @media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.hero{padding:92px 0 56px;min-height:auto;}.hero-logo{width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery-item{height:220px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}}
 @media(min-width:769px){.mobile-menu{display:none !important;}}
@@ -275,16 +264,15 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <div class="testimonial-author">— Thomas Kåre Vinther ⭐⭐⭐⭐⭐</div>
 </div>
 </div>
-<div class="testimonial">
-<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid0mSHrAoRAcpKWve9DgPc6viTkmEsKVUCZVQLQL6NwzPE5Kbo8FSHhQLLFQKFneqQql&show_text=true&width=500" 
-    width="100%" height="200" 
-    style="border:none;overflow:hidden;border-radius:12px;" 
-    scrolling="no" frameborder="0" 
-    allowfullscreen="true" 
+<div class="testimonial" style="margin-top:24px;">
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid0mSHrAoRAcpKWve9DgPc6viTkmEsKVUCZVQLQL6NwzPE5Kbo8FSHhQLLFQKFneqQql&show_text=true&width=500"
+    width="100%" height="200"
+    style="border:none;overflow:hidden;border-radius:12px;"
+    scrolling="no" frameborder="0"
+    allowfullscreen="true"
     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
 </iframe>
 </div>
-
 </section>
 
 <section id="galerie" class="reveal">
@@ -311,7 +299,9 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
     <div class="video-thumb"><img src="https://img.youtube.com/vi/HolEGxIyEgg/hqdefault.jpg" alt="DJ Radu video 2" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video5Title">Momente și energie pe ringul de dans</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
-  <h3 class="media-subtitle" style="margin-top:56px;">TikTok</h3>
+</div>
+
+<h3 class="media-subtitle" style="margin-top:56px;">TikTok</h3>
 <div style="display:flex;justify-content:center;margin-top:20px;">
 <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djradudk" data-unique-id="djradudk" data-embed-type="creator" style="max-width:780px;min-width:288px;">
   <section>
@@ -321,7 +311,6 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <script async src="https://www.tiktok.com/embed.js"></script>
 </div>
 
-</div>
 <h3 class="media-subtitle" style="margin-top:56px;" data-i18n="photoSubtitle">Foto</h3>
 <div class="gallery">
 <div class="gallery-item" data-image="IMG_2364.JPG"><img src="IMG_2364.JPG" alt="DJ Radu logo și identitate vizuală" loading="lazy"></div>
@@ -338,8 +327,22 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <form class="booking-form" id="bookingForm" action="https://formsubmit.co/booking@djradu.com" method="POST">
 <input type="hidden" name="_subject" value="Rezervare noua - djradu.com">
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://djradu.com/#booking">
+<input type="hidden" name="_next" value="https://djradu.com/thankyou.html">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Mulțumim pentru cererea de rezervare! / Thank you for your booking request! / Tak for din bookingforespørgsel!
+
+Cererea ta a fost primită cu succes și vom reveni cu un răspuns în cel mai scurt timp posibil.
+Your request has been received and we will get back to you as soon as possible.
+Din forespørgsel er modtaget, og vi vender tilbage hurtigst muligt.
+
+DJ Radu
++45 52 71 21 02
+djradu.com
+booking@djradu.com
+
+--- Email automat. Te rugăm să nu răspunzi la acest mesaj. ---
+--- Automated email. Please do not reply to this message. ---
+--- Automatisk e-mail. Besvar venligst ikke denne besked. ---">
 <div class="form-row">
 <div class="form-group">
 <label for="firstName" data-i18n="bookingFirstName">Prenume</label>
@@ -369,7 +372,7 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <label for="eventType" data-i18n="bookingEventType">Tip de eveniment</label>
 <select id="eventType" name="eventType" required>
 <option value="" data-i18n="bookingSelectType">Selectează tip...</option>
-<option data-i18n="eventWedding" value="Nuntă">Nuntă</option>
+<option data-i18n="eventWedding" value="Nunta">Nuntă</option>
 <option data-i18n="eventChristening" value="Botez">Botez</option>
 <option data-i18n="eventBirthday" value="Aniversare">Aniversare</option>
 <option data-i18n="eventCorporate" value="Event Corporate">Event Corporate</option>
@@ -391,8 +394,6 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <label for="message" data-i18n="bookingMessage">Mesaj suplimentar</label>
 <textarea id="message" name="message"></textarea>
 </div>
-
-<!-- GDPR checkboxes -->
 <div class="form-check">
   <input type="checkbox" id="terms" name="terms" required>
   <label for="terms" data-i18n="checkTerms">Am citit și accept <a href="/terms.html" target="_blank" rel="noopener noreferrer">Termenii și condițiile</a>.</label>
@@ -401,7 +402,6 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
   <input type="checkbox" id="privacy" name="privacy" required>
   <label for="privacy" data-i18n="checkPrivacy">Am citit <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Politica de confidențialitate</a> și sunt de acord cu prelucrarea datelor mele.</label>
 </div>
-
 <button type="submit" class="booking-submit" data-i18n="bookingSend">Trimite cerere de rezervare</button>
 </form>
 <p style="margin-top:20px;text-align:center;color:var(--gray);font-size:.9rem;" data-i18n="bookingInfo">Cererea ta va fi trimisă la booking@djradu.com. Voi răspunde în cel mai scurt timp.</p>
@@ -512,8 +512,7 @@ const translations = {
     companyLabel:"Companie",companyName:"DJ Radu",addressLabel:"Adresă",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Deschide în Google Maps",emailLabel:"Email (General)",phoneLabel:"Telefon / WhatsApp",callNow:"Sună",socialTitle:"📱 Social media",
     footerCopy:"© 2026 DJ Radu. Toate drepturile rezervate.",footerTerms:"Termeni și condiții",footerPrivacy:"Politica de confidențialitate",
-    fullscreen:"Fullscreen",openYoutube:"Deschide pe YouTube",
-    alertSuccess:"Cererea ta a fost trimisă cu succes! 🎉",alertError:"A apărut o eroare. Te rog încearcă din nou."
+    fullscreen:"Fullscreen",openYoutube:"Deschide pe YouTube"
   },
   en: {
     navAbout:"About",navServices:"Services",navMusic:"Music",navGallery:"Gallery",navBooking:"Book Now",navContact:"Contact",
@@ -543,8 +542,7 @@ const translations = {
     companyLabel:"Company",companyName:"DJ Radu",addressLabel:"Address",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Open in Google Maps",emailLabel:"Email (General)",phoneLabel:"Phone / WhatsApp",callNow:"Call",socialTitle:"📱 Social media",
     footerCopy:"© 2026 DJ Radu. All rights reserved.",footerTerms:"Terms & Conditions",footerPrivacy:"Privacy Policy",
-    fullscreen:"Fullscreen",openYoutube:"Open on YouTube",
-    alertSuccess:"Your request has been sent successfully! 🎉",alertError:"An error occurred. Please try again."
+    fullscreen:"Fullscreen",openYoutube:"Open on YouTube"
   },
   da: {
     navAbout:"Om mig",navServices:"Ydelser",navMusic:"Musik",navGallery:"Galleri",navBooking:"Book nu",navContact:"Kontakt",
@@ -574,31 +572,25 @@ const translations = {
     companyLabel:"Virksomhed",companyName:"DJ Radu",addressLabel:"Adresse",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Åbn i Google Maps",emailLabel:"E-mail (General)",phoneLabel:"Telefon / WhatsApp",callNow:"Ring op",socialTitle:"📱 Sociale medier",
     footerCopy:"© 2026 DJ Radu. Alle rettigheder forbeholdes.",footerTerms:"Vilkår og betingelser",footerPrivacy:"Privatlivspolitik",
-    fullscreen:"Fullscreen",openYoutube:"Åbn på YouTube",
-    alertSuccess:"Din anmodning er sendt! 🎉",alertError:"Der opstod en fejl. Prøv venligst igen."
+    fullscreen:"Fullscreen",openYoutube:"Åbn på YouTube"
   }
 };
 
 let currentLang = "ro";
-
 function detectLanguage() {
   const browserLang = (navigator.language || "ro").toLowerCase();
   if (browserLang.startsWith("da")) return "da";
   if (browserLang.startsWith("en")) return "en";
   return "ro";
 }
-
 function setLanguage(lang) {
   currentLang = translations[lang] ? lang : "ro";
   document.documentElement.lang = currentLang;
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[currentLang][key] !== undefined) {
-      if (el.tagName === "OPTION") {
-        el.textContent = translations[currentLang][key];
-      } else {
-        el.innerHTML = translations[currentLang][key];
-      }
+      if (el.tagName === "OPTION") { el.textContent = translations[currentLang][key]; }
+      else { el.innerHTML = translations[currentLang][key]; }
     }
   });
   document.querySelectorAll(".lang-btn").forEach(btn => {
@@ -609,24 +601,20 @@ function setLanguage(lang) {
   document.title = titles[currentLang];
   document.querySelector('meta[name="description"]').setAttribute("content", descriptions[currentLang]);
 }
-
 const reveals = document.querySelectorAll(".reveal");
 function revealElements() {
   reveals.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); });
 }
 window.addEventListener("scroll", revealElements);
 revealElements();
-
 document.querySelectorAll(".lang-btn").forEach(btn => { btn.addEventListener("click", () => setLanguage(btn.dataset.lang)); });
 setLanguage(detectLanguage());
-
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 function closeMenu() { mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); document.body.classList.remove("menu-open"); }
 function openMenu() { mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); document.body.classList.add("menu-open"); }
 menuToggle.addEventListener("click", () => { if (mobileMenu.classList.contains("active")) closeMenu(); else openMenu(); });
 document.querySelectorAll('.mobile-menu a, nav a[href^="#"]').forEach(link => { link.addEventListener("click", () => closeMenu()); });
-
 const lightbox = document.getElementById("lightbox");
 const lightboxContent = document.getElementById("lightboxContent");
 const lightboxActions = document.getElementById("lightboxActions");
@@ -647,8 +635,6 @@ document.querySelectorAll(".video-card").forEach(card => { card.addEventListener
 lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeLightbox(); closeMenu(); } });
-
-// Form handled natively by formsubmit.co
 </script>
 
 </body>
