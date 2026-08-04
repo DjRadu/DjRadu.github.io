@@ -18,9 +18,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DJ Radu | Your party. My energy.</title>
+<title>DJ Radu | Your Party. My Energy.</title>
 <meta name="description" content="DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca, Nord Germania și Europa.">
 <link rel="canonical" href="https://djradu.com/">
+<meta name="theme-color" content="#050505">
 
 <!-- Open Graph (controls Facebook/Instagram/LinkedIn link previews) -->
 <meta property="og:type" content="website">
@@ -29,6 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:title" content="DJ Radu | Your Party. My Energy.">
 <meta property="og:description" content="Professional DJ for weddings, christenings, birthdays and private events across Denmark, Northern Germany and Europe.">
 <meta property="og:image" content="https://djradu.com/Logo-neon-2.jpeg">
+<meta property="og:image:alt" content="DJ Radu — Your Party. My Energy.">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
@@ -36,6 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="twitter:title" content="DJ Radu | Your Party. My Energy.">
 <meta name="twitter:description" content="Professional DJ for weddings, christenings, birthdays and private events across Denmark, Northern Germany and Europe.">
 <meta name="twitter:image" content="https://djradu.com/Logo-neon-2.jpeg">
+<meta name="twitter:image:alt" content="DJ Radu — Your Party. My Energy.">
 
 <!-- Structured data for Google -->
 <script type="application/ld+json">
@@ -89,6 +92,12 @@ body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;
 body.menu-open{overflow:hidden;}
 a,button{-webkit-tap-highlight-color:transparent;}
 img{max-width:100%;display:block;}
+
+/* Accessibility */
+.skip-link{position:absolute;left:-9999px;top:0;z-index:5000;background:var(--blue);color:#000;padding:12px 20px;border-radius:0 0 12px 0;font-weight:700;text-decoration:none;}
+.skip-link:focus{left:0;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+
 nav{position:fixed;top:0;left:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid var(--border);box-shadow:0 0 15px rgba(0,217,255,.1);}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;}
 .logo-mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(135deg,rgba(0,217,255,.2),rgba(0,153,255,.2));border:1.5px solid var(--blue);box-shadow:var(--glow);flex-shrink:0;}
@@ -109,12 +118,34 @@ nav a:hover{color:var(--blue);}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .menu-toggle.active span:nth-child(2){opacity:0;}
 .menu-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 0 70px;position:relative;background:linear-gradient(180deg,rgba(0,0,0,.95) 0%,rgba(0,20,40,.95) 100%);overflow:hidden;}
 .hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 20% 50%,rgba(0,217,255,.05) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,153,255,.05) 0%,transparent 50%);pointer-events:none;}
-.hero-content{width:100%;position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+#heroParticles{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;}
+.hero-content{width:100%;position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;will-change:transform;}
 .hero-logo{width:100%;max-width:none;display:block;margin:0;filter:drop-shadow(0 0 30px rgba(0,217,255,.4));}
 .hero-tagline{margin-top:28px;font-size:1.7rem;font-weight:700;color:#fff;line-height:1.35;padding:0 20px;}
 .hero-subtext{margin-top:14px;font-size:1.08rem;color:#e8e8e8;line-height:1.8;padding:0 20px;}
+
+/* Hero CTA buttons */
+.hero-btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;padding:0 20px;}
+.hero-btn{padding:14px 30px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.98rem;transition:.3s;display:inline-flex;align-items:center;gap:9px;min-height:50px;}
+.hero-btn-main{background:linear-gradient(90deg,var(--blue),var(--blue-dark));color:#000;box-shadow:0 0 24px rgba(0,217,255,.3);}
+.hero-btn-alt{border:1.5px solid var(--border);color:#fff;background:rgba(255,255,255,.02);}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 0 32px rgba(0,217,255,.45);}
+
+/* Scroll indicator */
+.scroll-indicator{margin-top:38px;width:32px;height:52px;border-radius:20px;border:1.5px solid var(--border);background:transparent;position:relative;cursor:pointer;display:inline-flex;}
+.scroll-indicator span{position:absolute;left:50%;top:10px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);animation:scrollDot 1.8s infinite;}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:1}70%{transform:translateY(24px);opacity:0}100%{transform:translateY(0);opacity:0}}
+
+/* Floating WhatsApp button */
+.wa-fab{position:fixed;right:20px;bottom:20px;z-index:2000;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:999px;background:linear-gradient(90deg,#25D366,#128C7E);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;box-shadow:0 10px 34px rgba(37,211,102,.35);transition:.3s;}
+.wa-fab i{font-size:1.35rem;}
+.wa-fab:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(37,211,102,.5);}
+.wa-fab .wa-text{display:inline;}
+@media(max-width:600px){.wa-fab{padding:15px;right:16px;bottom:16px;}.wa-fab .wa-text{display:none;}}
+
 section{padding:100px 8%;position:relative;}
 section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:.3;}
 .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,6vw,4rem);letter-spacing:3px;margin-bottom:50px;text-align:center;background:linear-gradient(90deg,#fff,var(--blue),#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
@@ -196,8 +227,13 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .lightbox-content{width:100%;max-height:90vh;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 0 40px rgba(0,217,255,.3);border:1.5px solid var(--blue);}
 .lightbox-content img{width:100%;max-height:90vh;object-fit:contain;background:#000;}
 .lightbox-content iframe{width:100%;aspect-ratio:16/9;border:none;display:block;background:#000;}
-.lightbox-close{position:absolute;top:-16px;right:-4px;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--blue);background:rgba(0,0,0,.95);color:var(--blue);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.lightbox-close{position:absolute;top:-16px;right:-4px;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--blue);background:rgba(0,0,0,.95);color:var(--blue);font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;}
 .lightbox-close:hover{background:var(--blue);color:#000;}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1.5px solid var(--border);background:rgba(0,0,0,.7);color:var(--blue);font-size:1.6rem;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:5;transition:.3s;}
+.lb-nav:hover{background:var(--blue);color:#000;border-color:var(--blue);}
+.lb-nav.show{display:flex;}
+.lb-prev{left:-8px;}
+.lb-next{right:-8px;}
 .lightbox-actions{position:absolute;left:16px;bottom:16px;display:flex;gap:10px;}
 .lightbox-action{padding:12px 16px;border-radius:12px;border:1.5px solid var(--blue);background:rgba(0,217,255,.1);color:var(--blue);text-decoration:none;font-size:.9rem;font-weight:700;cursor:pointer;transition:.3s;}
 .lightbox-action:hover{background:var(--blue);color:#000;}
@@ -207,11 +243,13 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .mobile-menu a{text-decoration:none;color:#fff;font-size:1rem;}
 .mobile-lang{display:flex;gap:10px;flex-wrap:wrap;}
 @media(max-width:960px){nav{padding:16px 5%;}section{padding:90px 5%;}.nav-right{gap:16px;}nav ul{gap:16px;}.contact-label{min-width:100%;}.form-row{grid-template-columns:1fr;}}
-@media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.hero{padding:92px 0 56px;min-height:auto;}.hero-logo{width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery-item{height:220px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}}
+@media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.hero{padding:92px 0 56px;min-height:auto;}.hero-logo{width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery-item{height:220px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lb-prev{left:0;}.lb-next{right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}.hero-btn{padding:13px 24px;font-size:.92rem;}}
 @media(min-width:769px){.mobile-menu{display:none !important;}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}.reveal{opacity:1;transform:none;}#heroParticles{display:none;}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#despre">Skip to content</a>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 <!-- Google Tag Manager (noscript) -->
@@ -268,11 +306,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 
-<section class="hero">
+<!-- Floating WhatsApp button -->
+<a class="wa-fab" href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i><span class="wa-text" data-i18n="waFab">Scrie-mi</span>
+</a>
+
+<section class="hero" id="home">
+  <canvas id="heroParticles" aria-hidden="true"></canvas>
   <div class="hero-content">
     <img src="Logo-neon-2.jpeg" alt="DJ Radu Logo" class="hero-logo">
-    <div class="hero-tagline" data-i18n="heroTagline">Petrecerea ta. Energia mea!</div>
+    <div class="hero-tagline" data-i18n="heroTagline">Your Party. My Energy.</div>
     <div class="hero-subtext" data-i18n="heroSubtext">Nunți • Botezuri • Aniversări • Evenimente corporate</div>
+    <div class="hero-btns">
+      <a href="#booking" class="hero-btn hero-btn-main" data-i18n="heroBtnBook">Rezervă data</a>
+      <a href="https://wa.me/4552712102" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-alt"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+    </div>
+    <button class="scroll-indicator" id="scrollIndicator" type="button" aria-label="Scroll down"><span></span></button>
   </div>
 </section>
 
@@ -333,17 +382,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="testimonial-text">"A fantastic DJ who knew exactly how to create the perfect atmosphere. Great music, great energy, and a seamless experience from start to finish. Our party wouldn't have been the same without him. Highly recommend Dj Radu!"</div>
 <div class="testimonial-author">— Stefy Isc ⭐⭐⭐⭐⭐ <span style="color:var(--gray);font-weight:400;font-size:.85rem;">(Google)</span></div>
 </div>
+</div>
+
 <div class="testimonial" style="margin-top:24px;">
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid0mSHrAoRAcpKWve9DgPc6viTkmEsKVUCZVQLQL6NwzPE5Kbo8FSHhQLLFQKFneqQql&show_text=true&width=500"
     width="100%" height="200"
     style="border:none;overflow:hidden;border-radius:12px;"
     scrolling="no" frameborder="0"
-    allowfullscreen="true"
+    allowfullscreen="true" loading="lazy"
     allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
 </iframe>
 </div>
 
-<!-- TrustBox widget - Review Collector -->
+<!-- TrustBox widget -->
 <div style="max-width:860px;margin:32px auto 0;">
 <div class="trustpilot-widget" data-locale="en-US" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="140px" data-style-width="100%" data-theme="dark" data-stars="1,2,3,4,5">
   <a href="https://www.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
@@ -356,23 +407,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 class="section-title" data-i18n="galleryTitle">Galerie</h2>
 <h3 class="media-subtitle" data-i18n="videoSubtitle">Video</h3>
 <div class="video-grid">
-  <div class="video-card" data-video-id="nH5AnYNTvvM" data-video-type="video">
+  <div class="video-card" data-video-id="nH5AnYNTvvM" data-video-type="video" role="button" tabindex="0">
     <div class="video-thumb"><img src="https://img.youtube.com/vi/nH5AnYNTvvM/hqdefault.jpg" alt="DJ Radu video 1" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video1Title">Atmosferă live la eveniment</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
-  <div class="video-card" data-video-id="Oo7Db0Y7Rr4" data-video-type="short">
+  <div class="video-card" data-video-id="Oo7Db0Y7Rr4" data-video-type="short" role="button" tabindex="0">
     <div class="video-thumb"><img src="https://img.youtube.com/vi/Oo7Db0Y7Rr4/hqdefault.jpg" alt="DJ Radu short 1" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video2Title">Short cu atmosferă de petrecere</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
-  <div class="video-card" data-video-id="YSS1Yol0320" data-video-type="short">
+  <div class="video-card" data-video-id="YSS1Yol0320" data-video-type="short" role="button" tabindex="0">
     <div class="video-thumb"><img src="https://img.youtube.com/vi/YSS1Yol0320/hqdefault.jpg" alt="DJ Radu short 2" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video3Title">Short dintr-un moment special</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
-  <div class="video-card" data-video-id="1RFXzH_Qlq4" data-video-type="short">
+  <div class="video-card" data-video-id="1RFXzH_Qlq4" data-video-type="short" role="button" tabindex="0">
     <div class="video-thumb"><img src="https://img.youtube.com/vi/1RFXzH_Qlq4/hqdefault.jpg" alt="DJ Radu short 3" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video4Title">Mai mult vibe, mai mult dans</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
-  <div class="video-card" data-video-id="HolEGxIyEgg" data-video-type="video">
+  <div class="video-card" data-video-id="HolEGxIyEgg" data-video-type="video" role="button" tabindex="0">
     <div class="video-thumb"><img src="https://img.youtube.com/vi/HolEGxIyEgg/hqdefault.jpg" alt="DJ Radu video 2" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
     <div class="video-info"><h4 data-i18n="video5Title">Momente și energie pe ringul de dans</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
   </div>
@@ -390,10 +441,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h3 class="media-subtitle" style="margin-top:56px;" data-i18n="photoSubtitle">Foto</h3>
 <div class="gallery">
-<div class="gallery-item" data-image="IMG_2364.JPG"><img src="IMG_2364.JPG" alt="DJ Radu logo și identitate vizuală" loading="lazy"></div>
-<div class="gallery-item" data-image="IMG_2529.JPG"><img src="IMG_2529.JPG" alt="Setup DJ Radu" loading="lazy"></div>
-<div class="gallery-item" data-image="IMG_2554.JPG"><img src="IMG_2554.JPG" alt="Atmosferă la eveniment" loading="lazy"></div>
-<div class="gallery-item" data-image="IMG_2557.JPG"><img src="IMG_2557.JPG" alt="DJ Radu în timpul unui eveniment" loading="lazy"></div>
+<div class="gallery-item" data-image="IMG_2364.JPG" role="button" tabindex="0"><img src="IMG_2364.JPG" alt="DJ Radu logo și identitate vizuală" loading="lazy"></div>
+<div class="gallery-item" data-image="IMG_2529.JPG" role="button" tabindex="0"><img src="IMG_2529.JPG" alt="Setup DJ Radu" loading="lazy"></div>
+<div class="gallery-item" data-image="IMG_2554.JPG" role="button" tabindex="0"><img src="IMG_2554.JPG" alt="Atmosferă la eveniment" loading="lazy"></div>
+<div class="gallery-item" data-image="IMG_2557.JPG" role="button" tabindex="0"><img src="IMG_2557.JPG" alt="DJ Radu în timpul unui eveniment" loading="lazy"></div>
 </div>
 </section>
 
@@ -531,10 +582,10 @@ booking@djradu.com
 </div>
 <div class="contact-section-title" data-i18n="socialTitle">📱 Social media</div>
 <div class="social-links">
-<a href="https://www.facebook.com/DJRaduG/" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
-<a href="https://youtube.com/@djradug" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
-<a href="https://www.tiktok.com/@djradudk" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.facebook.com/DJRaduG/" target="_blank" rel="noopener noreferrer" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/djradug" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://youtube.com/@djradug" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+<a href="https://www.tiktok.com/@djradudk" target="_blank" rel="noopener noreferrer" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
 </div>
 
 <div style="margin-top:32px;display:flex;justify-content:center;">
@@ -546,14 +597,15 @@ booking@djradu.com
   data-small-header="false"
   data-adapt-container-width="true"
   data-hide-cover="false"
-  data-show-facepile="true">
+  data-show-facepile="true"
+  data-lazy="true">
 </div>
 </div>
 </div>
 </section>
 
 <footer>
-  <img src="Logo-neon-2.jpeg" alt="DJ Radu" class="footer-logo">
+  <img src="Logo-neon-2.jpeg" alt="DJ Radu" class="footer-logo" loading="lazy">
   <div class="footer-info">
     <strong style="color:#aaa;">DJ Radu</strong> &nbsp;•&nbsp; CVR: 46538560 &nbsp;•&nbsp; Juelsminde, Danemarca<br>
     <a href="mailto:booking@djradu.com">booking@djradu.com</a> &nbsp;•&nbsp; +45 52 71 21 02
@@ -568,7 +620,9 @@ booking@djradu.com
 <div class="lightbox" id="lightbox" aria-hidden="true">
 <div class="lightbox-inner">
 <button class="lightbox-close" id="lightboxClose" aria-label="Close" type="button">✕</button>
+<button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous" type="button">‹</button>
 <div class="lightbox-content" id="lightboxContent"></div>
+<button class="lb-nav lb-next" id="lbNext" aria-label="Next" type="button">›</button>
 <div class="lightbox-actions" id="lightboxActions"></div>
 </div>
 </div>
@@ -577,7 +631,8 @@ booking@djradu.com
 const translations = {
   ro: {
     navAbout:"Despre",navServices:"Servicii",navMusic:"Muzică",navGallery:"Galerie",navBooking:"Rezervare",navContact:"Contact",
-    heroTagline:"Petrecerea ta. Energia mea!",heroSubtext:"Nunți • Botezuri • Aniversări • Evenimente corporate",
+    heroTagline:"Your Party. My Energy.",heroSubtext:"Nunți • Botezuri • Aniversări • Evenimente corporate",
+    heroBtnBook:"Rezervă data",waFab:"Scrie-mi",
     aboutTitle:"Despre mine",
     about1:"Sunt Radu Ghiorghiu, DJ român stabilit în Danemarca, iar pentru mine muzica înseamnă mai mult decât un simplu playlist — înseamnă atmosferă, emoție și energie.",
     about2:"La fiecare eveniment îmi doresc să creez un echilibru între eleganță, bun gust și distracție, astfel încât fiecare invitat să se simtă parte dintr-un moment cu adevărat special.",
@@ -607,7 +662,8 @@ const translations = {
   },
   en: {
     navAbout:"About",navServices:"Services",navMusic:"Music",navGallery:"Gallery",navBooking:"Book Now",navContact:"Contact",
-    heroTagline:"Your party. My energy!",heroSubtext:"Weddings • Christenings • Birthdays • Corporate events",
+    heroTagline:"Your Party. My Energy.",heroSubtext:"Weddings • Christenings • Birthdays • Corporate events",
+    heroBtnBook:"Book your date",waFab:"Message me",
     aboutTitle:"About me",
     about1:"I'm Radu Ghiorghiu, a Romanian DJ based in Denmark, and for me music means more than just a playlist — it means atmosphere, emotion and energy.",
     about2:"At every event, my goal is to create a balance between elegance, good taste and genuine fun, so that every guest feels part of a truly special moment.",
@@ -637,7 +693,8 @@ const translations = {
   },
   da: {
     navAbout:"Om mig",navServices:"Ydelser",navMusic:"Musik",navGallery:"Galleri",navBooking:"Book nu",navContact:"Kontakt",
-    heroTagline:"Din fest. Min energi!",heroSubtext:"Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
+    heroTagline:"Your Party. My Energy.",heroSubtext:"Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
+    heroBtnBook:"Book din dato",waFab:"Skriv til mig",
     aboutTitle:"Om mig",
     about1:"Jeg hedder Radu Ghiorghiu, er rumænsk DJ bosat i Danmark, og for mig er musik mere end bare en playliste — det er stemning, følelse og energi.",
     about2:"Ved hvert arrangement er mit mål at skabe en balance mellem elegance, god smag og ægte feststemning, så hver gæst føler sig som en del af et helt særligt øjeblik.",
@@ -660,7 +717,7 @@ const translations = {
     checkPrivacy:'Jeg har læst <a href="/privacy.html" target="_blank" rel="noopener noreferrer">Privatlivspolitikken</a> og accepterer behandling af mine personoplysninger.',
     contactTitle:"Kontakt",contactIntro:"For yderligere information, samarbejde eller andre spørgsmål, kontakt mig direkte.",
     bookingContactTitle:"📅 Til bookinger",generalContactTitle:"💬 Generel kontakt",
-    companyLabel:"Virksomhed",addressLabel:"Adresse",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
+    companyLabel:"Virksomhed",companyName:"DJ Radu",addressLabel:"Adresse",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Åbn i Google Maps",emailLabel:"E-mail (General)",phoneLabel:"Telefon / WhatsApp",callNow:"Ring op",socialTitle:"📱 Sociale medier",
     footerCopy:"© 2026 DJ Radu. Alle rettigheder forbeholdes.",footerTerms:"Vilkår og betingelser",footerPrivacy:"Privatlivspolitik",
     fullscreen:"Fullscreen",openYoutube:"Åbn på YouTube"
@@ -687,45 +744,176 @@ function setLanguage(lang) {
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.toggle("active", btn.dataset.lang === currentLang);
   });
-  const titles = {ro:"DJ Radu | Petrecerea ta. Energia mea.",en:"DJ Radu | Your party. My energy.",da:"DJ Radu | Din fest. Min energi."};
+  document.title = "DJ Radu | Your Party. My Energy.";
   const descriptions = {ro:"DJ Radu - servicii profesioniste de DJ pentru nunți, botezuri, aniversări și evenimente private în toată Danemarca, Nord Germania și Europa.",en:"DJ Radu - professional DJ services for weddings, christenings, birthdays and private events throughout Denmark, Northern Germany and Europe.",da:"DJ Radu - professionelle DJ-services til bryllupper, barnedåb, fødselsdage og private events i hele Danmark, Nordtyskland og Europa."};
-  document.title = titles[currentLang];
   document.querySelector('meta[name="description"]').setAttribute("content", descriptions[currentLang]);
 }
+
+/* Reveal on scroll */
 const reveals = document.querySelectorAll(".reveal");
 function revealElements() {
   reveals.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); });
 }
-window.addEventListener("scroll", revealElements);
+window.addEventListener("scroll", revealElements, {passive:true});
 revealElements();
+
 document.querySelectorAll(".lang-btn").forEach(btn => { btn.addEventListener("click", () => setLanguage(btn.dataset.lang)); });
 setLanguage(detectLanguage());
+
+/* Mobile menu */
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 function closeMenu() { mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); document.body.classList.remove("menu-open"); }
 function openMenu() { mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); document.body.classList.add("menu-open"); }
 menuToggle.addEventListener("click", () => { if (mobileMenu.classList.contains("active")) closeMenu(); else openMenu(); });
 document.querySelectorAll('.mobile-menu a, nav a[href^="#"]').forEach(link => { link.addEventListener("click", () => closeMenu()); });
+
+/* Lightbox with gallery navigation */
 const lightbox = document.getElementById("lightbox");
 const lightboxContent = document.getElementById("lightboxContent");
 const lightboxActions = document.getElementById("lightboxActions");
 const lightboxClose = document.getElementById("lightboxClose");
-function closeLightbox() { lightbox.classList.remove("active"); lightbox.setAttribute("aria-hidden","true"); lightboxContent.innerHTML = ""; lightboxActions.innerHTML = ""; document.body.classList.remove("menu-open"); }
-function openImageLightbox(src, alt) { lightboxContent.innerHTML = `<img src="${src}" alt="${alt}">`; lightboxActions.innerHTML = ""; lightbox.classList.add("active"); lightbox.setAttribute("aria-hidden","false"); document.body.classList.add("menu-open"); }
-function openVideoLightbox(videoId, type) {
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
-  const youtubeUrl = type === "short" ? `https://www.youtube.com/shorts/${videoId}` : `https://www.youtube.com/watch?v=${videoId}`;
-  lightboxContent.innerHTML = `<iframe id="ytFrame" src="${embedUrl}" title="DJ Radu video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  lightboxActions.innerHTML = `<button class="lightbox-action" id="fullscreenBtn" type="button">${translations[currentLang].fullscreen}</button><a class="lightbox-action" href="${youtubeUrl}" target="_blank" rel="noopener noreferrer">${translations[currentLang].openYoutube}</a>`;
-  lightbox.classList.add("active"); lightbox.setAttribute("aria-hidden","false"); document.body.classList.add("menu-open");
-  const ytFrame = document.getElementById("ytFrame");
-  document.getElementById("fullscreenBtn").addEventListener("click", () => { if (ytFrame.requestFullscreen) ytFrame.requestFullscreen(); else if (ytFrame.webkitRequestFullscreen) ytFrame.webkitRequestFullscreen(); });
+const lbPrev = document.getElementById("lbPrev");
+const lbNext = document.getElementById("lbNext");
+const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
+let galleryIndex = -1;
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden","true");
+  lightboxContent.innerHTML = "";
+  lightboxActions.innerHTML = "";
+  lbPrev.classList.remove("show"); lbNext.classList.remove("show");
+  galleryIndex = -1;
+  document.body.classList.remove("menu-open");
 }
-document.querySelectorAll(".gallery-item").forEach(item => { item.addEventListener("click", () => { const img = item.querySelector("img"); openImageLightbox(item.dataset.image, img.alt); }); });
-document.querySelectorAll(".video-card").forEach(card => { card.addEventListener("click", () => openVideoLightbox(card.dataset.videoId, card.dataset.videoType)); });
+function showGalleryImage(i) {
+  if (!galleryItems.length) return;
+  galleryIndex = (i + galleryItems.length) % galleryItems.length;
+  const item = galleryItems[galleryIndex];
+  const img = item.querySelector("img");
+  lightboxContent.innerHTML = '<img src="' + item.dataset.image + '" alt="' + (img ? img.alt : '') + '">';
+  lightboxActions.innerHTML = "";
+  lbPrev.classList.add("show"); lbNext.classList.add("show");
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden","false");
+  document.body.classList.add("menu-open");
+}
+function openVideoLightbox(videoId, type) {
+  galleryIndex = -1;
+  lbPrev.classList.remove("show"); lbNext.classList.remove("show");
+  const embedUrl = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0&modestbranding=1";
+  const youtubeUrl = type === "short" ? "https://www.youtube.com/shorts/" + videoId : "https://www.youtube.com/watch?v=" + videoId;
+  lightboxContent.innerHTML = '<iframe id="ytFrame" src="' + embedUrl + '" title="DJ Radu video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+  lightboxActions.innerHTML = '<button class="lightbox-action" id="fullscreenBtn" type="button">' + translations[currentLang].fullscreen + '</button><a class="lightbox-action" href="' + youtubeUrl + '" target="_blank" rel="noopener noreferrer">' + translations[currentLang].openYoutube + '</a>';
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden","false");
+  document.body.classList.add("menu-open");
+  const ytFrame = document.getElementById("ytFrame");
+  document.getElementById("fullscreenBtn").addEventListener("click", () => {
+    if (ytFrame.requestFullscreen) ytFrame.requestFullscreen();
+    else if (ytFrame.webkitRequestFullscreen) ytFrame.webkitRequestFullscreen();
+  });
+}
+
+galleryItems.forEach((item, i) => {
+  item.addEventListener("click", () => showGalleryImage(i));
+  item.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showGalleryImage(i); } });
+});
+document.querySelectorAll(".video-card").forEach(card => {
+  const go = () => openVideoLightbox(card.dataset.videoId, card.dataset.videoType);
+  card.addEventListener("click", go);
+  card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+});
+lbPrev.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex - 1); });
+lbNext.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex + 1); });
 lightboxClose.addEventListener("click", closeLightbox);
-lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-document.addEventListener("keydown", (e) => { if (e.key === "Escape") { closeLightbox(); closeMenu(); } });
+lightbox.addEventListener("click", e => { if (e.target === lightbox || e.target === lightbox.firstElementChild) closeLightbox(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { closeLightbox(); closeMenu(); }
+  if (lightbox.classList.contains("active") && galleryIndex >= 0) {
+    if (e.key === "ArrowLeft") showGalleryImage(galleryIndex - 1);
+    if (e.key === "ArrowRight") showGalleryImage(galleryIndex + 1);
+  }
+});
+
+/* Scroll indicator */
+const scrollIndicator = document.getElementById("scrollIndicator");
+if (scrollIndicator) {
+  scrollIndicator.addEventListener("click", () => {
+    const target = document.getElementById("despre");
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth" });
+  });
+}
+
+/* Subtle hero parallax */
+(function heroParallax(){
+  const content = document.querySelector(".hero-content");
+  const hero = document.querySelector(".hero");
+  if (!content || !hero) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let ticking = false;
+  function update(){
+    const rect = hero.getBoundingClientRect();
+    const p = Math.min(Math.max(-rect.top / (window.innerHeight || 1), 0), 1);
+    content.style.transform = "translateY(" + (p * 26) + "px)";
+    content.style.opacity = String(1 - p * 0.5);
+    ticking = false;
+  }
+  window.addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  update();
+})();
+
+/* Lightweight hero particles */
+(function heroParticles(){
+  const canvas = document.getElementById("heroParticles");
+  if (!canvas) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const ctx = canvas.getContext("2d");
+  let particles = [], raf = null, running = true;
+  function resize(){
+    const r = window.devicePixelRatio || 1;
+    canvas.width = canvas.clientWidth * r;
+    canvas.height = canvas.clientHeight * r;
+    ctx.setTransform(r, 0, 0, r, 0, 0);
+  }
+  function create(){
+    const count = Math.min(40, Math.round(canvas.clientWidth * canvas.clientHeight / 26000));
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.clientWidth,
+        y: Math.random() * canvas.clientHeight,
+        r: Math.random() * 1.6 + 0.5,
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: -(Math.random() * 0.22 + 0.05),
+        a: Math.random() * 0.4 + 0.15
+      });
+    }
+  }
+  function tick(){
+    if (!running) return;
+    ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.y < -10) { p.y = canvas.clientHeight + 10; p.x = Math.random() * canvas.clientWidth; }
+      if (p.x < -10) p.x = canvas.clientWidth + 10;
+      if (p.x > canvas.clientWidth + 10) p.x = -10;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(0,217,255," + p.a + ")";
+      ctx.fill();
+    }
+    raf = requestAnimationFrame(tick);
+  }
+  function start(){ running = true; if (!raf) tick(); }
+  function stop(){ running = false; if (raf) { cancelAnimationFrame(raf); raf = null; } }
+  window.addEventListener("resize", () => { resize(); create(); }, {passive:true});
+  document.addEventListener("visibilitychange", () => { document.hidden ? stop() : start(); });
+  resize(); create(); start();
+})();
 </script>
 
 </body>
