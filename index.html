@@ -150,32 +150,50 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .music-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
 .music-item{padding:15px 24px;background:var(--card);border-radius:30px;border:1.5px solid var(--border);transition:.3s;}
 .music-item:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 0 15px rgba(0,217,255,.2);}
-.media-subtitle{font-size:1.45rem;margin-bottom:18px;margin-top:12px;text-align:center;background:linear-gradient(90deg,var(--blue),var(--blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;}
-.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:30px;}
-.testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:24px;border-radius:20px;box-shadow:var(--shadow);}
-.testimonial-text{color:var(--gray);line-height:1.8;margin-bottom:16px;font-style:italic;}
-.testimonial-author{font-weight:700;color:var(--blue);font-size:.95rem;}
 
-/* Social embeds (Facebook / Instagram) */
-.social-embeds{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:24px;}
-.embed-item{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:18px;padding:12px;box-shadow:var(--shadow);overflow:hidden;display:flex;align-items:flex-start;justify-content:center;}
-.embed-item iframe{border:none;overflow:hidden;border-radius:10px;max-width:100%;display:block;}
-.embed-item .instagram-media{margin:0 !important;min-width:280px !important;}
+/* SECȚIUNI COLAPSABILE - ACORDION */
+.accordion-section{max-width:1000px;margin:0 auto;}
+.accordion-header{background:linear-gradient(90deg,rgba(0,217,255,.08),rgba(0,153,255,.05));border:1.5px solid var(--border);padding:18px 24px;border-radius:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:.3s;margin-bottom:16px;font-weight:700;font-size:1.1rem;}
+.accordion-header:hover{border-color:var(--blue);background:linear-gradient(90deg,rgba(0,217,255,.12),rgba(0,153,255,.08));}
+.accordion-header.active{background:linear-gradient(90deg,rgba(0,217,255,.15),rgba(0,153,255,.12));border-color:var(--blue);box-shadow:0 0 20px rgba(0,217,255,.15);}
+.accordion-header i{transition:.3s;font-size:1.2rem;}
+.accordion-header.active i{transform:rotate(180deg);}
+.accordion-content{max-height:0;overflow:hidden;transition:max-height .4s ease;background:rgba(255,255,255,.01);border-left:2px solid var(--blue);padding:0 24px;margin-bottom:16px;border-radius:0 0 14px 14px;}
+.accordion-content.active{max-height:5000px;padding:24px;}
 
-.video-grid,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:20px;}
-.video-card,.gallery-item{overflow:hidden;border-radius:22px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);box-shadow:var(--shadow);cursor:pointer;transition:.3s;position:relative;}
-.video-card:hover,.gallery-item:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 0 25px rgba(0,217,255,.3),var(--shadow);}
+/* TESTIMONIALS CONTAINER */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:20px;border-radius:16px;box-shadow:var(--shadow);}
+.testimonial-text{color:var(--gray);line-height:1.7;margin-bottom:12px;font-size:.95rem;}
+.testimonial-author{font-weight:700;color:var(--blue);font-size:.9rem;}
+
+/* TRUSTPILOT WIDGET FIX */
+.trustpilot-wrapper{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:16px;padding:24px;margin-top:20px;box-shadow:var(--shadow);}
+.trustpilot-widget{min-height:200px !important;}
+
+/* VIDEO GRID */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
+.video-card{overflow:hidden;border-radius:16px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);box-shadow:var(--shadow);cursor:pointer;transition:.3s;}
+.video-card:hover{transform:translateY(-6px);border-color:var(--blue);box-shadow:0 0 25px rgba(0,217,255,.3),var(--shadow);}
 .video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#000;}
 .video-thumb img{width:100%;height:100%;object-fit:cover;transition:.4s;}
 .video-card:hover .video-thumb img{transform:scale(1.04);}
-.play-badge{position:absolute;inset:auto auto 16px 16px;background:rgba(0,217,255,.9);color:#000;padding:10px 14px;border-radius:999px;font-size:.9rem;font-weight:700;}
-.video-info{padding:18px;}
-.video-info h4{font-size:1rem;margin-bottom:8px;}
-.video-info p{font-size:.92rem;color:var(--gray);line-height:1.6;}
-.gallery{grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
-.gallery-item{height:230px;}
+.play-badge{position:absolute;inset:auto auto 12px 12px;background:rgba(0,217,255,.9);color:#000;padding:8px 12px;border-radius:999px;font-size:.85rem;font-weight:700;}
+.video-info{padding:14px;}
+.video-info h4{font-size:.95rem;margin-bottom:6px;}
+.video-info p{font-size:.85rem;color:var(--gray);line-height:1.5;}
+
+/* PHOTO GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;}
+.gallery-item{height:180px;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);cursor:pointer;transition:.3s;}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:.45s;}
+.gallery-item:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 0 20px rgba(0,217,255,.2);}
 .gallery-item:hover img{transform:scale(1.05);}
+
+/* SOCIAL EMBEDS */
+.social-embeds{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:20px;}
+.embed-item{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:14px;padding:10px;overflow:hidden;}
+.embed-item iframe{border:none;border-radius:8px;display:block;}
 
 .contact{text-align:center;}
 .contact-intro{max-width:760px;margin:0 auto 26px;color:var(--gray);line-height:1.8;}
@@ -244,7 +262,7 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .mobile-menu a{text-decoration:none;color:#fff;font-size:1rem;}
 .mobile-lang{display:flex;gap:10px;flex-wrap:wrap;}
 @media(max-width:960px){nav{padding:12px 5%;}section{padding:90px 5%;}.nav-right{gap:16px;}nav ul{gap:16px;}.contact-label{min-width:100%;}.form-row{grid-template-columns:1fr;}}
-@media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.logo-img{height:38px;}.hero{padding:100px 5% 56px;min-height:auto;}.hero-logo{max-width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}.gallery-item{height:170px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lb-prev{left:0;}.lb-next{right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}.hero-btn{padding:13px 24px;font-size:.92rem;}}
+@media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.logo-img{height:38px;}.hero{padding:100px 5% 56px;min-height:auto;}.hero-logo{max-width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}.gallery-item{height:120px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lb-prev{left:0;}.lb-next{right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}.hero-btn{padding:13px 24px;font-size:.92rem;}.accordion-header{padding:14px 16px;font-size:1rem;}.video-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}}
 @media(min-width:769px){.mobile-menu{display:none !important;}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}.reveal{opacity:1;transform:none;}#heroParticles{display:none;}}
 </style>
@@ -265,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="#despre" data-i18n="navAbout">Despre</a></li>
 <li><a href="#servicii" data-i18n="navServices">Servicii</a></li>
 <li><a href="#muzica" data-i18n="navMusic">Muzică</a></li>
-<li><a href="#galerie" data-i18n="navGallery">Galerie</a></li>
+<li><a href="#testimoniale" data-i18n="navTestimonials">Recenzii</a></li>
 <li><a href="#booking" data-i18n="navBooking">Rezervare</a></li>
 <li><a href="#contact" data-i18n="navContact">Contact</a></li>
 </ul>
@@ -285,7 +303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <li><a href="#despre" data-i18n="navAbout">Despre</a></li>
 <li><a href="#servicii" data-i18n="navServices">Servicii</a></li>
 <li><a href="#muzica" data-i18n="navMusic">Muzică</a></li>
-<li><a href="#galerie" data-i18n="navGallery">Galerie</a></li>
+<li><a href="#testimoniale" data-i18n="navTestimonials">Recenzii</a></li>
 <li><a href="#booking" data-i18n="navBooking">Rezervare</a></li>
 <li><a href="#contact" data-i18n="navContact">Contact</a></li>
 </ul>
@@ -352,8 +370,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </section>
 
-<section id="testimonials" class="reveal">
+<section id="testimoniale" class="reveal">
 <h2 class="section-title" data-i18n="testimonialsTitle">Recenzii &amp; Mărturii</h2>
+
+<!-- ACORDION 1: RECENZII CLIENT -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" data-i18n="customerReviews">
+📝 Recenziile clienților
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
 <div class="testimonials">
 <div class="testimonial">
 <div class="testimonial-text">"Radu a fost extraordinar! A readus energia la petrecerea noastră. Recomand cu mare încredere! 🎉"</div>
@@ -369,99 +395,99 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <div class="testimonial">
 <div class="testimonial-text">"A fantastic DJ who knew exactly how to create the perfect atmosphere. Great music, great energy, and a seamless experience from start to finish. Our party wouldn't have been the same without him. Highly recommend Dj Radu!"</div>
-<div class="testimonial-author">— Stefy Isc ⭐⭐⭐⭐⭐ <span style="color:var(--gray);font-weight:400;font-size:.85rem;">(Google)</span></div>
+<div class="testimonial-author">— Stefy Isc ⭐⭐⭐⭐⭐</div>
+</div>
+</div>
 </div>
 </div>
 
-<h3 class="media-subtitle" style="margin-top:56px;" data-i18n="socialProofTitle">Din social media</h3>
+<!-- ACORDION 2: TRUSTPILOT -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0">
+⭐ Trustpilot
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
+<div class="trustpilot-wrapper">
+<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="auto" data-style-width="100%" data-token="eea6a222-ba27-4e9f-aa8f-311e8b5bec09">
+  <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ACORDION 3: SOCIAL MEDIA -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" data-i18n="socialProofTitle">
+📱 Din social media
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
 <div class="social-embeds">
-
   <div class="embed-item">
     <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid02qCiahuryCMq5z86Em1DtVhGnq3imx3rtdqJs6AtpHMZNZwgrCjFmsq9eDBSsEWE6l&show_text=true&width=500" width="500" height="200" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook review"></iframe>
   </div>
 
   <div class="embed-item">
-    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F27240390652298799%2F&show_text=true&width=267&t=0" width="267" height="591" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
-  </div>
-
-  <div class="embed-item">
-    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1006739365270270%2F&show_text=false&width=267&t=0" width="267" height="476" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
-  </div>
-
-  <div class="embed-item">
-    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1697558157819235%2F&show_text=false&width=267&t=0" width="267" height="476" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
+    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F27240390652298799%2F&show_text=true&width=267&t=0" width="267" height="476" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
   </div>
 
   <div class="embed-item">
     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DaaZkygsgv3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
   </div>
-
-  <div class="embed-item">
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DaYX0hQMmMs/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-  </div>
-
 </div>
 <script async src="https://www.instagram.com/embed.js"></script>
 </div>
- 
-
-<!-- TrustBox widget - Review Collector -->
-<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="eea6a222-ba27-4e9f-aa8f-311e8b5bec09">
-  <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
 </div>
-<!-- End TrustBox widget -->
-  
+
 </section>
 
 <section id="galerie" class="reveal">
 <h2 class="section-title" data-i18n="galleryTitle">Galerie</h2>
-<h3 class="media-subtitle" data-i18n="videoSubtitle">Video</h3>
+
+<!-- ACORDION 1: VIDEO -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" data-i18n="videoSubtitle">
+🎬 Video
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
 <div class="video-grid">
   <div class="video-card" data-video-id="WVmfu-_eAaM" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/WVmfu-_eAaM/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video6Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/WVmfu-_eAaM/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="QTItw8Clc50" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/QTItw8Clc50/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video7Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/QTItw8Clc50/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="KTDdGEL2p2Y" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/KTDdGEL2p2Y/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video8Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/KTDdGEL2p2Y/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="Oo7Db0Y7Rr4" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/Oo7Db0Y7Rr4/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video2Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/Oo7Db0Y7Rr4/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="nH5AnYNTvvM" data-video-type="video" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/nH5AnYNTvvM/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video1Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/nH5AnYNTvvM/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="YSS1Yol0320" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/YSS1Yol0320/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video3Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/YSS1Yol0320/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="1RFXzH_Qlq4" data-video-type="short" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/1RFXzH_Qlq4/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video4Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/1RFXzH_Qlq4/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
   <div class="video-card" data-video-id="HolEGxIyEgg" data-video-type="video" role="button" tabindex="0">
-    <div class="video-thumb"><img src="https://img.youtube.com/vi/HolEGxIyEgg/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi video</div></div>
-    <div class="video-info"><h4 data-i18n="video5Title">Video</h4><p data-i18n="videoOpenText">Apasă pentru vizionare mare și fullscreen.</p></div>
+    <div class="video-thumb"><img src="https://img.youtube.com/vi/HolEGxIyEgg/hqdefault.jpg" alt="DJ Radu video" loading="lazy"><div class="play-badge" data-i18n="watchVideo">▶ Vezi</div></div>
   </div>
 </div>
-
-<h3 class="media-subtitle" style="margin-top:56px;">TikTok</h3>
-<div style="display:flex;justify-content:center;margin-top:20px;">
-<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djradudk" data-unique-id="djradudk" data-embed-type="creator" style="max-width:780px;min-width:288px;">
-  <section>
-    <a target="_blank" href="https://www.tiktok.com/@djradudk?refer=creator_embed">@djradudk</a>
-  </section>
-</blockquote>
-<script async src="https://www.tiktok.com/embed.js"></script>
+</div>
 </div>
 
-<h3 class="media-subtitle" style="margin-top:56px;" data-i18n="photoSubtitle">Foto</h3>
+<!-- ACORDION 2: FOTO -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" data-i18n="photoSubtitle">
+📷 Galerie Foto
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content">
 <div class="gallery">
 <div class="gallery-item" data-image="IMG_9034.jpg" role="button" tabindex="0"><img src="IMG_9034.jpg" alt="DJ Radu" loading="lazy"></div>
 <div class="gallery-item" data-image="IMG_2188.jpg" role="button" tabindex="0"><img src="IMG_2188.jpg" alt="DJ Radu" loading="lazy"></div>
@@ -485,6 +511,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="gallery-item" data-image="54109d6c-1cad-49db-a7d0-9c0cf13aed96.JPG" role="button" tabindex="0"><img src="54109d6c-1cad-49db-a7d0-9c0cf13aed96.JPG" alt="DJ Radu" loading="lazy"></div>
 <div class="gallery-item" data-image="c24cf411-65a3-43c3-a88e-a28fa6ad9112.JPG" role="button" tabindex="0"><img src="c24cf411-65a3-43c3-a88e-a28fa6ad9112.JPG" alt="DJ Radu" loading="lazy"></div>
 </div>
+</div>
+</div>
+
+<!-- ACORDION 3: TIKTOK -->
+<div class="accordion-section">
+<div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0">
+🎵 TikTok
+<i class="fas fa-chevron-down"></i>
+</div>
+<div class="accordion-content" style="text-align:center;">
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djradudk" data-unique-id="djradudk" data-embed-type="creator" style="max-width:780px;min-width:288px;">
+  <section>
+    <a target="_blank" href="https://www.tiktok.com/@djradudk?refer=creator_embed">@djradudk</a>
+  </section>
+</blockquote>
+<script async src="https://www.tiktok.com/embed.js"></script>
+</div>
+</div>
+
 </section>
 
 <section id="booking" class="reveal">
@@ -653,9 +698,31 @@ booking@djradu.com
 </div>
 
 <script>
+function toggleAccordion(header){
+  const content = header.nextElementSibling;
+  const isActive = content.classList.contains("active");
+  
+  document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("active"));
+  document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
+  
+  if (!isActive) {
+    content.classList.add("active");
+    header.classList.add("active");
+  }
+}
+
+document.querySelectorAll(".accordion-header").forEach(header => {
+  header.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleAccordion(header);
+    }
+  });
+});
+
 const translations = {
   ro: {
-    navAbout:"Despre",navServices:"Servicii",navMusic:"Muzică",navGallery:"Galerie",navBooking:"Rezervare",navContact:"Contact",
+    navAbout:"Despre",navServices:"Servicii",navMusic:"Muzică",navTestimonials:"Recenzii",navBooking:"Rezervare",navContact:"Contact",
     heroTagline:"Your Party. My Energy.",heroSubtext:"Nunți • Botezuri • Aniversări • Evenimente corporate",
     heroBtnBook:"Rezervă data",waFab:"Scrie-mi",
     aboutTitle:"Despre mine",
@@ -666,12 +733,10 @@ const translations = {
     servicesTitle:"Servicii",service1Title:"💍 Nunți",service1Text:"Muzică pentru toate generațiile și pentru toate momentele importante ale serii.",
     service2Title:"🕯️ Botezuri",service2Text:"Atmosfera potrivită pentru familie, invitați și o petrecere reușită.",
     service3Title:"🎂 Aniversări",service3Text:"Petreceri private memorabile, pline de energie și muzică bună.",
-    service4Title:"🏢 Evenimente corporate",service4Text:"Evenimente profesionale, petreceri de firmă și seri de team-building.",
+    service4Title:"🏢 evenimente corporate",service4Text:"Evenimente profesionale, petreceri de firmă și seri de team-building.",
     musicTitle:"Repertoriu",music1:"Populară românească",music2:"Hore & sârbe",music3:"Manele selectate",music4:"Pop românesc",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"Hituri internaționale",
-    testimonialsTitle:"Recenzii & Mărturii",socialProofTitle:"Din social media",
-    galleryTitle:"Galerie",videoSubtitle:"Video",photoSubtitle:"Foto",watchVideo:"▶ Vezi video",videoOpenText:"Apasă pentru vizionare mare și fullscreen.",
-    video1Title:"Atmosferă live la eveniment",video2Title:"Your Party, My Energy!",video3Title:"Short dintr-un moment special",video4Title:"Mai mult vibe, mai mult dans",video5Title:"Momente și energie pe ringul de dans",
-    video6Title:"Nunți · Botezuri · Corporate",video7Title:"Botez în Horsens, Danemarca",video8Title:"Made în România 🇷🇴",
+    testimonialsTitle:"Recenzii & Mărturii",customerReviews:"📝 Recenziile clienților",socialProofTitle:"📱 Din social media",
+    galleryTitle:"Galerie",videoSubtitle:"🎬 Video",photoSubtitle:"📷 Galerie Foto",watchVideo:"▶ Vezi",videoOpenText:"Apasă pentru vizionare mare și fullscreen.",
     bookingTitle:"Rezervați data",bookingSubtitle:"Completați formularul de mai jos pentru a-mi trimite o cerere de rezervare",
     bookingFirstName:"Prenume",bookingLastName:"Nume",bookingEmail:"Email",bookingPhone:"Telefon",bookingEventDate:"Data evenimentului",bookingEventType:"Tip de eveniment",bookingSelectType:"Selectează tip...",
     eventWedding:"Nuntă",eventChristening:"Botez",eventBirthday:"Aniversare",eventCorporate:"Event Corporate",eventOther:"Altul",
@@ -687,7 +752,7 @@ const translations = {
     fullscreen:"Fullscreen",openYoutube:"Deschide pe YouTube"
   },
   en: {
-    navAbout:"About",navServices:"Services",navMusic:"Music",navGallery:"Gallery",navBooking:"Book Now",navContact:"Contact",
+    navAbout:"About",navServices:"Services",navMusic:"Music",navTestimonials:"Reviews",navBooking:"Book Now",navContact:"Contact",
     heroTagline:"Your Party. My Energy.",heroSubtext:"Weddings • Christenings • Birthdays • Corporate events",
     heroBtnBook:"Book your date",waFab:"Message me",
     aboutTitle:"About me",
@@ -700,10 +765,8 @@ const translations = {
     service3Title:"🎂 Birthdays",service3Text:"Private parties filled with energy, great music and unforgettable moments.",
     service4Title:"🏢 Corporate events",service4Text:"Professional events, company parties and team-building evenings.",
     musicTitle:"Music selection",music1:"Romanian folk",music2:"Hora & sârba",music3:"Selected manele",music4:"Romanian pop",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"International hits",
-    testimonialsTitle:"Reviews & Testimonials",socialProofTitle:"From social media",
-    galleryTitle:"Gallery",videoSubtitle:"Videos",photoSubtitle:"Photos",watchVideo:"▶ Watch video",videoOpenText:"Tap to open large view and fullscreen.",
-    video1Title:"Live atmosphere at an event",video2Title:"Your Party, My Energy!",video3Title:"Short from a special moment",video4Title:"More vibe, more dancing",video5Title:"Dance floor moments and energy",
-    video6Title:"Weddings · Christenings · Corporate",video7Title:"Baptism party in Horsens, Denmark",video8Title:"Made in Romania 🇷🇴",
+    testimonialsTitle:"Reviews & Testimonials",customerReviews:"📝 Customer Reviews",socialProofTitle:"📱 From social media",
+    galleryTitle:"Gallery",videoSubtitle:"🎬 Videos",photoSubtitle:"📷 Photo Gallery",watchVideo:"▶ Watch",videoOpenText:"Tap to open large view and fullscreen.",
     bookingTitle:"Book Your Date",bookingSubtitle:"Fill in the form below to send me a booking request",
     bookingFirstName:"First Name",bookingLastName:"Last Name",bookingEmail:"Email",bookingPhone:"Phone",bookingEventDate:"Event Date",bookingEventType:"Event Type",bookingSelectType:"Select type...",
     eventWedding:"Wedding",eventChristening:"Christening",eventBirthday:"Birthday",eventCorporate:"Corporate Event",eventOther:"Other",
@@ -719,7 +782,7 @@ const translations = {
     fullscreen:"Fullscreen",openYoutube:"Open on YouTube"
   },
   da: {
-    navAbout:"Om mig",navServices:"Ydelser",navMusic:"Musik",navGallery:"Galleri",navBooking:"Book nu",navContact:"Kontakt",
+    navAbout:"Om mig",navServices:"Ydelser",navMusic:"Musik",navTestimonials:"Anmeldelser",navBooking:"Book nu",navContact:"Kontakt",
     heroTagline:"Your Party. My Energy.",heroSubtext:"Bryllupper • Barnedåb • Fødselsdage • Firmaevents",
     heroBtnBook:"Book din dato",waFab:"Skriv til mig",
     aboutTitle:"Om mig",
@@ -732,10 +795,8 @@ const translations = {
     service3Title:"🎂 Fødselsdage",service3Text:"Private fester fyldt med energi, god musik og gode minder.",
     service4Title:"🏢 Firmaevents",service4Text:"Professionelle arrangementer, firmafester og teambuilding-aftener.",
     musicTitle:"Repertoire",music1:"Rumænsk folkemusik",music2:"Hora & sârba",music3:"Udvalgte manele",music4:"Rumænsk pop",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"Internationale hits",
-    testimonialsTitle:"Anmeldelser & Testimonier",socialProofTitle:"Fra sociale medier",
-    galleryTitle:"Galleri",videoSubtitle:"Videoer",photoSubtitle:"Billeder",watchVideo:"▶ Se video",videoOpenText:"Tryk for stor visning og fullscreen.",
-    video1Title:"Live stemning fra et event",video2Title:"Your Party, My Energy!",video3Title:"Short fra et særligt øjeblik",video4Title:"Mere vibe, mere dans",video5Title:"Øjeblikke og energi på dansegulvet",
-    video6Title:"Bryllupper · Barnedåb · Firmafest",video7Title:"Barnedåb i Horsens, Danmark",video8Title:"Made in Romania 🇷🇴",
+    testimonialsTitle:"Anmeldelser & Testimonier",customerReviews:"📝 Kundeanmeldelser",socialProofTitle:"📱 Fra sociale medier",
+    galleryTitle:"Galleri",videoSubtitle:"🎬 Videoer",photoSubtitle:"📷 Fotogalleri",watchVideo:"▶ Se",videoOpenText:"Tryk for stor visning og fullscreen.",
     bookingTitle:"Book din dato",bookingSubtitle:"Udfyld formularen nedenfor for at sende mig en bookingforespørgsel",
     bookingFirstName:"Fornavn",bookingLastName:"Efternavn",bookingEmail:"E-mail",bookingPhone:"Telefon",bookingEventDate:"Eventdato",bookingEventType:"Eventtype",bookingSelectType:"Vælg type...",
     eventWedding:"Bryllup",eventChristening:"Barnedåb",eventBirthday:"Fødselsdag",eventCorporate:"Firmaevent",eventOther:"Andet",
