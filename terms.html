@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DJ Radu - Termeni si Conditii</title>
+  <title>DJ Radu - Termeni și Condiții</title>
   <style>
-    :root{--bg:#050505;--card:#111111;--text:#ffffff;--muted:#c9c9c9;--blue:#00c8ff;--border:rgba(255,255,255,.08);}
+    :root{--bg:#050505;--card:#111111;--card-2:#171717;--text:#ffffff;--muted:#c9c9c9;--blue:#00d9ff;--blue-dark:#0099ff;--border:rgba(0,217,255,.15);}
     *{box-sizing:border-box;}
-    body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+    body{margin:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
     .wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px;}
     .topbar{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:32px;flex-wrap:wrap;}
     h1{margin:0;font-size:2rem;color:var(--blue);}
     .back{color:var(--blue);text-decoration:none;font-size:.95rem;}
     .back:hover{text-decoration:underline;}
     .lang-switch{display:flex;gap:8px;}
-    .lang-switch button{border:1px solid var(--border);background:transparent;color:var(--text);padding:10px 14px;cursor:pointer;border-radius:8px;font-size:.85rem;font-weight:700;}
-    .lang-switch button.active{background:var(--blue);color:#000;border-color:var(--blue);}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+    .lang-switch button{border:1.5px solid var(--border);background:transparent;color:var(--text);padding:10px 14px;cursor:pointer;border-radius:8px;font-size:.85rem;font-weight:700;transition:.3s;}
+    .lang-switch button:hover{border-color:var(--blue);}
+    .lang-switch button.active{background:linear-gradient(90deg,var(--blue),var(--blue-dark));color:#000;border-color:var(--blue);}
+    .card{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.35);}
     .lang{display:none;}
     .lang.active{display:block;}
     h2{color:var(--blue);margin-top:28px;margin-bottom:12px;}
@@ -30,25 +31,25 @@
     <div class="topbar">
       <div>
         <a href="/" class="back">← djradu.com</a>
-        <h1 style="margin-top:8px;">Termeni &amp; Conditii</h1>
+        <h1 style="margin-top:8px;" data-i18n-title>Termeni &amp; Condiții</h1>
       </div>
       <div class="lang-switch">
-        <button class="active" onclick="setLang('ro',this)">RO</button>
-        <button onclick="setLang('en',this)">EN</button>
-        <button onclick="setLang('da',this)">DA</button>
+        <button data-lang="ro" onclick="setLang('ro',this)">RO</button>
+        <button data-lang="en" onclick="setLang('en',this)">EN</button>
+        <button data-lang="da" onclick="setLang('da',this)">DA</button>
       </div>
     </div>
 
     <div class="card">
-      <div id="ro" class="lang active">
-        <h2>Termeni si conditii de utilizare</h2>
-        <p>Acest site este administrat de DJ Radu (CVR: 46538560) si are scopul de a prezenta serviciile oferite, precum si de a permite clientilor sa trimita cereri de rezervare pentru evenimente.</p>
-        <p>Prin utilizarea acestui site, utilizatorul declara ca a citit si este de acord cu acesti termeni si conditii. Informatiile publicate pe site au scop informativ si pot fi actualizate fara notificare prealabila.</p>
-        <p>Trimiterea formularului de rezervare nu reprezinta confirmarea automata a unei rezervari. O rezervare este considerata valabila doar dupa confirmarea explicita a acesteia de catre DJ Radu.</p>
-        <p>Utilizatorul are responsabilitatea de a transmite date corecte si complete in formular. DJ Radu nu isi asuma responsabilitatea pentru erori cauzate de informatii incomplete sau incorecte furnizate de utilizator.</p>
-        <p>Toate textele, imaginile, logo-ul, materialele grafice si continutul publicat pe acest site apartin DJ Radu si nu pot fi copiate, distribuite sau utilizate fara acordul scris al proprietarului.</p>
-        <p>DJ Radu isi rezerva dreptul de a modifica in orice moment continutul site-ului si acesti termeni si conditii.</p>
-        <p>Contact: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+      <div id="ro" class="lang">
+        <h2>Termeni și condiții de utilizare</h2>
+        <p>Acest site este administrat de DJ Radu (CVR: 46538560) și are scopul de a prezenta serviciile oferite, precum și de a permite clienților să trimită cereri de rezervare pentru evenimente.</p>
+        <p>Prin utilizarea acestui site, utilizatorul declară că a citit și este de acord cu acești termeni și condiții. Informațiile publicate pe site au scop informativ și pot fi actualizate fără notificare prealabilă.</p>
+        <p>Trimiterea formularului de rezervare nu reprezintă confirmarea automată a unei rezervări. O rezervare este considerată valabilă doar după confirmarea explicită a acesteia de către DJ Radu.</p>
+        <p>Utilizatorul are responsabilitatea de a transmite date corecte și complete în formular. DJ Radu nu își asumă responsabilitatea pentru erori cauzate de informații incomplete sau incorecte furnizate de utilizator.</p>
+        <p>Toate textele, imaginile, logo-ul, materialele grafice și conținutul publicat pe acest site aparțin DJ Radu și nu pot fi copiate, distribuite sau utilizate fără acordul scris al proprietarului.</p>
+        <p>DJ Radu își rezervă dreptul de a modifica în orice moment conținutul site-ului și acești termeni și condiții.</p>
+        <p>Contact: <a href="mailto:info@djradu.com">info@djradu.com</a> | +45 52 71 21 02</p>
       </div>
 
       <div id="en" class="lang">
@@ -59,18 +60,18 @@
         <p>The user is responsible for providing correct and complete information in the form. DJ Radu is not responsible for errors caused by incomplete or incorrect information provided by the user.</p>
         <p>All texts, images, the logo, graphic materials and content published on this website are the property of DJ Radu and may not be copied, distributed or used without the written permission of the owner.</p>
         <p>DJ Radu reserves the right to modify the website content and these terms and conditions at any time.</p>
-        <p>Contact: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+        <p>Contact: <a href="mailto:info@djradu.com">info@djradu.com</a> | +45 52 71 21 02</p>
       </div>
 
       <div id="da" class="lang">
-        <h2>Vilkar og betingelser for brug</h2>
-        <p>Dette website drives af DJ Radu (CVR: 46538560) og har til formal at praesente de tilbudte ydelser samt give kunder mulighed for at sende bookingforesprgsler til arrangementer.</p>
-        <p>Ved at bruge dette website erklaerer brugeren, at han eller hun har laest og accepterer disse vilkar og betingelser. Oplysningerne pa websitet er udelukkende vejledende og kan opdateres uden forudgaende varsel.</p>
-        <p>Indsendelse af bookingformularen er ikke en automatisk bekraeftelse af en booking. En booking er farst gaeldig, nar den udtrykkeligt er bekraeftet af DJ Radu.</p>
-        <p>Brugeren er ansvarlig for at afgive korrekte og fuldstaendige oplysninger i formularen. DJ Radu kan ikke holdes ansvarlig for fejl, der skyldes ufuldstaendige eller forkerte oplysninger fra brugeren.</p>
-        <p>Alle tekster, billeder, logoet, grafiske materialer og andet indhold pa dette website tilharer DJ Radu og ma ikke kopieres, deles eller anvendes uden skriftlig tilladelse fra ejeren.</p>
-        <p>DJ Radu forbeholder sig retten til nar som helst at aendre indholdet pa websitet samt disse vilkar og betingelser.</p>
-        <p>Kontakt: <a href="mailto:contact@djradu.com">contact@djradu.com</a> | +45 52 71 21 02</p>
+        <h2>Vilkår og betingelser for brug</h2>
+        <p>Dette website drives af DJ Radu (CVR: 46538560) og har til formål at præsentere de tilbudte ydelser samt give kunder mulighed for at sende bookingforespørgsler til arrangementer.</p>
+        <p>Ved at bruge dette website erklærer brugeren, at han eller hun har læst og accepterer disse vilkår og betingelser. Oplysningerne på websitet er udelukkende vejledende og kan opdateres uden forudgående varsel.</p>
+        <p>Indsendelse af bookingformularen er ikke en automatisk bekræftelse af en booking. En booking er først gyldig, når den udtrykkeligt er bekræftet af DJ Radu.</p>
+        <p>Brugeren er ansvarlig for at afgive korrekte og fuldstændige oplysninger i formularen. DJ Radu kan ikke holdes ansvarlig for fejl, der skyldes ufuldstændige eller forkerte oplysninger fra brugeren.</p>
+        <p>Alle tekster, billeder, logoet, grafiske materialer og andet indhold på dette website tilhører DJ Radu og må ikke kopieres, deles eller anvendes uden skriftlig tilladelse fra ejeren.</p>
+        <p>DJ Radu forbeholder sig retten til når som helst at ændre indholdet på websitet samt disse vilkår og betingelser.</p>
+        <p>Kontakt: <a href="mailto:info@djradu.com">info@djradu.com</a> | +45 52 71 21 02</p>
       </div>
     </div>
   </div>
@@ -78,13 +79,24 @@
   <footer>© 2026 DJ Radu • Juelsminde, Danemarca • CVR: 46538560</footer>
 
   <script>
+    const titles = {ro:"Termeni & Condiții", en:"Terms & Conditions", da:"Vilkår & betingelser"};
     function setLang(lang, btn) {
       document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
       document.getElementById(lang).classList.add('active');
-      btn.classList.add('active');
+      if (btn) btn.classList.add('active');
+      else document.querySelector('.lang-switch button[data-lang="'+lang+'"]').classList.add('active');
       document.documentElement.lang = lang;
+      document.querySelector('[data-i18n-title]').textContent = titles[lang];
+      document.title = "DJ Radu - " + titles[lang];
     }
+    function detectLanguage() {
+      const browserLang = (navigator.language || "ro").toLowerCase();
+      if (browserLang.startsWith("da")) return "da";
+      if (browserLang.startsWith("en")) return "en";
+      return "ro";
+    }
+    setLang(detectLanguage());
   </script>
 </body>
 </html>
