@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PKH9JPMD');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E1P3WG6YHH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-E1P3WG6YHH');
-</script>
+<!-- Google Tag Manager & Analytics — loaded ONLY after cookie consent, see cookie banner script at bottom of page -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DJ Radu | Your Party. My Energy.</title>
@@ -77,9 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- TrustBox script -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-<!-- End TrustBox script -->
+<!-- TrustBox script loaded conditionally after cookie consent, see bottom of page -->
   
 <style>
 :root{
@@ -273,14 +257,25 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 @media(max-width:768px){.nav-right{display:none;}.menu-toggle{display:flex;}.logo-img{height:38px;}.hero{padding:100px 5% 56px;min-height:auto;}.hero-logo{max-width:100%;}.hero-tagline{font-size:1.2rem;margin-top:20px;padding:0 16px;}.hero-subtext{font-size:.95rem;padding:0 16px;}.gallery{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;}.gallery-item{height:120px;}.lightbox{padding:16px;}.lightbox-close{top:-10px;right:0;}.lb-prev{left:0;}.lb-next{right:0;}.lightbox-actions{position:static;margin-top:12px;justify-content:center;flex-wrap:wrap;}.lightbox-inner{flex-direction:column;}.form-row{grid-template-columns:1fr;}.hero-btn{padding:13px 24px;font-size:.92rem;}.accordion-header{padding:14px 16px;font-size:1rem;}.video-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));}}
 @media(min-width:769px){.mobile-menu{display:none !important;}}
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}.reveal{opacity:1;transform:none;}#heroParticles{display:none;}}
+
+/* COOKIE CONSENT BANNER */
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:4000;background:rgba(8,8,10,.98);backdrop-filter:blur(12px);border-top:1.5px solid var(--border);padding:20px 6%;box-shadow:0 -10px 30px rgba(0,0,0,.4);transform:translateY(120%);transition:transform .5s ease;}
+.cookie-banner.show{transform:translateY(0);}
+.cookie-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;}
+.cookie-text{flex:1;min-width:260px;color:var(--gray);font-size:.92rem;line-height:1.6;}
+.cookie-text strong{color:#fff;}
+.cookie-text a{color:var(--blue);text-decoration:underline;}
+.cookie-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.cookie-btn{padding:12px 22px;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;transition:.3s;border:1.5px solid var(--border);white-space:nowrap;}
+.cookie-btn-accept{background:linear-gradient(90deg,var(--blue),var(--blue-dark));color:#000;border-color:var(--blue);}
+.cookie-btn-accept:hover{box-shadow:0 0 20px rgba(0,217,255,.4);transform:translateY(-2px);}
+.cookie-btn-reject{background:transparent;color:#fff;}
+.cookie-btn-reject:hover{border-color:var(--blue);}
+@media(max-width:768px){.cookie-inner{flex-direction:column;align-items:stretch;text-align:center;}.cookie-actions{justify-content:center;}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#despre">Skip to content</a>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKH9JPMD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <nav>
 <a href="#" class="logo" aria-label="DJ Radu">
@@ -446,20 +441,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="accordion-content">
 <div class="social-embeds">
   <div class="embed-item">
-    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid02qCiahuryCMq5z86Em1DtVhGnq3imx3rtdqJs6AtpHMZNZwgrCjFmsq9eDBSsEWE6l&show_text=true&width=500" width="500" height="200" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook review"></iframe>
+    <iframe data-src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fiovana.madalina%2Fposts%2Fpfbid02qCiahuryCMq5z86Em1DtVhGnq3imx3rtdqJs6AtpHMZNZwgrCjFmsq9eDBSsEWE6l&show_text=true&width=500" width="500" height="200" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook review"></iframe>
   </div>
 
   <div class="embed-item">
-    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F27240390652298799%2F&show_text=true&width=267&t=0" width="267" height="476" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
+    <iframe data-src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F27240390652298799%2F&show_text=true&width=267&t=0" width="267" height="476" loading="lazy" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook reel"></iframe>
   </div>
 
   <div class="embed-item">
     <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DaaZkygsgv3/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
   </div>
 </div>
-<script async src="https://www.instagram.com/embed.js"></script>
+<p class="cookie-embed-notice" data-i18n="cookieEmbedNotice" style="text-align:center;color:var(--gray);font-size:.85rem;margin-top:16px;">Conținutul social media se încarcă doar după acceptarea cookie-urilor.</p>
 </div>
 </div>
+
 
 </section>
 
@@ -547,7 +543,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a target="_blank" href="https://www.tiktok.com/@djradudk?refer=creator_embed">@djradudk</a>
   </section>
 </blockquote>
-<script async src="https://www.tiktok.com/embed.js"></script>
+<p class="cookie-embed-notice" data-i18n="cookieEmbedNotice" style="color:var(--gray);font-size:.85rem;margin-top:16px;">Conținutul social media se încarcă doar după acceptarea cookie-urilor.</p>
 </div>
 </div>
 
@@ -774,7 +770,8 @@ const translations = {
     companyLabel:"Companie",companyName:"DJ Radu",addressLabel:"Adresă",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Deschide în Google Maps",emailLabel:"Email (General)",phoneLabel:"Telefon / WhatsApp",callNow:"Sună",socialTitle:"📱 Social media",
     footerCopy:"© 2026 DJ Radu. Toate drepturile rezervate.",footerTerms:"Termeni și condiții",footerPrivacy:"Politica de confidențialitate",
-    fullscreen:"Fullscreen",openYoutube:"Deschide pe YouTube"
+    fullscreen:"Fullscreen",openYoutube:"Deschide pe YouTube",
+    cookieEmbedNotice:"Conținutul social media se încarcă doar după acceptarea cookie-urilor."
   },
   en: {
     navAbout:"About",navServices:"Services",navMusic:"Music",navTestimonials:"Reviews",navBooking:"Book Now",navContact:"Contact",
@@ -808,7 +805,8 @@ const translations = {
     companyLabel:"Company",companyName:"DJ Radu",addressLabel:"Address",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Open in Google Maps",emailLabel:"Email (General)",phoneLabel:"Phone / WhatsApp",callNow:"Call",socialTitle:"📱 Social media",
     footerCopy:"© 2026 DJ Radu. All rights reserved.",footerTerms:"Terms & Conditions",footerPrivacy:"Privacy Policy",
-    fullscreen:"Fullscreen",openYoutube:"Open on YouTube"
+    fullscreen:"Fullscreen",openYoutube:"Open on YouTube",
+    cookieEmbedNotice:"Social media content only loads after cookies are accepted."
   },
   da: {
     navAbout:"Om mig",navServices:"Ydelser",navMusic:"Musik",navTestimonials:"Anmeldelser",navBooking:"Book nu",navContact:"Kontakt",
@@ -842,7 +840,8 @@ const translations = {
     companyLabel:"Virksomhed",companyName:"DJ Radu",addressLabel:"Adresse",addressValue:"Skrænten 21, Hosby, 7130 Juelsminde",
     openMaps:"Åbn i Google Maps",emailLabel:"E-mail (General)",phoneLabel:"Telefon / WhatsApp",callNow:"Ring op",socialTitle:"📱 Sociale medier",
     footerCopy:"© 2026 DJ Radu. Alle rettigheder forbeholdes.",footerTerms:"Vilkår og betingelser",footerPrivacy:"Privatlivspolitik",
-    fullscreen:"Fullscreen",openYoutube:"Åbn på YouTube"
+    fullscreen:"Fullscreen",openYoutube:"Åbn på YouTube",
+    cookieEmbedNotice:"Indhold fra sociale medier indlæses først, når cookies er accepteret."
   }
 };
 
@@ -1030,6 +1029,114 @@ if (scrollIndicator) {
   document.addEventListener("visibilitychange", () => { document.hidden ? stop() : start(); });
   resize(); create(); start();
 })();
+</script>
+
+<!-- COOKIE CONSENT BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <div class="cookie-text" id="cookieText">
+      <strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-reject" id="cookieReject">Doar esențiale</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept toate</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== COOKIE CONSENT MANAGEMENT =====
+const cookieTexts = {
+  ro: {text:'<strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.', reject:'Doar esențiale', accept:'Accept toate'},
+  en: {text:'<strong>🍪 Cookies</strong> — We use essential cookies for the website to function and, with your consent, analytics and social media cookies (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). See our <a href="/privacy.html">Privacy Policy</a>.', reject:'Essential only', accept:'Accept all'},
+  da: {text:'<strong>🍪 Cookies</strong> — Vi bruger nødvendige cookies for at websitet fungerer, og med dit samtykke analyse- og sociale medie-cookies (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Se vores <a href="/privacy.html">Privatlivspolitik</a>.', reject:'Kun nødvendige', accept:'Accepter alle'}
+};
+
+function loadAnalytics(){
+  // Google Tag Manager
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PKH9JPMD');
+  // Google tag (gtag.js)
+  const gtagScript = document.createElement('script');
+  gtagScript.async = true;
+  gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-E1P3WG6YHH';
+  document.head.appendChild(gtagScript);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', 'G-E1P3WG6YHH');
+}
+
+function loadSocialEmbeds(){
+  // Instagram embed script
+  if (!document.getElementById('ig-embed-script')) {
+    const ig = document.createElement('script');
+    ig.id = 'ig-embed-script';
+    ig.async = true;
+    ig.src = 'https://www.instagram.com/embed.js';
+    document.body.appendChild(ig);
+  }
+  // TikTok embed script
+  if (!document.getElementById('tiktok-embed-script')) {
+    const tt = document.createElement('script');
+    tt.id = 'tiktok-embed-script';
+    tt.async = true;
+    tt.src = 'https://www.tiktok.com/embed.js';
+    document.body.appendChild(tt);
+  }
+  // Trustpilot widget script
+  if (!document.getElementById('trustpilot-script')) {
+    const tp = document.createElement('script');
+    tp.id = 'trustpilot-script';
+    tp.type = 'text/javascript';
+    tp.src = '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
+    tp.async = true;
+    document.body.appendChild(tp);
+  }
+  // Facebook + Instagram iframes: activate real src from data-src (they are blocked by default in the HTML)
+  document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
+}
+
+function setCookieConsent(status){
+  localStorage.setItem('djradu_cookie_consent', status);
+  document.getElementById('cookieBanner').classList.remove('show');
+  if (status === 'accepted') {
+    loadAnalytics();
+    loadSocialEmbeds();
+  }
+}
+
+function initCookieBanner(){
+  const consent = localStorage.getItem('djradu_cookie_consent');
+  const lang = (currentLang && cookieTexts[currentLang]) ? currentLang : 'ro';
+  const t = cookieTexts[lang];
+  document.getElementById('cookieText').innerHTML = t.text;
+  document.getElementById('cookieReject').textContent = t.reject;
+  document.getElementById('cookieAccept').textContent = t.accept;
+
+  if (!consent) {
+    setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 800);
+  } else if (consent === 'accepted') {
+    loadAnalytics();
+    loadSocialEmbeds();
+  }
+}
+
+document.getElementById('cookieAccept').addEventListener('click', () => setCookieConsent('accepted'));
+document.getElementById('cookieReject').addEventListener('click', () => setCookieConsent('essential'));
+
+// Update banner text if language changes before consent given
+const origSetLanguage = setLanguage;
+setLanguage = function(lang){
+  origSetLanguage(lang);
+  if (!localStorage.getItem('djradu_cookie_consent') && cookieTexts[currentLang]) {
+    const t = cookieTexts[currentLang];
+    document.getElementById('cookieText').innerHTML = t.text;
+    document.getElementById('cookieReject').textContent = t.reject;
+    document.getElementById('cookieAccept').textContent = t.accept;
+  }
+};
+
+initCookieBanner();
 </script>
 
 </body>
