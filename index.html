@@ -167,6 +167,45 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .trustpilot-wrapper{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-top:20px;box-shadow:var(--shadow);}
 .trustpilot-widget{height:auto !important;min-height:60px !important;}
 
+/* TRUSTPILOT FLOATING WIDGET OVERRIDE - Trustpilot's "Review Collector" template renders
+   as a fixed floating box regardless of where it's placed in the DOM. Force it small,
+   rectangular, and aligned with the WhatsApp button (same bottom offset, same height). */
+div[class*="trustpilot-widget"][style*="position"],
+.trustpilot-widget iframe{
+  max-width:170px !important;
+  width:170px !important;
+  height:50px !important;
+  max-height:50px !important;
+  border-radius:12px !important;
+  overflow:hidden !important;
+}
+body > .trustpilot-widget,
+body > div[data-businessunit-id]{
+  position:fixed !important;
+  left:20px !important;
+  bottom:20px !important;
+  right:auto !important;
+  top:auto !important;
+  z-index:1999 !important;
+  width:170px !important;
+  height:50px !important;
+  max-width:170px !important;
+  max-height:50px !important;
+  border-radius:12px !important;
+  overflow:hidden !important;
+  box-shadow:0 10px 34px rgba(0,0,0,.35) !important;
+}
+@media(max-width:600px){
+  body > .trustpilot-widget,
+  body > div[data-businessunit-id]{
+    left:16px !important;
+    bottom:16px !important;
+    width:150px !important;
+    height:50px !important;
+    max-width:150px !important;
+  }
+}
+
 /* VIDEO GRID */
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
 .video-card{overflow:hidden;border-radius:16px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);box-shadow:var(--shadow);cursor:pointer;transition:.3s;}
@@ -1096,8 +1135,43 @@ function loadSocialEmbeds(){
     tp.async = true;
     document.body.appendChild(tp);
   }
+  // Force any Trustpilot floating widget/iframe to stay small & aligned with the WhatsApp button,
+  // even if Trustpilot's script sets its own inline size after loading.
+  fixTrustpilotFloatingSize();
+  const tpObserver = new MutationObserver(() => fixTrustpilotFloatingSize());
+  tpObserver.observe(document.body, {childList:true, subtree:true});
+
   // Facebook + Instagram iframes: activate real src from data-src (they are blocked by default in the HTML)
   document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
+}
+
+function fixTrustpilotFloatingSize(){
+  const isMobile = window.innerWidth <= 600;
+  const w = isMobile ? '150px' : '170px';
+  const offset = isMobile ? '16px' : '20px';
+  document.querySelectorAll('iframe[src*="trustpilot"]').forEach(f => {
+    f.style.setProperty('width', w, 'important');
+    f.style.setProperty('height', '50px', 'important');
+    f.style.setProperty('max-width', w, 'important');
+    f.style.setProperty('max-height', '50px', 'important');
+    f.style.setProperty('border-radius', '12px', 'important');
+    // If this iframe's parent is a body-level floating container, resize & reposition it too
+    let parent = f.parentElement;
+    if (parent && parent !== document.body && !parent.closest('.trustpilot-wrapper')) {
+      parent.style.setProperty('position', 'fixed', 'important');
+      parent.style.setProperty('left', offset, 'important');
+      parent.style.setProperty('bottom', offset, 'important');
+      parent.style.setProperty('right', 'auto', 'important');
+      parent.style.setProperty('top', 'auto', 'important');
+      parent.style.setProperty('width', w, 'important');
+      parent.style.setProperty('height', '50px', 'important');
+      parent.style.setProperty('max-width', w, 'important');
+      parent.style.setProperty('max-height', '50px', 'important');
+      parent.style.setProperty('border-radius', '12px', 'important');
+      parent.style.setProperty('overflow', 'hidden', 'important');
+      parent.style.setProperty('z-index', '1999', 'important');
+    }
+  });
 }
 
 function setCookieConsent(status){
