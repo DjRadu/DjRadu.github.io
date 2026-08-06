@@ -55,6 +55,13 @@
     "addressCountry": "DK"
   },
   "areaServed": ["Denmark", "Northern Germany", "Europe"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.0",
+    "reviewCount": "4",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "sameAs": [
     "https://www.facebook.com/DJRaduG/",
     "https://www.instagram.com/djradug",
@@ -188,8 +195,8 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 /* STATIC TRUSTPILOT BADGE — our own fixed bottom-left button (bottom-right is WhatsApp).
    This is plain HTML/CSS we control fully, not Trustpilot's unpredictable floating
    script, so size/color/position always stay exactly as intended. */
-.tp-fab{position:fixed;left:20px;bottom:20px;z-index:1999;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;box-shadow:0 10px 34px rgba(0,0,0,.4);transition:.3s;}
-.tp-fab:hover{border-color:#00b67a;box-shadow:0 0 20px rgba(0,182,122,.35);transform:translateY(-3px);}
+.tp-fab{position:fixed;left:20px;bottom:20px;z-index:1999;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid rgba(0,182,122,.4);color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;box-shadow:0 10px 34px rgba(0,182,122,.35);transition:.3s;}
+.tp-fab:hover{border-color:#00b67a;box-shadow:0 12px 40px rgba(0,182,122,.55);transform:translateY(-3px);}
 .tp-fab .tp-star{color:#00b67a;font-size:1.05rem;line-height:1;}
 @media(max-width:600px){.tp-fab{left:16px;bottom:16px;padding:12px 16px;font-size:.85rem;}}
 
@@ -452,22 +459,19 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 <i class="fas fa-chevron-down"></i>
 </div>
 <div class="accordion-content">
-<div class="trustpilot-wrapper trustpilot-desktop">
-<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="f5b2556c-c3a7-4d85-bf97-fa774b6a605e">
-  <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
-</div>
-</div>
-
-<div class="trustpilot-wrapper trustpilot-mobile">
-<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="9c635329-d1c9-4474-8a4e-8ab5809247d4">
-  <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
-</div>
+<div class="trustpilot-wrapper" style="text-align:center;">
+<div style="color:#00b67a;font-size:1.8rem;letter-spacing:4px;margin-bottom:12px;">★★★★★</div>
+<p data-i18n="trustpilotCtaText" style="color:var(--gray);margin-bottom:20px;">Citește recenziile verificate sau lasă-mi și tu un review pe Trustpilot.</p>
+<a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-main" style="display:inline-flex;">
+<span style="color:#00b67a;">★</span> <span data-i18n="trustpilotCtaBtn">Vezi pe Trustpilot</span>
+</a>
 </div>
 </div>
 </div>
 
 <!-- ACORDION 3: SOCIAL MEDIA -->
 <div class="accordion-section">
+
 <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0" data-i18n="socialProofTitle">
 📱 Din social media
 <i class="fas fa-chevron-down"></i>
@@ -791,6 +795,7 @@ const translations = {
     service4Title:"🏢 evenimente corporate",service4Text:"Evenimente profesionale, petreceri de firmă și seri de team-building.",
     musicTitle:"Repertoriu",music1:"Populară românească",music2:"Hore & sârbe",music3:"Manele selectate",music4:"Pop românesc",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"Hituri internaționale",
     testimonialsTitle:"Recenzii & Mărturii",customerReviews:"📝 Recenziile clienților",socialProofTitle:"📱 Din social media",
+    trustpilotCtaText:"Citește recenziile verificate sau lasă-mi și tu un review pe Trustpilot.",trustpilotCtaBtn:"Vezi pe Trustpilot",
     galleryTitle:"Galerie",videoSubtitle:"🎬 Video",photoSubtitle:"📷 Galerie Foto",watchVideo:"▶ Vezi",videoOpenText:"Apasă pentru vizionare mare și fullscreen.",
     bookingTitle:"Rezervați data",bookingSubtitle:"Completați formularul de mai jos pentru a-mi trimite o cerere de rezervare",
     bookingFirstName:"Prenume",bookingLastName:"Nume",bookingEmail:"Email",bookingPhone:"Telefon",bookingEventDate:"Data evenimentului",bookingEventType:"Tip de eveniment",bookingSelectType:"Selectează tip...",
@@ -826,6 +831,7 @@ const translations = {
     service4Title:"🏢 Corporate events",service4Text:"Professional events, company parties and team-building evenings.",
     musicTitle:"Music selection",music1:"Romanian folk",music2:"Hora & sârba",music3:"Selected manele",music4:"Romanian pop",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"International hits",
     testimonialsTitle:"Reviews & Testimonials",customerReviews:"📝 Customer Reviews",socialProofTitle:"📱 From social media",
+    trustpilotCtaText:"Read verified reviews or leave one of your own on Trustpilot.",trustpilotCtaBtn:"View on Trustpilot",
     galleryTitle:"Gallery",videoSubtitle:"🎬 Videos",photoSubtitle:"📷 Photo Gallery",watchVideo:"▶ Watch",videoOpenText:"Tap to open large view and fullscreen.",
     bookingTitle:"Book Your Date",bookingSubtitle:"Fill in the form below to send me a booking request",
     bookingFirstName:"First Name",bookingLastName:"Last Name",bookingEmail:"Email",bookingPhone:"Phone",bookingEventDate:"Event Date",bookingEventType:"Event Type",bookingSelectType:"Select type...",
@@ -861,6 +867,7 @@ const translations = {
     service4Title:"🏢 Firmaevents",service4Text:"Professionelle arrangementer, firmafester og teambuilding-aftener.",
     musicTitle:"Repertoire",music1:"Rumænsk folkemusik",music2:"Hora & sârba",music3:"Udvalgte manele",music4:"Rumænsk pop",music5:"Dance",music6:"House",music7:"Latino",music8:"Rock",music9:"Internationale hits",
     testimonialsTitle:"Anmeldelser & Testimonier",customerReviews:"📝 Kundeanmeldelser",socialProofTitle:"📱 Fra sociale medier",
+    trustpilotCtaText:"Læs verificerede anmeldelser, eller skriv selv en på Trustpilot.",trustpilotCtaBtn:"Se på Trustpilot",
     galleryTitle:"Galleri",videoSubtitle:"🎬 Videoer",photoSubtitle:"📷 Fotogalleri",watchVideo:"▶ Se",videoOpenText:"Tryk for stor visning og fullscreen.",
     bookingTitle:"Book din dato",bookingSubtitle:"Udfyld formularen nedenfor for at sende mig en bookingforespørgsel",
     bookingFirstName:"Fornavn",bookingLastName:"Efternavn",bookingEmail:"E-mail",bookingPhone:"Telefon",bookingEventDate:"Eventdato",bookingEventType:"Eventtype",bookingSelectType:"Vælg type...",
@@ -1069,7 +1076,7 @@ if (scrollIndicator) {
 <div class="cookie-banner" id="cookieBanner">
   <div class="cookie-inner">
     <div class="cookie-text" id="cookieText">
-      <strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.
+      <strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.
     </div>
     <div class="cookie-actions">
       <button class="cookie-btn cookie-btn-reject" id="cookieReject">Doar esențiale</button>
@@ -1081,9 +1088,9 @@ if (scrollIndicator) {
 <script>
 // ===== COOKIE CONSENT MANAGEMENT =====
 const cookieTexts = {
-  ro: {text:'<strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.', reject:'Doar esențiale', accept:'Accept toate'},
-  en: {text:'<strong>🍪 Cookies</strong> — We use essential cookies for the website to function and, with your consent, analytics and social media cookies (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). See our <a href="/privacy.html">Privacy Policy</a>.', reject:'Essential only', accept:'Accept all'},
-  da: {text:'<strong>🍪 Cookies</strong> — Vi bruger nødvendige cookies for at websitet fungerer, og med dit samtykke analyse- og sociale medie-cookies (Google Analytics, Facebook, Instagram, TikTok, Trustpilot). Se vores <a href="/privacy.html">Privatlivspolitik</a>.', reject:'Kun nødvendige', accept:'Accepter alle'}
+  ro: {text:'<strong>🍪 Cookie-uri</strong> — Folosim cookie-uri esențiale pentru funcționarea site-ului și, cu acordul tău, cookie-uri de analiză și social media (Google Analytics, Facebook, Instagram, TikTok). Vezi <a href="/privacy.html">Politica de confidențialitate</a>.', reject:'Doar esențiale', accept:'Accept toate'},
+  en: {text:'<strong>🍪 Cookies</strong> — We use essential cookies for the website to function and, with your consent, analytics and social media cookies (Google Analytics, Facebook, Instagram, TikTok). See our <a href="/privacy.html">Privacy Policy</a>.', reject:'Essential only', accept:'Accept all'},
+  da: {text:'<strong>🍪 Cookies</strong> — Vi bruger nødvendige cookies for at websitet fungerer, og med dit samtykke analyse- og sociale medie-cookies (Google Analytics, Facebook, Instagram, TikTok). Se vores <a href="/privacy.html">Privatlivspolitik</a>.', reject:'Kun nødvendige', accept:'Accepter alle'}
 };
 
 function loadAnalytics(){
@@ -1117,15 +1124,10 @@ function loadSocialEmbeds(){
     tt.src = 'https://www.tiktok.com/embed.js';
     document.body.appendChild(tt);
   }
-  // Trustpilot widget script — loads the live reviews widget inside the Recenzii accordion
-  if (!document.getElementById('trustpilot-script')) {
-    const tp = document.createElement('script');
-    tp.id = 'trustpilot-script';
-    tp.type = 'text/javascript';
-    tp.src = '//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
-    tp.async = true;
-    document.body.appendChild(tp);
-  }
+  // Note: Trustpilot's own JS widget was removed — it always renders itself as a
+  // fixed floating box regardless of container, overlapping our custom Trustpilot
+  // button. We use a static, reliable card + button instead (see Recenzii accordion
+  // and the fixed bottom-left tp-fab button), both linking directly to Trustpilot.
 
   // Facebook + Instagram iframes: activate real src from data-src (they are blocked by default in the HTML)
   document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
