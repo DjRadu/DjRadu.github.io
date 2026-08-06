@@ -170,6 +170,26 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .trustpilot-wrapper{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-top:20px;box-shadow:var(--shadow);}
 .trustpilot-widget{height:auto !important;min-height:60px !important;}
 
+/* Trustpilot fallback text (shown briefly before the widget script fully loads/renders)
+   defaults to black link color which is invisible on our dark theme — force it white. */
+.trustpilot-widget a,
+.trustpilot-wrapper a{
+  color:#ffffff !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+.trustpilot-widget a:hover,
+.trustpilot-wrapper a:hover{
+  color:var(--blue) !important;
+  text-decoration:underline !important;
+}
+/* Safety net: any Trustpilot link anywhere on the page (in case their script wraps
+   the fallback differently than expected) also gets readable white text. */
+a[href*="trustpilot.com"]{
+  color:#ffffff !important;
+  font-weight:700 !important;
+}
+
 /* TRUSTPILOT FLOATING WIDGET OVERRIDE - Trustpilot's "Review Collector" template renders
    as a fixed floating box regardless of where it's placed in the DOM. Force it small,
    rectangular, and aligned with the WhatsApp button (same bottom offset, same height). */
