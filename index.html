@@ -161,6 +161,14 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .accordion-content{max-height:0;overflow:hidden;transition:max-height .4s ease;background:rgba(255,255,255,.01);border-left:2px solid var(--blue);padding:0 24px;margin-bottom:16px;border-radius:0 0 14px 14px;}
 .accordion-content.active{max-height:5000px;padding:24px;}
 
+/* TRUSTPILOT RESPONSIVE - SHOW/HIDE */
+.trustpilot-desktop{display:block;}
+.trustpilot-mobile{display:none;}
+@media(max-width:768px){
+  .trustpilot-desktop{display:none;}
+  .trustpilot-mobile{display:block;}
+}
+
 /* TESTIMONIALS CONTAINER */
 .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
 .testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:20px;border-radius:16px;box-shadow:var(--shadow);}
@@ -408,8 +416,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <i class="fas fa-chevron-down"></i>
 </div>
 <div class="accordion-content">
-<div class="trustpilot-wrapper">
-<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="eea6a222-ba27-4e9f-aa8f-311e8b5bec09">
+<div class="trustpilot-wrapper trustpilot-desktop">
+<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="f5b2556c-c3a7-4d85-bf97-fa774b6a605e">
+  <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+</div>
+
+<div class="trustpilot-wrapper trustpilot-mobile">
+<div class="trustpilot-widget" data-locale="da-DK" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="6a61ae14cd201ef451eed12e" data-style-height="52px" data-style-width="100%" data-token="9c635329-d1c9-4474-8a4e-8ab5809247d4">
   <a href="https://dk.trustpilot.com/review/djradu.com" target="_blank" rel="noopener">Trustpilot</a>
 </div>
 </div>
