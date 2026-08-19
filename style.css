@@ -6,7 +6,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;overflow-x:hidden;}
-body.menu-open{overflow:hidden;}
+body.menu-open{position:fixed;left:0;right:0;width:100%;overflow:hidden;}
 a,button{-webkit-tap-highlight-color:transparent;}
 img{max-width:100%;display:block;}
 
@@ -78,10 +78,28 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .accordion-content.active{max-height:5000px;padding:24px;}
 
 /* TESTIMONIALS CONTAINER */
-.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:20px;border-radius:16px;box-shadow:var(--shadow);}
-.testimonial-text{color:var(--gray);line-height:1.7;margin-bottom:12px;font-size:.95rem;}
+.testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:28px;border-radius:16px;box-shadow:var(--shadow);min-height:150px;}
+.testimonial-text{color:var(--gray);line-height:1.7;margin-bottom:12px;font-size:1rem;}
 .testimonial-author{font-weight:700;color:var(--blue);font-size:.9rem;}
+
+/* TRUSTPILOT RATING STAT — shown above the review carousel */
+.rating-stat{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:26px;flex-wrap:wrap;}
+.rating-stat .stars{color:#00b67a;font-size:1.3rem;letter-spacing:3px;}
+.rating-stat .rating-number{font-weight:800;font-size:1.3rem;color:#fff;}
+.rating-stat .rating-count{color:var(--gray);font-size:.9rem;}
+
+/* REVIEW CAROUSEL */
+.testimonial-carousel{position:relative;max-width:760px;margin:0 auto;}
+.testimonial-viewport{overflow:hidden;}
+.testimonial-track{display:flex;transition:transform .5s ease;}
+.testimonial-slide{flex:0 0 100%;min-width:0;padding:4px;}
+.carousel-nav{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:22px;}
+.carousel-arrow{width:42px;height:42px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--border);background:var(--card);color:var(--blue);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:.3s;}
+.carousel-arrow:hover{border-color:var(--blue);box-shadow:0 0 12px rgba(0,217,255,.3);}
+.carousel-dots{display:flex;gap:8px;align-items:center;}
+.carousel-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;padding:0;transition:.3s;}
+.carousel-dot.active{background:var(--blue);box-shadow:0 0 8px rgba(0,217,255,.5);width:24px;border-radius:5px;}
+@media(max-width:600px){.testimonial{padding:22px;min-height:190px;}.carousel-arrow{width:38px;height:38px;font-size:1.15rem;}}
 
 /* TRUSTPILOT — fully custom, no official TrustBox script anywhere on this site (it always
    renders its own floating white-bordered box regardless of container, which is what

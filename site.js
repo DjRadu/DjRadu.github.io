@@ -4,6 +4,39 @@
 // <script src="/site.js"> tag on each page).
 const LANG = window.SITE_LANG_STRINGS || {};
 
+// Keeps the header of the currently-open accordion in view. Some browsers
+// shift scroll position on their own once expanding/collapsing content
+// changes the page's layout, which otherwise leaves the section the visitor
+// just opened scrolled out of view above the fold. Two things can move the
+// target after the initial click: the CSS max-height transition of the
+// section being opened (or of a *different* section collapsing at the same
+// time, since only one accordion can be open at once), and — for embeds like
+// TikTok/Instagram — an async-loaded iframe resizing well after that. A
+// single ResizeObserver on document.body catches all of those (whichever
+// element on the page is actually still settling), not just the open
+// section's own box, and keeps re-correcting toward whatever the current
+// target is until it settles or the window elapses.
+function scrollHeaderIntoView(header){
+  const navOffset = window.innerWidth <= 768 ? 76 : 90;
+  const top = header.getBoundingClientRect().top + window.scrollY - navOffset;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+let scrollTargetHeader = null;
+let scrollTargetDeadline = 0;
+
+if ("ResizeObserver" in window) {
+  let debounceTimer = null;
+  new ResizeObserver(() => {
+    if (!scrollTargetHeader) return;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      if (!scrollTargetHeader || Date.now() > scrollTargetDeadline) { scrollTargetHeader = null; return; }
+      scrollHeaderIntoView(scrollTargetHeader);
+    }, 120);
+  }).observe(document.body);
+}
+
 function toggleAccordion(header){
   const content = header.nextElementSibling;
   const isActive = content.classList.contains("active");
@@ -14,6 +47,13 @@ function toggleAccordion(header){
   if (!isActive) {
     content.classList.add("active");
     header.classList.add("active");
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      scrollTargetHeader = header;
+      scrollTargetDeadline = Date.now() + 4000;
+      requestAnimationFrame(() => requestAnimationFrame(() => scrollHeaderIntoView(header)));
+    }
+  } else {
+    scrollTargetHeader = null;
   }
 }
 
@@ -26,6 +66,56 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   });
 });
 
+(function testimonialCarousel(){
+  const carousel = document.querySelector(".testimonial-carousel");
+  const track = document.querySelector(".testimonial-track");
+  const dotsWrap = document.querySelector(".carousel-dots");
+  const prevBtn = document.querySelector(".carousel-prev");
+  const nextBtn = document.querySelector(".carousel-next");
+  if (!carousel || !track || !dotsWrap || !prevBtn || !nextBtn) return;
+
+  const slides = Array.from(track.children);
+  if (slides.length < 2) { prevBtn.style.display = "none"; nextBtn.style.display = "none"; return; }
+
+  let index = 0;
+  let timer = null;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", "Go to review " + (i + 1));
+    dot.addEventListener("click", () => { goTo(i); restartAutoplay(); });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function goTo(i){
+    index = (i + slides.length) % slides.length;
+    track.style.transform = "translateX(-" + (index * 100) + "%)";
+    dots.forEach((d, di) => d.classList.toggle("active", di === index));
+  }
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+  function stopAutoplay(){ if (timer) { clearInterval(timer); timer = null; } }
+  function startAutoplay(){
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    stopAutoplay();
+    timer = setInterval(next, 6000);
+  }
+  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+
+  nextBtn.addEventListener("click", () => { next(); restartAutoplay(); });
+  prevBtn.addEventListener("click", () => { prev(); restartAutoplay(); });
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+  carousel.addEventListener("focusin", stopAutoplay);
+  carousel.addEventListener("focusout", startAutoplay);
+
+  goTo(0);
+  startAutoplay();
+})();
+
 const reveals = document.querySelectorAll(".reveal");
 function revealElements() {
   reveals.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add("active"); });
@@ -33,10 +123,31 @@ function revealElements() {
 window.addEventListener("scroll", revealElements, {passive:true});
 revealElements();
 
+// Locks body scroll while a modal (mobile menu or lightbox) is open. Uses the
+// position:fixed + saved-offset technique rather than plain overflow:hidden —
+// on mobile browsers, overflow:hidden alone can let the page silently jump to
+// a different scroll position (e.g. the URL bar collapsing/expanding), which
+// left an opened video or TikTok embed scrolled out of view.
+let savedScrollY = 0;
+function lockBodyScroll(){
+  savedScrollY = window.scrollY;
+  document.body.style.top = -savedScrollY + "px";
+  document.body.classList.add("menu-open");
+}
+function unlockBodyScroll(){
+  if (!document.body.classList.contains("menu-open")) return;
+  document.body.classList.remove("menu-open");
+  document.body.style.top = "";
+  // Instant, not smooth: this restores the pre-lock position the visitor
+  // never actually left (the page only looked scrolled-to-0 while pinned
+  // via position:fixed), so animating it would look like a fake scroll jump.
+  window.scrollTo({ top: savedScrollY, left: 0, behavior: "instant" });
+}
+
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
-function closeMenu() { mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); document.body.classList.remove("menu-open"); }
-function openMenu() { mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); document.body.classList.add("menu-open"); }
+function closeMenu() { mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); unlockBodyScroll(); }
+function openMenu() { mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); lockBodyScroll(); }
 menuToggle.addEventListener("click", () => { if (mobileMenu.classList.contains("active")) closeMenu(); else openMenu(); });
 document.querySelectorAll('.mobile-menu a, nav a[href^="#"]').forEach(link => { link.addEventListener("click", () => closeMenu()); });
 
@@ -56,7 +167,7 @@ function closeLightbox() {
   lightboxActions.innerHTML = "";
   lbPrev.classList.remove("show"); lbNext.classList.remove("show");
   galleryIndex = -1;
-  document.body.classList.remove("menu-open");
+  unlockBodyScroll();
 }
 function showGalleryImage(i) {
   if (!galleryItems.length) return;
@@ -68,7 +179,7 @@ function showGalleryImage(i) {
   lbPrev.classList.add("show"); lbNext.classList.add("show");
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden","false");
-  document.body.classList.add("menu-open");
+  lockBodyScroll();
 }
 function openVideoLightbox(videoId, type) {
   galleryIndex = -1;
@@ -79,7 +190,7 @@ function openVideoLightbox(videoId, type) {
   lightboxActions.innerHTML = '<button class="lightbox-action" id="fullscreenBtn" type="button">' + LANG.fullscreen + '</button><a class="lightbox-action" href="' + youtubeUrl + '" target="_blank" rel="noopener noreferrer">' + LANG.openYoutube + '</a>';
   lightbox.classList.add("active");
   lightbox.setAttribute("aria-hidden","false");
-  document.body.classList.add("menu-open");
+  lockBodyScroll();
   const ytFrame = document.getElementById("ytFrame");
   document.getElementById("fullscreenBtn").addEventListener("click", () => {
     if (ytFrame.requestFullscreen) ytFrame.requestFullscreen();
