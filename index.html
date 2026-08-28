@@ -4,12 +4,12 @@
 <!-- Google Tag Manager & Analytics — loaded ONLY after cookie consent, see cookie banner script at bottom of page -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Sends visitors to the version matching their browser language. Runs before
-     the page paints so nobody sees the Danish hero flash by first. Only ever
-     redirects away from this root document, and only while the visitor has not
-     picked a language by hand — the switcher records that choice (see site.js),
-     and once it exists this never fires again. Danish, and any language we do
-     not publish, stays here. -->
+<!-- Sends visitors to the version matching their device language. Runs before
+     the page paints so nobody sees the Danish hero flash by first. Romanian
+     goes to /ro/, Danish stays here, and everyone else gets /en/ as the
+     fallback. Only ever redirects away from this root document, and only while
+     the visitor has not picked a language by hand — the switcher records that
+     choice (see site.js), and once it exists this never fires again. -->
 <script>
 (function () {
   var path = location.pathname;
@@ -21,18 +21,14 @@
     return; // storage blocked: never redirect, or we could do it on every visit
   }
 
-  var langs = navigator.languages && navigator.languages.length
-    ? navigator.languages
-    : [navigator.language || ""];
+  var lang = String(
+    (navigator.languages && navigator.languages[0]) || navigator.language || ""
+  ).toLowerCase().split("-")[0];
 
-  for (var i = 0; i < langs.length; i++) {
-    var code = String(langs[i]).toLowerCase().split("-")[0];
-    if (code === "da") return;              // already on the Danish version
-    if (code === "ro" || code === "en") {
-      location.replace("/" + code + "/" + location.search + location.hash);
-      return;
-    }
-  }
+  // No language reported at all: stay on the canonical Danish root rather than
+  // guessing. Danish stays too; everything else falls back to English.
+  if (!lang || lang === "da") return;
+  location.replace((lang === "ro" ? "/ro/" : "/en/") + location.search + location.hash);
 })();
 </script>
 <title>DJ Radu | Your Party. My Energy. – Bryllups-DJ i hele Danmark & Nordtyskland</title>
@@ -272,7 +268,7 @@
 <li><a href="#faq">FAQ</a></li><li><a href="#booking">Book nu</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
-<div class="lang-switcher"><a class="lang-btn" href="/ro/">RO</a><a class="lang-btn" href="/en/">EN</a><a class="lang-btn active" href="/">DA</a></div>
+<div class="lang-switcher"><a class="lang-btn" href="/ro/"><span class="flag" aria-hidden="true">🇷🇴</span>RO</a><a class="lang-btn" href="/en/"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a><a class="lang-btn active" href="/"><span class="flag" aria-hidden="true">🇩🇰</span>DA</a></div>
 </div>
 <button aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle" type="button">
 <span></span><span></span><span></span>
@@ -287,7 +283,7 @@
 <li><a href="#faq">FAQ</a></li><li><a href="#booking">Book nu</a></li>
 <li><a href="#kontakt">Kontakt</a></li>
 </ul>
-<div class="mobile-lang"><a class="lang-btn" href="/ro/">RO</a><a class="lang-btn" href="/en/">EN</a><a class="lang-btn active" href="/">DA</a></div>
+<div class="mobile-lang"><a class="lang-btn" href="/ro/"><span class="flag" aria-hidden="true">🇷🇴</span>RO</a><a class="lang-btn" href="/en/"><span class="flag" aria-hidden="true">🇬🇧</span>EN</a><a class="lang-btn active" href="/"><span class="flag" aria-hidden="true">🇩🇰</span>DA</a></div>
 </div>
 <a aria-label="WhatsApp" class="wa-fab" href="https://wa.me/4552712102" rel="noopener noreferrer" target="_blank">
 <i aria-hidden="true" class="fab fa-whatsapp"></i><span class="wa-text">Skriv til mig</span>

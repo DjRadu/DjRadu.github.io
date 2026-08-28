@@ -98,7 +98,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 .lang-switch{display:flex;justify-content:center;gap:10px;margin-bottom:28px;}
 .lang-btn{padding:7px 14px;border:1px solid var(--border);background:transparent;color:#fff;border-radius:999px;font-size:.78rem;font-weight:700;cursor:pointer;transition:.3s;}
-.lang-btn.active{background:linear-gradient(90deg,var(--blue),var(--blue-dark));border-color:var(--blue);color:#000;}
+.lang-btn.active{background:linear-gradient(90deg,var(--blue),var(--blue-dark));border-color:var(--blue);color:#000;}.lang-btn .flag{margin-right:.32em;}
 
 .lang{display:none;}
 .lang.active{display:block;}
@@ -132,9 +132,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   <div class="logo-text">DJ RADU</div>
 
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="setLang('ro',this)">RO</button>
-    <button class="lang-btn" onclick="setLang('en',this)">EN</button>
-    <button class="lang-btn" onclick="setLang('da',this)">DA</button>
+    <button class="lang-btn active" onclick="setLang('ro',this)"><span class="flag" aria-hidden="true">🇷🇴</span>RO</button>
+    <button class="lang-btn" onclick="setLang('en',this)"><span class="flag" aria-hidden="true">🇬🇧</span>EN</button>
+    <button class="lang-btn" onclick="setLang('da',this)"><span class="flag" aria-hidden="true">🇩🇰</span>DA</button>
   </div>
 
   <div id="ro" class="lang active">
