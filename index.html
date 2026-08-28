@@ -4,6 +4,37 @@
 <!-- Google Tag Manager & Analytics — loaded ONLY after cookie consent, see cookie banner script at bottom of page -->
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Sends visitors to the version matching their browser language. Runs before
+     the page paints so nobody sees the Danish hero flash by first. Only ever
+     redirects away from this root document, and only while the visitor has not
+     picked a language by hand — the switcher records that choice (see site.js),
+     and once it exists this never fires again. Danish, and any language we do
+     not publish, stays here. -->
+<script>
+(function () {
+  var path = location.pathname;
+  if (path !== "/" && path !== "/index.html") return;
+
+  try {
+    if (localStorage.getItem("djradu_lang")) return;
+  } catch (e) {
+    return; // storage blocked: never redirect, or we could do it on every visit
+  }
+
+  var langs = navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || ""];
+
+  for (var i = 0; i < langs.length; i++) {
+    var code = String(langs[i]).toLowerCase().split("-")[0];
+    if (code === "da") return;              // already on the Danish version
+    if (code === "ro" || code === "en") {
+      location.replace("/" + code + "/" + location.search + location.hash);
+      return;
+    }
+  }
+})();
+</script>
 <title>DJ Radu | Your Party. My Energy. – Bryllups-DJ i hele Danmark & Nordtyskland</title>
 <meta content="Professionel DJ til bryllup, konfirmation, dåb, julefrokost og firmafester i hele Danmark og Nordtyskland. Resten af Europa efter aftale. Flersproget DJ bosat i Juelsminde. Book DJ Radu i dag." name="description"/>
 <link href="https://djradu.com/" rel="canonical"/><link href="https://djradu.com/" hreflang="da" rel="alternate"/><link href="https://djradu.com/en/" hreflang="en" rel="alternate"/><link href="https://djradu.com/ro/" hreflang="ro" rel="alternate"/><link href="https://djradu.com/" hreflang="x-default" rel="alternate"/>

@@ -360,3 +360,26 @@ document.getElementById('cookieAccept').addEventListener('click', () => setCooki
 document.getElementById('cookieReject').addEventListener('click', () => setCookieConsent('essential'));
 
 initCookieBanner();
+
+// LANGUAGE CHOICE
+// The Danish homepage redirects first-time visitors to /ro/ or /en/ based on
+// their browser language (see the inline script in its <head>). Picking a
+// language from the header or the mobile menu is meant to win over that guess
+// for good, so record it here — including a click on DA, which is the only way
+// back to a Danish root that would otherwise keep bouncing the visitor away.
+// Delegated from the document in the capture phase so it fires for both
+// switchers and cannot be swallowed by another handler.
+const LANG_BY_PATH = { '/ro/': 'ro', '/en/': 'en', '/': 'da' };
+
+document.addEventListener('click', e => {
+  const link = e.target.closest?.('a.lang-btn');
+  if (!link) return;
+  const choice = LANG_BY_PATH[new URL(link.href, location.href).pathname];
+  if (!choice) return;
+  try {
+    localStorage.setItem('djradu_lang', choice);
+  } catch (err) {
+    // Private mode or storage disabled: the visitor still navigates normally,
+    // they just get the language guess again next time they land on the root.
+  }
+}, true);
