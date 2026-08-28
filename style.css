@@ -27,6 +27,7 @@ nav a:hover{color:var(--blue);}
 .lang-btn{padding:8px 12px;border:1.5px solid var(--border);background:transparent;color:#fff;border-radius:999px;font-size:.78rem;font-weight:700;cursor:pointer;transition:.3s;min-width:48px;min-height:40px;}
 .lang-btn:hover{border-color:var(--blue);box-shadow:0 0 10px rgba(0,217,255,.3);}
 .lang-btn.active{background:linear-gradient(90deg,var(--blue),var(--blue-dark));border-color:var(--blue);box-shadow:var(--glow);}
+.lang-btn .flag{margin-right:.32em;font-style:normal;}
 .menu-toggle{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--border);background:transparent;color:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;}
 .menu-toggle span{display:block;width:20px;height:2px;background:#fff;transition:.3s;}
 .menu-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
