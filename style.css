@@ -83,6 +83,7 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .testimonial{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);padding:28px;border-radius:16px;box-shadow:var(--shadow);min-height:150px;}
 .testimonial-text{color:var(--gray);line-height:1.7;margin-bottom:12px;font-size:1rem;}
 .testimonial-author{font-weight:700;color:var(--blue);font-size:.9rem;}
+.testimonial-note{display:block;margin-top:5px;font-weight:400;color:var(--gray);font-size:.76rem;}
 
 /* TRUSTPILOT RATING STAT — shown above the review carousel */
 .rating-stat{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:26px;flex-wrap:wrap;}
