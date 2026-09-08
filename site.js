@@ -369,3 +369,28 @@ if (document.getElementById('cookieBanner')) {
   initCookieBanner();
 }
 
+
+
+// LANGUAGE BANNER
+// Kun et link. En automatisk omdirigering stod her før og holdt den
+// engelske forside ude af Googles indeks, fordi forsiden så blev
+// gengivet som den engelske side — derfor aldrig location.replace her.
+(function langBanner(){
+  const banner = document.getElementById("langBanner");
+  if (!banner) return;
+  try { if (localStorage.getItem("djradu_langbanner")) return; } catch (e) { return; }
+  const browser = String((navigator.languages && navigator.languages[0]) || navigator.language || "")
+    .toLowerCase().split("-")[0];
+  if (!browser || browser === document.documentElement.lang) return;
+  const link = banner.querySelector('a[data-lang="' + browser + '"]');
+  if (!link) return;
+  link.hidden = false;
+  banner.hidden = false;
+  document.documentElement.style.setProperty("--lang-banner-h", banner.offsetHeight + "px");
+  document.body.classList.add("has-lang-banner");
+  banner.querySelector(".lang-banner-close").addEventListener("click", () => {
+    banner.hidden = true;
+    document.body.classList.remove("has-lang-banner");
+    try { localStorage.setItem("djradu_langbanner", "1"); } catch (e) {}
+  });
+})();
