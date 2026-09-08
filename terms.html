@@ -4,11 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ Radu - Termeni și Condiții</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+  <link href="/style.css" rel="stylesheet"/>
   <style>
     :root{--bg:#050505;--card:#111111;--card-2:#171717;--text:#ffffff;--muted:#c9c9c9;--blue:#00d9ff;--blue-dark:#0099ff;--border:rgba(0,217,255,.15);}
     *{box-sizing:border-box;}
     body{margin:0;font-family:'Montserrat',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
-    .wrap{max-width:900px;margin:0 auto;padding:40px 20px 80px;}
+    .wrap{max-width:900px;margin:0 auto;padding:120px 20px 80px;}
     .topbar{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:32px;flex-wrap:wrap;}
     h1{margin:0;font-size:2rem;color:var(--blue);}
     .back{color:var(--blue);text-decoration:none;font-size:.95rem;}
@@ -27,10 +32,43 @@
   </style>
 </head>
 <body>
+<nav>
+<a aria-label="DJ Radu" class="logo" href="#">
+<img alt="DJ Radu" class="logo-img" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
+</a>
+<div class="nav-right">
+<ul>
+<li><a href="/ro/#servicii">Servicii</a></li>
+<li><a href="/ro/#despre">Despre</a></li>
+<li><a href="/ro/evenimente/">Evenimente</a></li>
+<li><a href="/ro/repertoriu/">Repertoriu</a></li>
+<li><a href="/ro/galerie/">Galerie</a></li>
+<li><a href="/ro/intrebari-frecvente/">Întrebări</a></li>
+<li><a href="/ro/#testimoniale">Recenzii</a></li>
+<li><a href="/ro/#contact">Contact</a></li>
+<li><a href="/ro/#booking">Rezervare</a></li>
+</ul>
+</div>
+<button aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul>
+<li><a href="/ro/#servicii">Servicii</a></li>
+<li><a href="/ro/#despre">Despre</a></li>
+<li><a href="/ro/evenimente/">Evenimente</a></li>
+<li><a href="/ro/repertoriu/">Repertoriu</a></li>
+<li><a href="/ro/galerie/">Galerie</a></li>
+<li><a href="/ro/intrebari-frecvente/">Întrebări</a></li>
+<li><a href="/ro/#testimoniale">Recenzii</a></li>
+<li><a href="/ro/#contact">Contact</a></li>
+<li><a href="/ro/#booking">Rezervare</a></li>
+</ul>
+</div>
   <div class="wrap">
     <div class="topbar">
       <div>
-        <a href="/" class="back">← djradu.com</a>
         <h1 style="margin-top:8px;" data-i18n-title>Termeni &amp; Condiții</h1>
       </div>
       <div class="lang-switch">
@@ -76,7 +114,18 @@
     </div>
   </div>
 
-  <footer>© 2026 DJ Radu • Juelsminde, Danemarca • CVR: 46538560</footer>
+  <footer>
+<img alt="DJ Radu" class="footer-logo" loading="lazy" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
+<div class="footer-info">
+<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, Danemarca<br/>
+<a href="mailto:booking@djradu.com">booking@djradu.com</a>  •  +45 52 71 21 02
+  </div>
+<div class="footer-copy">© 2026 DJ Radu. Toate drepturile rezervate.</div>
+<div class="footer-legal">
+<a href="/terms.html">Termeni și condiții</a>
+<a href="/privacy.html">Politica de confidențialitate</a>
+</div>
+</footer>
 
   <script>
     const titles = {ro:"Termeni & Condiții", en:"Terms & Conditions", da:"Vilkår & betingelser"};
@@ -98,5 +147,6 @@
     }
     setLang(detectLanguage());
   </script>
+<script defer="" src="/site.js"></script>
 </body>
 </html>
