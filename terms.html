@@ -117,7 +117,7 @@
   <footer>
 <img alt="DJ Radu" class="footer-logo" loading="lazy" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
 <div class="footer-info">
-<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, Danemarca<br/>
+<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, <span data-i18n-country="">Danemarca</span><br/>
 <a href="mailto:booking@djradu.com">booking@djradu.com</a>  •  +45 52 71 21 02
   </div>
 <div class="footer-copy">© 2026 DJ Radu. Toate drepturile rezervate.</div>
@@ -129,6 +129,28 @@
 
   <script>
     const titles = {ro:"Termeni & Condiții", en:"Terms & Conditions", da:"Vilkår & betingelser"};
+    
+    // Meniul si subsolul au fost copiate din pagina romaneasca; aici urmeaza
+    // comutatorul de limba al paginii, ca sa nu ramana romanesti sub un text danez.
+    const CHROME = {
+  da: {menu:[["Ydelser","/#ydelser"],["Om mig","/#om-mig"],["Arrangementer","/da/arrangementer/"],["Repertoire","/da/repertoire/"],["Galleri","/da/galleri/"],["FAQ","/da/faq/"],["Anmeldelser","/#anmeldelser"],["Kontakt","/#kontakt"],["Book nu","/#booking"]],country:"Danmark",copy:"© 2026 DJ Radu. Alle rettigheder forbeholdes.",terms:"Vilkår og betingelser",privacy:"Privatlivspolitik"},
+  en: {menu:[["Services","/en/#services"],["About","/en/#about"],["Events","/en/events/"],["Music","/en/music/"],["Gallery","/en/gallery/"],["FAQ","/en/faq/"],["Reviews","/en/#reviews"],["Contact","/en/#contact"],["Book Now","/en/#booking"]],country:"Denmark",copy:"© 2026 DJ Radu. All rights reserved.",terms:"Terms & Conditions",privacy:"Privacy Policy"},
+  ro: {menu:[["Servicii","/ro/#servicii"],["Despre","/ro/#despre"],["Evenimente","/ro/evenimente/"],["Repertoriu","/ro/repertoriu/"],["Galerie","/ro/galerie/"],["Întrebări","/ro/intrebari-frecvente/"],["Recenzii","/ro/#testimoniale"],["Contact","/ro/#contact"],["Rezervare","/ro/#booking"]],country:"Danemarca",copy:"© 2026 DJ Radu. Toate drepturile rezervate.",terms:"Termeni și condiții",privacy:"Politica de confidențialitate"}
+    };
+    function applyChrome(lang) {
+      const c = CHROME[lang];
+      if (!c) return;
+      document.querySelectorAll('.nav-right ul, .mobile-menu ul').forEach(ul => {
+        ul.innerHTML = c.menu.map(i => '<li><a href="' + i[1] + '">' + i[0] + '</a></li>').join('');
+      });
+      const country = document.querySelector('[data-i18n-country]');
+      if (country) country.textContent = c.country;
+      const copy = document.querySelector('.footer-copy');
+      if (copy) copy.textContent = c.copy;
+      const legal = document.querySelectorAll('.footer-legal a');
+      if (legal.length === 2) { legal[0].textContent = c.terms; legal[1].textContent = c.privacy; }
+    }
+
     function setLang(lang, btn) {
       document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
@@ -138,6 +160,7 @@
       document.documentElement.lang = lang;
       document.querySelector('[data-i18n-title]').textContent = titles[lang];
       document.title = "DJ Radu - " + titles[lang];
+      applyChrome(lang);
     }
     function detectLanguage() {
       const browserLang = (navigator.language || "ro").toLowerCase();
