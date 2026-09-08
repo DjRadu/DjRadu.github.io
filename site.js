@@ -339,6 +339,8 @@ function loadSocialEmbeds(){
 function setCookieConsent(status){
   localStorage.setItem('djradu_cookie_consent', status);
   document.getElementById('cookieBanner').classList.remove('show');
+  // Sprogbjaelken har ventet pa dette valg; to bjaelker pa en gang er for meget.
+  if (typeof showLangBanner === 'function') showLangBanner();
   if (status === 'accepted') {
     loadAnalytics();
     loadSocialEmbeds();
@@ -375,9 +377,9 @@ if (document.getElementById('cookieBanner')) {
 // Kun et link. En automatisk omdirigering stod her før og holdt den
 // engelske forside ude af Googles indeks, fordi forsiden så blev
 // gengivet som den engelske side — derfor aldrig location.replace her.
-(function langBanner(){
+function showLangBanner(){
   const banner = document.getElementById("langBanner");
-  if (!banner) return;
+  if (!banner || !banner.hidden) return;
   try { if (localStorage.getItem("djradu_langbanner")) return; } catch (e) { return; }
   const browser = String((navigator.languages && navigator.languages[0]) || navigator.language || "")
     .toLowerCase().split("-")[0];
@@ -393,4 +395,13 @@ if (document.getElementById('cookieBanner')) {
     document.body.classList.remove("has-lang-banner");
     try { localStorage.setItem("djradu_langbanner", "1"); } catch (e) {}
   });
+}
+
+(function initLangBanner(){
+  if (!document.getElementById("langBanner")) return;
+  let consent = null;
+  try { consent = localStorage.getItem("djradu_cookie_consent"); } catch (e) {}
+  // Er cookie-valget allerede truffet — eller findes bjaelken slet ikke —
+  // er der intet at vente pa. Ellers kalder setCookieConsent os bagefter.
+  if (consent || !document.getElementById("cookieBanner")) showLangBanner();
 })();
