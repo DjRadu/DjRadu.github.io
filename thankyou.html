@@ -6,10 +6,12 @@
 <meta name="robots" content="noindex,follow">
 <title>DJ Radu — Rezervare trimisă!</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link href="/style.css" rel="stylesheet">
 <style>
 :root{--bg:#050505;--blue:#00d9ff;--blue-dark:#0099ff;--border:rgba(0,217,255,.15);--glow:0 0 30px rgba(0,217,255,.3);}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:#fff;font-family:'Montserrat',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+body{background:var(--bg);color:#fff;font-family:'Montserrat',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 20px 40px;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 30% 40%,rgba(0,217,255,.06) 0%,transparent 50%),radial-gradient(circle at 70% 70%,rgba(0,153,255,.06) 0%,transparent 50%);pointer-events:none;}
 
 .popup{
@@ -107,7 +109,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .countdown span{color:var(--blue);font-weight:700;}
 
 @media(max-width:600px){
-  body{padding:14px;align-items:flex-start;}
+  body{padding:96px 14px 30px;align-items:flex-start;}
   .popup{padding:28px 20px;border-radius:22px;margin:10px 0 30px;}
   .checkmark{width:60px;height:60px;margin-bottom:18px;}
   .checkmark svg{width:30px;height:30px;}
@@ -121,6 +123,40 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 </style>
 </head>
 <body>
+<nav>
+<a aria-label="DJ Radu" class="logo" href="#">
+<img alt="DJ Radu" class="logo-img" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
+</a>
+<div class="nav-right">
+<ul>
+<li><a href="/ro/#servicii">Servicii</a></li>
+<li><a href="/ro/#despre">Despre</a></li>
+<li><a href="/ro/evenimente/">Evenimente</a></li>
+<li><a href="/ro/repertoriu/">Repertoriu</a></li>
+<li><a href="/ro/galerie/">Galerie</a></li>
+<li><a href="/ro/intrebari-frecvente/">Întrebări</a></li>
+<li><a href="/ro/#testimoniale">Recenzii</a></li>
+<li><a href="/ro/#contact">Contact</a></li>
+<li><a href="/ro/#booking">Rezervare</a></li>
+</ul>
+</div>
+<button aria-expanded="false" aria-label="Open menu" class="menu-toggle" id="menuToggle" type="button">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<ul>
+<li><a href="/ro/#servicii">Servicii</a></li>
+<li><a href="/ro/#despre">Despre</a></li>
+<li><a href="/ro/evenimente/">Evenimente</a></li>
+<li><a href="/ro/repertoriu/">Repertoriu</a></li>
+<li><a href="/ro/galerie/">Galerie</a></li>
+<li><a href="/ro/intrebari-frecvente/">Întrebări</a></li>
+<li><a href="/ro/#testimoniale">Recenzii</a></li>
+<li><a href="/ro/#contact">Contact</a></li>
+<li><a href="/ro/#booking">Rezervare</a></li>
+</ul>
+</div>
 
 <div class="popup">
   <div class="checkmark">
@@ -214,5 +250,18 @@ const interval = setInterval(() => {
 }, 1000);
 </script>
 
+<footer>
+<img alt="DJ Radu" class="footer-logo" loading="lazy" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
+<div class="footer-info">
+<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, Danemarca<br/>
+<a href="mailto:booking@djradu.com">booking@djradu.com</a>  •  +45 52 71 21 02
+  </div>
+<div class="footer-copy">© 2026 DJ Radu. Toate drepturile rezervate.</div>
+<div class="footer-legal">
+<a href="/terms.html">Termeni și condiții</a>
+<a href="/privacy.html">Politica de confidențialitate</a>
+</div>
+</footer>
+<script defer="" src="/site.js"></script>
 </body>
 </html>
