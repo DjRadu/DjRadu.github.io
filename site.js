@@ -146,9 +146,11 @@ function unlockBodyScroll(){
 
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
-function closeMenu() { mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); unlockBodyScroll(); }
-function openMenu() { mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); lockBodyScroll(); }
-menuToggle.addEventListener("click", () => { if (mobileMenu.classList.contains("active")) closeMenu(); else openMenu(); });
+function closeMenu() { if (!menuToggle || !mobileMenu) return; mobileMenu.classList.remove("active"); menuToggle.classList.remove("active"); menuToggle.setAttribute("aria-expanded","false"); unlockBodyScroll(); }
+function openMenu() { if (!menuToggle || !mobileMenu) return; mobileMenu.classList.add("active"); menuToggle.classList.add("active"); menuToggle.setAttribute("aria-expanded","true"); lockBodyScroll(); }
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => { if (mobileMenu.classList.contains("active")) closeMenu(); else openMenu(); });
+}
 document.querySelectorAll('.mobile-menu a, nav a[href^="#"]').forEach(link => { link.addEventListener("click", () => closeMenu()); });
 
 const lightbox = document.getElementById("lightbox");
@@ -161,6 +163,7 @@ const galleryItems = Array.from(document.querySelectorAll(".gallery-item"));
 let galleryIndex = -1;
 
 function closeLightbox() {
+  if (!lightbox) return;
   lightbox.classList.remove("active");
   lightbox.setAttribute("aria-hidden","true");
   lightboxContent.innerHTML = "";
@@ -207,13 +210,16 @@ document.querySelectorAll(".video-card").forEach(card => {
   card.addEventListener("click", go);
   card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
 });
-lbPrev.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex - 1); });
-lbNext.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex + 1); });
-lightboxClose.addEventListener("click", closeLightbox);
-lightbox.addEventListener("click", e => { if (e.target === lightbox || e.target === lightbox.firstElementChild) closeLightbox(); });
+// Sider uden galleri (fx privatlivspolitik) har ingen lightbox i DOM'en.
+if (lightbox && lightboxClose && lbPrev && lbNext) {
+  lbPrev.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex - 1); });
+  lbNext.addEventListener("click", e => { e.stopPropagation(); showGalleryImage(galleryIndex + 1); });
+  lightboxClose.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", e => { if (e.target === lightbox || e.target === lightbox.firstElementChild) closeLightbox(); });
+}
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") { closeLightbox(); closeMenu(); }
-  if (lightbox.classList.contains("active") && galleryIndex >= 0) {
+  if (lightbox && lightbox.classList.contains("active") && galleryIndex >= 0) {
     if (e.key === "ArrowLeft") showGalleryImage(galleryIndex - 1);
     if (e.key === "ArrowRight") showGalleryImage(galleryIndex + 1);
   }
@@ -356,8 +362,10 @@ function initCookieBanner(){
   }
 }
 
-document.getElementById('cookieAccept').addEventListener('click', () => setCookieConsent('accepted'));
-document.getElementById('cookieReject').addEventListener('click', () => setCookieConsent('essential'));
-
-initCookieBanner();
+// Banneret findes ikke pa alle sider; uden det springer vi hele blokken over.
+if (document.getElementById('cookieBanner')) {
+  document.getElementById('cookieAccept').addEventListener('click', () => setCookieConsent('accepted'));
+  document.getElementById('cookieReject').addEventListener('click', () => setCookieConsent('essential'));
+  initCookieBanner();
+}
 
