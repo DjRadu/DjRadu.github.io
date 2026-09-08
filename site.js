@@ -361,3 +361,18 @@ document.getElementById('cookieReject').addEventListener('click', () => setCooki
 
 initCookieBanner();
 
+// EVENTS LIST
+// Alle arrangementer ligger i HTML fra start og skjules kun visuelt, så
+// søgemaskiner ser dem alle. Knappen slår den sammenklappede tilstand fra.
+(function eventsToggle(){
+  const btn = document.querySelector(".events-toggle");
+  const grid = btn && document.getElementById(btn.getAttribute("aria-controls"));
+  if (!btn || !grid) return;
+  btn.addEventListener("click", () => {
+    grid.classList.toggle("events--collapsed");
+    const open = !grid.classList.contains("events--collapsed");
+    btn.setAttribute("aria-expanded", String(open));
+    btn.textContent = open ? btn.dataset.less : btn.dataset.more;
+  });
+})();
+
