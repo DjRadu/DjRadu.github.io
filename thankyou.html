@@ -219,7 +219,29 @@ const cdTexts = {
   da: ["Du bliver automatisk omdirigeret om", "sekunder"]
 };
 
-function setLang(lang, btn) {
+
+    // Meniul si subsolul au fost copiate din pagina romaneasca; aici urmeaza
+    // comutatorul de limba al paginii, ca sa nu ramana romanesti sub un text danez.
+    const CHROME = {
+  da: {menu:[["Ydelser","/#ydelser"],["Om mig","/#om-mig"],["Arrangementer","/da/arrangementer/"],["Repertoire","/da/repertoire/"],["Galleri","/da/galleri/"],["FAQ","/da/faq/"],["Anmeldelser","/#anmeldelser"],["Kontakt","/#kontakt"],["Book nu","/#booking"]],country:"Danmark",copy:"© 2026 DJ Radu. Alle rettigheder forbeholdes.",terms:"Vilkår og betingelser",privacy:"Privatlivspolitik"},
+  en: {menu:[["Services","/en/#services"],["About","/en/#about"],["Events","/en/events/"],["Music","/en/music/"],["Gallery","/en/gallery/"],["FAQ","/en/faq/"],["Reviews","/en/#reviews"],["Contact","/en/#contact"],["Book Now","/en/#booking"]],country:"Denmark",copy:"© 2026 DJ Radu. All rights reserved.",terms:"Terms & Conditions",privacy:"Privacy Policy"},
+  ro: {menu:[["Servicii","/ro/#servicii"],["Despre","/ro/#despre"],["Evenimente","/ro/evenimente/"],["Repertoriu","/ro/repertoriu/"],["Galerie","/ro/galerie/"],["Întrebări","/ro/intrebari-frecvente/"],["Recenzii","/ro/#testimoniale"],["Contact","/ro/#contact"],["Rezervare","/ro/#booking"]],country:"Danemarca",copy:"© 2026 DJ Radu. Toate drepturile rezervate.",terms:"Termeni și condiții",privacy:"Politica de confidențialitate"}
+    };
+    function applyChrome(lang) {
+      const c = CHROME[lang];
+      if (!c) return;
+      document.querySelectorAll('.nav-right ul, .mobile-menu ul').forEach(ul => {
+        ul.innerHTML = c.menu.map(i => '<li><a href="' + i[1] + '">' + i[0] + '</a></li>').join('');
+      });
+      const country = document.querySelector('[data-i18n-country]');
+      if (country) country.textContent = c.country;
+      const copy = document.querySelector('.footer-copy');
+      if (copy) copy.textContent = c.copy;
+      const legal = document.querySelectorAll('.footer-legal a');
+      if (legal.length === 2) { legal[0].textContent = c.terms; legal[1].textContent = c.privacy; }
+    }
+
+    function setLang(lang, btn) {
   document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
   document.getElementById(lang).classList.add('active');
@@ -227,7 +249,10 @@ function setLang(lang, btn) {
   document.documentElement.lang = lang;
   document.getElementById('cdText').textContent = cdTexts[lang][0];
   document.getElementById('cdSec').textContent = cdTexts[lang][1];
+  applyChrome(lang);
 }
+
+applyChrome('ro');
 
 // Auto-detect language
 const browserLang = (navigator.language || 'ro').toLowerCase();
@@ -236,6 +261,10 @@ if (browserLang.startsWith('da')) {
 } else if (browserLang.startsWith('en')) {
   setLang('en', document.querySelectorAll('.lang-btn')[1]);
 }
+
+// Sidefoden star efter dette script i dokumentet, sa det forste kald til
+// applyChrome nar den ikke. Vi kalder igen, nar dokumentet er faerdigt.
+document.addEventListener('DOMContentLoaded', () => applyChrome(document.documentElement.lang));
 
 // Countdown redirect
 let seconds = 10;
@@ -253,7 +282,7 @@ const interval = setInterval(() => {
 <footer>
 <img alt="DJ Radu" class="footer-logo" loading="lazy" src="/352170B5-C0E2-4458-852A-49B251B3FFC1.PNG"/>
 <div class="footer-info">
-<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, Danemarca<br/>
+<strong style="color:#aaa;">DJ Radu</strong>  •  CVR: 46538560  •  Juelsminde, <span data-i18n-country="">Danemarca</span><br/>
 <a href="mailto:booking@djradu.com">booking@djradu.com</a>  •  +45 52 71 21 02
   </div>
 <div class="footer-copy">© 2026 DJ Radu. Toate drepturile rezervate.</div>
