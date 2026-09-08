@@ -112,8 +112,9 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 
 /* TRUSTPILOT — fully custom, no official TrustBox script anywhere on this site (it always
    renders its own floating white-bordered box regardless of container, which is what
-   caused the mismatch behind our button). This card + the tp-fab below are plain HTML/CSS
-   we control completely, both linking straight to the Trustpilot profile. */
+   caused the mismatch behind our button). This card and the score link in
+   the reviews section are plain HTML/CSS we control completely, both linking
+   straight to the Trustpilot profile. */
 .trustpilot-wrapper{background:linear-gradient(180deg,var(--card),var(--card-2));border:1.5px solid var(--border);border-radius:16px;padding:16px;margin-top:20px;box-shadow:var(--shadow);}
 .trustpilot-wrapper a{
   color:#ffffff !important;
@@ -124,15 +125,6 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
   color:var(--blue) !important;
   text-decoration:underline !important;
 }
-
-/* STATIC TRUSTPILOT BADGE — our own fixed bottom-left button (bottom-right is WhatsApp).
-   Solid Trustpilot green, no transparent/white layer behind it, so it never mismatches
-   any external widget frame. */
-.tp-fab{position:fixed;left:20px;bottom:20px;z-index:1999;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:#00b67a;border:1.5px solid #00b67a;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;box-shadow:0 10px 34px rgba(0,182,122,.45);transition:.3s;}
-.tp-fab:hover{background:#00cf8c;box-shadow:0 12px 40px rgba(0,182,122,.6);transform:translateY(-3px);}
-.tp-fab .tp-star{font-size:1.05rem;line-height:1;}
-.tp-fab .tp-rating{opacity:.85;font-weight:600;}
-@media(max-width:600px){.tp-fab{left:16px;bottom:16px;padding:12px 16px;font-size:.85rem;}}
 
 /* VIDEO GRID */
 .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;}
@@ -244,3 +236,19 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .cookie-btn-reject{background:transparent;color:#fff;}
 .cookie-btn-reject:hover{border-color:var(--blue);}
 @media(max-width:768px){.cookie-inner{flex-direction:column;align-items:stretch;text-align:center;}.cookie-actions{justify-content:center;}}
+
+/* Trustpilot: scor si link in continut, in locul badge-ului plutitor */
+.tp-inline{display:flex;width:fit-content;align-items:center;gap:8px;margin:0 auto 22px;padding:9px 16px;border:1.5px solid var(--border);border-radius:999px;background:rgba(255,255,255,.02);color:var(--gray);text-decoration:none;font-size:.9rem;font-weight:600;transition:.3s;}
+.tp-inline:hover{border-color:#00b67a;color:#fff;}
+.tp-inline-star{color:#00b67a;font-size:1.05rem;line-height:1;}
+
+/* Banner de limba: doar o sugestie cu link, niciodata o redirectionare */
+.lang-banner{position:fixed;top:0;left:0;right:0;z-index:1100;display:flex;align-items:center;justify-content:center;gap:14px;padding:11px 52px 11px 20px;background:rgba(0,18,34,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);font-size:.9rem;text-align:center;}
+.lang-banner[hidden],.lang-banner a[hidden]{display:none;}
+.lang-banner a{color:var(--blue);text-decoration:none;font-weight:600;}
+.lang-banner a:hover{text-decoration:underline;}
+.lang-banner-close{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:none;background:transparent;color:var(--gray);font-size:1rem;cursor:pointer;border-radius:50%;line-height:1;}
+.lang-banner-close:hover{color:#fff;}
+.lang-banner-close:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+body.has-lang-banner nav{top:var(--lang-banner-h,0px);}
+body.has-lang-banner .mobile-menu{top:calc(76px + var(--lang-banner-h,0px));}

@@ -181,6 +181,11 @@
 <link href="/style.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="lang-banner" hidden id="langBanner">
+<a data-lang="da" hidden href="/">Denne side findes også på dansk</a>
+<a data-lang="en" hidden href="/en/">This site is also available in English</a>
+<button aria-label="Închide" class="lang-banner-close" type="button">✕</button>
+</div>
 <a class="skip-link" href="#despre">Skip to content</a>
 <nav>
 <a aria-label="DJ Radu" class="logo" href="#">
@@ -220,9 +225,6 @@
 </div>
 <a aria-label="WhatsApp" class="wa-fab" href="https://wa.me/4552712102" rel="noopener noreferrer" target="_blank">
 <i aria-hidden="true" class="fab fa-whatsapp"></i><span class="wa-text">Scrie-mi</span>
-</a>
-<a aria-label="Trustpilot" class="tp-fab" href="https://dk.trustpilot.com/review/djradu.com" rel="noopener noreferrer" target="_blank">
-<span class="tp-star">★</span><span>Trustpilot</span><span class="tp-rating">4.3</span>
 </a>
 <section class="hero" id="home">
 <canvas aria-hidden="true" id="heroParticles"></canvas>
@@ -274,6 +276,7 @@
 </section>
 <section class="reveal" id="testimoniale">
 <h2 class="section-title">Recenzii &amp; Mărturii</h2>
+<a aria-label="Vezi DJ Radu pe Trustpilot" class="tp-inline" href="https://dk.trustpilot.com/review/djradu.com" rel="noopener noreferrer" target="_blank"><span aria-hidden="true" class="tp-inline-star">★</span>4,3 — 9 recenzii pe Trustpilot</a>
 <!-- ACORDION 1: RECENZII CLIENT -->
 <div class="accordion-section">
 <div class="accordion-header" onclick="toggleAccordion(this)" role="button" tabindex="0">📝 Recenziile clienților<i class="fas fa-chevron-down"></i></div>
