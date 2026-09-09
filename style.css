@@ -242,13 +242,14 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .tp-inline:hover{border-color:#00b67a;color:#fff;}
 .tp-inline-star{color:#00b67a;font-size:1.05rem;line-height:1;}
 
-/* Banner de limba: doar o sugestie cu link, niciodata o redirectionare */
-.lang-banner{position:fixed;top:0;left:0;right:0;z-index:1100;display:flex;align-items:center;justify-content:center;gap:14px;padding:11px 52px 11px 20px;background:rgba(0,18,34,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);font-size:.9rem;text-align:center;}
-.lang-banner[hidden],.lang-banner a[hidden]{display:none;}
-.lang-banner a{color:var(--blue);text-decoration:none;font-weight:600;}
-.lang-banner a:hover{text-decoration:underline;}
-.lang-banner-close{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:36px;height:36px;border:none;background:transparent;color:var(--gray);font-size:1rem;cursor:pointer;border-radius:50%;line-height:1;}
-.lang-banner-close:hover{color:#fff;}
-.lang-banner-close:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
-body.has-lang-banner nav{top:var(--lang-banner-h,0px);}
-body.has-lang-banner .mobile-menu{top:calc(76px + var(--lang-banner-h,0px));}
+/* Serviciile: primele patru se vad, restul stau in HTML si asteapta butonul */
+.services--collapsed .card:nth-child(n+5){display:none;}
+.services-toggle{display:block;margin:26px auto 0;padding:13px 28px;min-height:48px;border-radius:999px;border:1.5px solid var(--border);background:rgba(255,255,255,.02);color:#fff;font-weight:700;font-size:.95rem;cursor:pointer;transition:.3s;}
+.services-toggle:hover{border-color:var(--blue);box-shadow:0 0 15px rgba(0,217,255,.2);transform:translateY(-2px);}
+.services-toggle:focus-visible{outline:2px solid var(--blue);outline-offset:3px;}
+
+/* Lista tuturor paginilor, sub servicii */
+.pagelist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;max-width:1000px;margin:0 auto;padding:0;}
+.pagelist a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 20px;border:1.5px solid var(--border);border-radius:14px;background:linear-gradient(180deg,var(--card),var(--card-2));color:#fff;text-decoration:none;font-weight:600;font-size:.98rem;transition:.3s;}
+.pagelist a:hover{border-color:var(--blue);color:var(--blue);box-shadow:0 0 15px rgba(0,217,255,.18);transform:translateY(-2px);}
+.pagelist a span{color:var(--blue);}

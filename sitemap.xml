@@ -117,122 +117,212 @@
   </url>
   <url>
     <loc>https://djradu.com/da/arrangementer/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/en/events/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/ro/evenimente/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/da/repertoire/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/repertoire/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/music/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/repertoriu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/repertoire/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/en/music/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/repertoire/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/music/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/repertoriu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/repertoire/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/ro/repertoriu/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/repertoire/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/music/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/repertoriu/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/repertoire/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/da/faq/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/intrebari-frecvente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/faq/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/en/faq/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/intrebari-frecvente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/faq/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/ro/intrebari-frecvente/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/faq/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/faq/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/intrebari-frecvente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/faq/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/da/galleri/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/galleri/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/gallery/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/galerie/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/galleri/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/en/gallery/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/galleri/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/gallery/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/galerie/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/galleri/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://djradu.com/ro/galerie/</loc>
-    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/" />
-    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/" />
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/galleri/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/gallery/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/galerie/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/galleri/" />
     <lastmod>2026-08-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/da/min-historie/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/min-historie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/povestea-mea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/min-historie/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/min-historie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/povestea-mea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/min-historie/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/povestea-mea/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/min-historie/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/about/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/povestea-mea/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/min-historie/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/da/anmeldelser/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/anmeldelser/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/reviews/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/recenzii/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/anmeldelser/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/reviews/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/anmeldelser/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/reviews/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/recenzii/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/anmeldelser/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/recenzii/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/anmeldelser/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/reviews/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/recenzii/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/anmeldelser/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/da/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/kontakt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/kontakt/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/kontakt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/kontakt/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/kontakt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/contact/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/contact/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/kontakt/" />
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
