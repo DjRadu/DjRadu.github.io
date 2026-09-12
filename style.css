@@ -253,3 +253,11 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 .pagelist a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 20px;border:1.5px solid var(--border);border-radius:14px;background:linear-gradient(180deg,var(--card),var(--card-2));color:#fff;text-decoration:none;font-weight:600;font-size:.98rem;transition:.3s;}
 .pagelist a:hover{border-color:var(--blue);color:var(--blue);box-shadow:0 0 15px rgba(0,217,255,.18);transform:translateY(-2px);}
 .pagelist a span{color:var(--blue);}
+
+/* Trustpilot in hero: inaltimea e rezervata dinainte, ca widgetul sa nu
+   impinga pagina cand se incarca. Pana atunci se vede linkul din markup,
+   care e un link adevarat — nimic ascuns, nimic nefunctional. */
+.hero-trustpilot{margin-top:24px;min-height:28px;display:flex;align-items:center;justify-content:center;}
+.hero-trustpilot .trustpilot-widget{width:100%;max-width:300px;}
+.hero-trustpilot a{color:var(--gray);font-size:.9rem;font-weight:600;text-decoration:none;}
+.hero-trustpilot a:hover{color:#00b67a;}
