@@ -316,22 +316,19 @@ function loadAnalytics(){
 }
 
 function loadSocialEmbeds(){
-  // Instagram embed script
-  if (!document.getElementById('ig-embed-script')) {
-    const ig = document.createElement('script');
-    ig.id = 'ig-embed-script';
-    ig.async = true;
-    ig.src = 'https://www.instagram.com/embed.js';
-    document.body.appendChild(ig);
+  // Hver indleajningsscript hentes kun pa de sider, der faktisk har noget at
+  // vise. Forsiden havde begge, ogsa efter at galleriet flyttede ud herfra.
+  function embedScript(id, src, selector){
+    if (document.getElementById(id)) return;
+    if (!document.querySelector(selector)) return;
+    const s = document.createElement('script');
+    s.id = id;
+    s.async = true;
+    s.src = src;
+    document.body.appendChild(s);
   }
-  // TikTok embed script
-  if (!document.getElementById('tiktok-embed-script')) {
-    const tt = document.createElement('script');
-    tt.id = 'tiktok-embed-script';
-    tt.async = true;
-    tt.src = 'https://www.tiktok.com/embed.js';
-    document.body.appendChild(tt);
-  }
+  embedScript('ig-embed-script', 'https://www.instagram.com/embed.js', 'blockquote.instagram-media');
+  embedScript('tiktok-embed-script', 'https://www.tiktok.com/embed.js', 'blockquote.tiktok-embed');
   // Facebook + Instagram iframes: activate real src from data-src (they are blocked by default in the HTML)
   document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
 }
