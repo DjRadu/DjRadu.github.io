@@ -302,8 +302,6 @@ if (scrollIndicator) {
 
 // ===== COOKIE CONSENT MANAGEMENT =====
 function loadAnalytics(){
-  // Google Tag Manager
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PKH9JPMD');
   // Google tag (gtag.js)
   const gtagScript = document.createElement('script');
   gtagScript.async = true;
@@ -329,6 +327,21 @@ function loadSocialEmbeds(){
   }
   embedScript('ig-embed-script', 'https://www.instagram.com/embed.js', 'blockquote.instagram-media');
   embedScript('tiktok-embed-script', 'https://www.tiktok.com/embed.js', 'blockquote.tiktok-embed');
+
+  // Trustpilot: bootstrap-scriptet skanner selv siden, nar det indlaeses,
+  // men vi henter det forst efter samtykke, sa vi beder det udtrykkeligt.
+  if (document.querySelector('.trustpilot-widget') && !document.getElementById('tp-bootstrap')) {
+    const tp = document.createElement('script');
+    tp.id = 'tp-bootstrap';
+    tp.async = true;
+    tp.src = 'https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js';
+    tp.onload = () => {
+      if (!window.Trustpilot) return;
+      document.querySelectorAll('.trustpilot-widget')
+        .forEach(el => window.Trustpilot.loadFromElement(el, true));
+    };
+    document.body.appendChild(tp);
+  }
   // Facebook + Instagram iframes: activate real src from data-src (they are blocked by default in the HTML)
   document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
 }
