@@ -185,7 +185,17 @@ section::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;bac
 .social-links{display:flex;flex-wrap:wrap;gap:14px;}
 .social-links a i{font-size:1.2rem;}
 footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--border);background:linear-gradient(180deg,transparent,rgba(0,217,255,.03));}
-.footer-logo{width:200px;margin:0 auto 16px;opacity:.9;filter:drop-shadow(0 0 12px rgba(0,217,255,.35));}
+.footer-cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;max-width:1000px;margin:0 auto 22px;text-align:left;}
+.footer-brand{display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
+.footer-reach{display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+.footer-logo{width:180px;margin:0;opacity:.9;filter:drop-shadow(0 0 12px rgba(0,217,255,.35));}
+/* Discrete: patrate mici si gri, care se aprind doar la hover — subsolul
+   ramane despre datele de contact, nu despre retelele sociale. */
+.footer-social{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end;}
+.footer-social a{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:10px;color:#888;text-decoration:none;transition:.3s;}
+.footer-social a:hover{color:var(--blue);border-color:var(--blue);box-shadow:0 0 12px rgba(0,217,255,.18);}
+.footer-social a i{font-size:1rem;}
+@media(max-width:768px){.footer-cols{grid-template-columns:1fr;gap:18px;text-align:center;}.footer-brand,.footer-reach{align-items:center;}.footer-logo{margin:0 auto;}.footer-social{justify-content:center;}}
 .footer-info{color:#888;font-size:.85rem;line-height:1.9;}
 .footer-info a{color:#888;text-decoration:none;}
 .footer-info a:hover{color:var(--blue);}
