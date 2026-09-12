@@ -257,7 +257,13 @@ footer{padding:48px 20px 36px;text-align:center;border-top:1px solid var(--borde
 /* Trustpilot in hero: inaltimea e rezervata dinainte, ca widgetul sa nu
    impinga pagina cand se incarca. Pana atunci se vede linkul din markup,
    care e un link adevarat — nimic ascuns, nimic nefunctional. */
-.hero-trustpilot{margin-top:38px;min-height:28px;display:flex;align-items:center;justify-content:center;}
-.hero-trustpilot .trustpilot-widget{width:100%;max-width:300px;}
-.hero-trustpilot a{color:var(--gray);font-size:.9rem;font-weight:600;text-decoration:none;}
+/* Pastila deschisa nu e o alegere de gust: sablonul deseneaza sigla Trustpilot
+   in negru indiferent de data-theme="dark", iar pe fundalul nostru devenea
+   ilizibila. Pe deschis e si varianta ceruta de ghidul lor de brand.
+   inline-flex + margin auto: se stramteaza pe cat ii trebuie si sta centrata. */
+.hero-trustpilot{margin:38px auto 0;padding:8px 18px;min-height:28px;display:inline-flex;
+  align-items:center;justify-content:center;background:#fff;border-radius:999px;
+  box-shadow:0 4px 18px rgba(0,0,0,.35);}
+.hero-trustpilot .trustpilot-widget{width:200px;margin:0 auto;}
+.hero-trustpilot a{color:#191919;font-size:.9rem;font-weight:700;text-decoration:none;}
 .hero-trustpilot a:hover{color:#00b67a;}
