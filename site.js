@@ -68,6 +68,7 @@ document.querySelectorAll(".accordion-header").forEach(header => {
 
 (function testimonialCarousel(){
   const carousel = document.querySelector(".testimonial-carousel");
+  const viewport = document.querySelector(".testimonial-viewport");
   const track = document.querySelector(".testimonial-track");
   const dotsWrap = document.querySelector(".carousel-dots");
   const prevBtn = document.querySelector(".carousel-prev");
@@ -90,10 +91,18 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   });
   const dots = Array.from(dotsWrap.children);
 
+  // Anmeldelserne er meget forskellige i laengde. Sporet er en flex-raekke,
+  // sa uden det her bliver ruden lige sa hoj som den laengste anmeldelse, og
+  // der star et stort tomt felt under de korte kort.
+  function fitViewport(){
+    if (viewport) viewport.style.height = slides[index].offsetHeight + "px";
+  }
+
   function goTo(i){
     index = (i + slides.length) % slides.length;
     track.style.transform = "translateX(-" + (index * 100) + "%)";
     dots.forEach((d, di) => d.classList.toggle("active", di === index));
+    fitViewport();
   }
   function next(){ goTo(index + 1); }
   function prev(){ goTo(index - 1); }
@@ -113,6 +122,11 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   carousel.addEventListener("focusout", startAutoplay);
 
   goTo(0);
+  // Hojden afhaenger af, hvor mange linjer teksten fylder, sa den skal
+  // regnes om, nar bredden aendrer sig — og igen nar skrifttypen er hentet,
+  // fordi linjerne brydes anderledes med den end med reservetypen.
+  window.addEventListener("resize", fitViewport, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitViewport);
   startAutoplay();
 })();
 
