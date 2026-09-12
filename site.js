@@ -311,6 +311,9 @@ function loadAnalytics(){
   window.gtag = function(){ dataLayer.push(arguments); };
   gtag('js', new Date());
   gtag('config', 'G-E1P3WG6YHH');
+  // Google Ads: samme gtag.js-bibliotek som ovenfor, bare en destination
+  // mere. Et helt nyt snippet ville hente biblioteket to gange.
+  gtag('config', 'AW-18237660109');
 }
 
 function loadSocialEmbeds(){
