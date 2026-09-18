@@ -66,13 +66,17 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   });
 });
 
-(function testimonialCarousel(){
-  const carousel = document.querySelector(".testimonial-carousel");
-  const viewport = document.querySelector(".testimonial-viewport");
-  const track = document.querySelector(".testimonial-track");
-  const dotsWrap = document.querySelector(".carousel-dots");
-  const prevBtn = document.querySelector(".carousel-prev");
-  const nextBtn = document.querySelector(".carousel-next");
+// Trustpilot- og Google-anmeldelserne korer nu i to uafhaengige karruseller
+// (to .testimonial-widget i samme accordion), sa de ikke skifter i takt.
+// Google-widgetten faar en engangsforsinkelse via data-start-delay, sa de to
+// altid skifter forskudt fra hinanden i stedet for samtidig.
+document.querySelectorAll(".testimonial-widget").forEach(function(widget){
+  const carousel = widget.querySelector(".testimonial-carousel");
+  const viewport = widget.querySelector(".testimonial-viewport");
+  const track = widget.querySelector(".testimonial-track");
+  const dotsWrap = widget.querySelector(".carousel-dots");
+  const prevBtn = widget.querySelector(".carousel-prev");
+  const nextBtn = widget.querySelector(".carousel-next");
   if (!carousel || !track || !dotsWrap || !prevBtn || !nextBtn) return;
 
   const slides = Array.from(track.children);
@@ -80,6 +84,9 @@ document.querySelectorAll(".accordion-header").forEach(header => {
 
   let index = 0;
   let timer = null;
+  let delayTimer = null;
+  const intervalMs = parseInt(widget.dataset.interval, 10) || 10000;
+  const startDelay = parseInt(widget.dataset.startDelay, 10) || 0;
 
   slides.forEach((_, i) => {
     const dot = document.createElement("button");
@@ -106,20 +113,23 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   }
   function next(){ goTo(index + 1); }
   function prev(){ goTo(index - 1); }
-  function stopAutoplay(){ if (timer) { clearInterval(timer); timer = null; } }
-  function startAutoplay(){
+  function stopAutoplay(){
+    if (timer) { clearInterval(timer); timer = null; }
+    if (delayTimer) { clearTimeout(delayTimer); delayTimer = null; }
+  }
+  function startAutoplay(useStartDelay){
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     stopAutoplay();
-    timer = setInterval(next, 6000);
+    delayTimer = setTimeout(() => { timer = setInterval(next, intervalMs); }, useStartDelay ? startDelay : 0);
   }
-  function restartAutoplay(){ stopAutoplay(); startAutoplay(); }
+  function restartAutoplay(){ stopAutoplay(); startAutoplay(false); }
 
   nextBtn.addEventListener("click", () => { next(); restartAutoplay(); });
   prevBtn.addEventListener("click", () => { prev(); restartAutoplay(); });
   carousel.addEventListener("mouseenter", stopAutoplay);
-  carousel.addEventListener("mouseleave", startAutoplay);
+  carousel.addEventListener("mouseleave", restartAutoplay);
   carousel.addEventListener("focusin", stopAutoplay);
-  carousel.addEventListener("focusout", startAutoplay);
+  carousel.addEventListener("focusout", restartAutoplay);
 
   goTo(0);
   // Hojden afhaenger af, hvor mange linjer teksten fylder, sa den skal
@@ -127,8 +137,8 @@ document.querySelectorAll(".accordion-header").forEach(header => {
   // fordi linjerne brydes anderledes med den end med reservetypen.
   window.addEventListener("resize", fitViewport, { passive: true });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitViewport);
-  startAutoplay();
-})();
+  startAutoplay(true);
+});
 
 const reveals = document.querySelectorAll(".reveal");
 function revealElements() {
