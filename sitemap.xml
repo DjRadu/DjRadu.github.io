@@ -206,6 +206,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://djradu.com/da/arrangementer/latino-party-vejle/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/events/latino-party-vejle/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/evenimente/latino-party-vejle/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/latino-party-vejle/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/latino-party-vejle/" />
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://djradu.com/da/repertoire/</loc>
     <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/repertoire/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/music/" />
