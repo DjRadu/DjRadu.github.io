@@ -36,8 +36,9 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-47 pagini HTML: 3 homepage-uri, 33 subpagini, 8 stub-uri de redirect,
-plus `privacy.html`, `terms.html`, `thankyou.html`.
+56 de pagini HTML: 3 homepage-uri, 42 de subpagini (dintre care 9 sunt
+pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
+`privacy.html`, `terms.html`, `thankyou.html`.
 
 Paginile comune există în toate trei limbile, cu slug tradus:
 
@@ -79,7 +80,8 @@ Toate imaginile stau în **rădăcina repo-ului**, referite absolut (`/IMG_2980.
 Nu există folder de assets. Extensiile sunt inconsecvente (`.jpg`, `.JPG`,
 `.PNG`) — folosește exact numele din disc.
 
-Legătura cu evenimentele: fiecare card din paginile de evenimente are deja un
+Legătura cu evenimentele: sunt 12 evenimente pe fiecare din cele trei pagini
+(`/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`). Cele fără poză au un
 `<img>` **comentat**, cu `alt` scris în limba paginii:
 
 ```html
@@ -91,9 +93,42 @@ Legătura cu evenimentele: fiecare card din paginile de evenimente are deja un
 </div>
 ```
 
-Ca să adaugi o poză: pui numele fișierului în `src` și scoți `<!--` și `-->`.
-CSS-ul așază cardurile identic cu sau fără imagine. 11 evenimente pe fiecare
-din cele trei pagini.
+Cu o singură poză: pui numele fișierului în `src` și scoți `<!--` și `-->`.
+CSS-ul așază cardurile identic cu sau fără imagine.
+
+### Pagini de eveniment
+
+Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există trei:
+
+| Eveniment | Slug | Conținut |
+|---|---|---|
+| Petrecere aniversară 40 de ani, Tørring | `torring-40` | 6 poze, 1 video |
+| Petrecere de Dragobete, Point Cafe, Horsens | `dragobete-point-cafe` | 1 poză, afișul |
+| Latino Party, Kalkbrænderiet, Vejle | `latino-party-vejle` | 4 poze, 3 filmulețe, text |
+
+Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
+Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
+filmulețe): copiază-l, nu construi de la zero.
+
+- Fișierele stau în rădăcină, cu numele `<slug>-N.jpg` și
+  `<slug>-video-N.mp4` + `<slug>-video-N.jpg` (poster). Tørring are nume mai
+  vechi (`torring-40-fodselsdag*.jpg`); pentru evenimente noi, folosește schema asta.
+- Pozele: JPG, latura lungă 1600 px (`sips -s format jpeg -s formatOptions 82 -Z 1600`).
+- Filmulețele originale sunt de zeci de MB. Se recodifică la 720p, H.264 + AAC,
+  ținta 2–4 MB: `ffmpeg -i in.MOV -vf scale=1280:-2 -c:v libx264 -crf 28
+  -preset slow -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart out.mp4`.
+  Tag-ul `<video>` are `preload="none"`, `poster` și `aria-label`.
+- Fiecare pagină nouă intră în `sitemap.xml` cu blocul complet de alternative.
+- Textul e la persoana I, scris separat în fiecare limbă, nu tradus.
+
+**O poză stă într-un singur loc.** Fie în galerie, fie la un eveniment, nu în
+amândouă. Proprietarul vrea ca galeria și evenimentele să ajungă la un moment
+dat una și aceeași secțiune: evenimentul își arată pozele și povestea, iar
+vizitatorul înțelege din titlu că are ce vedea acolo. Până atunci, înainte de
+a pune o poză la un eveniment, verifică dacă nu e deja în `galleri/`,
+`galerie/` sau `gallery/`, și scoate-o de acolo (fișierul rămâne pe disc
+dacă îl folosește evenimentul).
 
 ## Convenții
 
@@ -102,7 +137,7 @@ propriul URL. Stub-urile fac excepție: al lor arată spre destinație.
 
 **Hreflang — stă în `sitemap.xml`, nu în HTML.** Doar cele 3 homepage-uri au
 `<link rel="alternate" hreflang>` în `<head>`. Pentru restul, alternativele
-sunt declarate prin `xhtml:link` în sitemap: 24 din cele 38 de URL-uri au
+sunt declarate prin `xhtml:link` în sitemap: 33 din cele 47 de URL-uri au
 alternative, restul de 14 sunt paginile specifice unei limbi și cele legale,
 care corect nu au. Dacă adaugi o pagină care există în toate trei limbile,
 adaug-o în sitemap cu blocul de alternative complet (`da`, `en`, `ro`,
@@ -241,7 +276,7 @@ for f in pathlib.Path('.').rglob('*.html'):
 "
 ```
 
-36 de blocuri, toate trebuie să treacă.
+45 de blocuri, toate trebuie să treacă.
 
 **Mesajele de commit se scriu în engleză**, explicând *de ce*, nu *ce* —
 diff-ul arată deja ce. Istoricul e consecvent așa; uită-te la `git log` înainte
@@ -252,8 +287,9 @@ limbă în alta; daneza și româna au formulări proprii, nu calchiate din engl
 
 ## Deschis acum
 
-Nimic în lucru. Ultimul publicat: `19700c9`. Testul Rich Results trece curat
-pe `djradu.com`, un element `LocalBusiness` valid, fără erori sau avertismente.
+Nimic în lucru. Ultimul eveniment adăugat: Latino Party, Vejle. Testul Rich
+Results a trecut curat pe `djradu.com` la `19700c9`, un element `LocalBusiness`
+valid, fără erori sau avertismente; nu a mai fost rulat de atunci.
 
 Rămân, dacă se cer:
 
