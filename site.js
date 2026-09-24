@@ -338,6 +338,28 @@ function loadAnalytics(){
   // Google Ads: samme gtag.js-bibliotek som ovenfor, bare en destination
   // mere. Et helt nyt snippet ville hente biblioteket to gange.
   gtag('config', 'AW-18237660109');
+
+  // Key events (booking, telefon, e-mail, WhatsApp) - bindes her, sa de
+  // kun spores efter samtykke, ligesom resten af analytics.
+  bindKeyEventTracking();
+}
+
+function bindKeyEventTracking(){
+  const form = document.getElementById('bookingForm');
+  if (form) {
+    form.addEventListener('submit', () => {
+      gtag('event', 'booking_form_submit', {transport_type: 'beacon'});
+    });
+  }
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => gtag('event', 'phone_click'));
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => gtag('event', 'email_click'));
+  });
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a => {
+    a.addEventListener('click', () => gtag('event', 'whatsapp_click'));
+  });
 }
 
 function loadSocialEmbeds(){
