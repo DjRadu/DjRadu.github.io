@@ -1,0 +1,29 @@
+# DJ Radu
+
+> Independent wedding and party DJ (Radu Ghiorghiu), based in Juelsminde, Denmark. Plays weddings, christenings, birthdays, confirmations, corporate events and Romanian community parties across Denmark and northern Germany, in Danish, English, Romanian and Italian.
+
+DJ Radu brings his own sound and light equipment (JBL PartyBox, ADJ Fusion FX Bar), plays a mix of international, Romanian and Latin music (salsa, bachata, house), and takes song requests from guests during the event. CVR 46538560.
+
+## Site
+
+- [Danish homepage](https://djradu.com/): default language, primary market (Denmark)
+- [English homepage](https://djradu.com/en/)
+- [Romanian homepage](https://djradu.com/ro/)
+- [About / my story](https://djradu.com/da/min-historie/) (da), [en](https://djradu.com/en/about/), [ro](https://djradu.com/ro/povestea-mea/)
+- [Music / repertoire](https://djradu.com/da/repertoire/) (da), [en](https://djradu.com/en/music/), [ro](https://djradu.com/ro/repertoriu/)
+- [Past events, with photos and videos](https://djradu.com/da/arrangementer/) (da), [en](https://djradu.com/en/events/), [ro](https://djradu.com/ro/evenimente/)
+- [FAQ](https://djradu.com/da/faq/) (da), [en](https://djradu.com/en/faq/), [ro](https://djradu.com/ro/intrebari-frecvente/)
+- [Reviews](https://djradu.com/da/anmeldelser/) (da), [en](https://djradu.com/en/reviews/), [ro](https://djradu.com/ro/recenzii/)
+- [Contact and booking](https://djradu.com/da/kontakt/) (da), [en](https://djradu.com/en/contact/), [ro](https://djradu.com/ro/contact/)
+
+## Contact
+
+- Booking: booking@djradu.com
+- General: info@djradu.com
+- Phone / WhatsApp: +45 50 24 62 80
+- Address: Skrænten 21, Hosby, 7130 Juelsminde, Denmark
+
+## Notes
+
+- The site has no English-only or Romanian-only content that isn't also on the Danish homepage in substance — each language version covers the same business, with locally relevant service names and a few language-specific landing pages (Danish occasions, Romanian occasions, English country pages for Denmark and Germany).
+- Sitemap: https://djradu.com/sitemap.xml
