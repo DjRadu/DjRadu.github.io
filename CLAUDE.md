@@ -77,8 +77,16 @@ la `/ro/`, cel EN la `/en/`. Nu sunt în sitemap.
 ## Imagini
 
 Toate imaginile stau în **rădăcina repo-ului**, referite absolut (`/IMG_2980.JPG`).
-Nu există folder de assets. Extensiile sunt inconsecvente (`.jpg`, `.JPG`,
+Nu există folder de assets. Extensiile sunt inconsecutive (`.jpg`, `.JPG`,
 `.PNG`) — folosește exact numele din disc.
+
+Logo-ul principal (nav, hero, footer, og:image, JSON-LD `image`/`logo`) e
+`/logo-site.jpg`, 1300px lățime, JPEG. Până pe 24 septembrie 2026 era un PNG
+de 1762×892, 1.3MB, sub un nume criptic (`352170B5-...PNG`) — cauza unui LCP
+de 9.6s pe mobil, găsit printr-un web-check extern. A fost comprimat și
+redenumit; toate cele 44 de referințe au fost actualizate odată. Dacă mai
+adaugi vreodată o versiune nouă a logo-ului, păstrează dimensiunea sub
+~150KB — orice PNG cu conținut fotografic (poza cu neon) comprimă prost.
 
 Legătura cu evenimentele: sunt 12 evenimente pe fiecare din cele trei pagini
 (`/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`). Cele fără poză au un
@@ -196,7 +204,13 @@ paginile pe orașe.
 | TikTok | `https://www.tiktok.com/@djradudk` |
 | Threads | `https://www.threads.com/@djradudk` |
 | Snapchat | `https://www.snapchat.com/@djradudk` |
+| SoundCloud | `https://soundcloud.com/djradudk` |
 | Trustpilot | `https://www.trustpilot.com/review/djradu.com` |
+
+SoundCloud e doar iconiță în footer + `sameAs`, fără pagină proprie și fără
+conținut încărcat — kontul există, dar upload-ul cere un abonament de 25
+kr/lună, pe care proprietarul nu-l are încă. Nu construi o pagină „Mixuri"
+sau vreun embed de player până nu se confirmă că are conținut de arătat.
 
 Facebook e singurul rămas pe handle-ul vechi (`DJRaduG`). Restul au migrat pe
 `djradudk`, ales ca să lege identitatea de Danemarca — în România sunt mulți
@@ -219,6 +233,17 @@ done
 ```
 
 (`sed -i ''` e forma de pe macOS; pe Linux e `sed -i`.)
+
+**Fonturi și Font Awesome, găzduite local, nu de la Google/cdnjs.** Trăiesc
+în `/fonts/`: `fonts.css` (Bebas Neue + Montserrat, doar subseturile latin
+și latin-ext, Montserrat e variabil deci un singur fișier acoperă toate
+grosimile 300-800) și `fontawesome.css` (doar `fab` + `fas`, cele 9 iconițe
+folosite pe site). Motivul e GDPR: încărcarea necondiționată de la Google
+Fonts/cdnjs trimitea IP-ul vizitatorului către terți înainte de acceptul de
+cookie-uri, o problemă documentată legal în Germania. Dacă adaugi vreodată
+o iconiță Font Awesome nouă, verifică întâi dacă glyph-ul există în
+`fa-solid-900.woff2`/`fa-brands-400.woff2` deja incluse; dacă nu, mai
+trebuie descărcat fișierul corespunzător de pe cdnjs și adăugat în `/fonts/`.
 
 Verificare: `grep -rho '\(style.css\|site.js\)?v=[a-f0-9]*' --include='*.html' .
 | sort | uniq -c` trebuie să arate o singură valoare pentru fiecare fișier.
@@ -287,14 +312,58 @@ limbă în alta; daneza și româna au formulări proprii, nu calchiate din engl
 
 ## Deschis acum
 
-Nimic în lucru. Ultimul eveniment adăugat: Latino Party, Vejle. Testul Rich
-Results a trecut curat pe `djradu.com` la `19700c9`, un element `LocalBusiness`
-valid, fără erori sau avertismente; nu a mai fost rulat de atunci.
+Nimic în lucru. Ultima sesiune (24 septembrie 2026) a rezolvat, pe rând, o
+listă de probleme găsite printr-un web-check extern (krak.dk) plus câteva
+cereri separate ale proprietarului:
 
-Rămân, dacă se cer:
+- **Fonturi și Font Awesome autogăzduite** — vezi convenția de mai sus.
+  Rezolvă alerta GDPR de încărcare necondiționată înainte de consimțământ.
+- **Logo comprimat și redenumit** la `/logo-site.jpg` — vezi secțiunea
+  Imagini. Era cauza unui LCP de 9.6s pe mobil.
+- **`llms.txt`** adăugat la rădăcină, un rezumat scurt al site-ului pentru
+  agenți/crawlere AI.
+- **IndexNow configurat** pentru Bing (cheia e fișierul
+  `f0704445d9544e1cb40e5276623cd3a6.txt` la rădăcină) și toate cele 47 de
+  URL-uri din sitemap trimise o dată, manual.
+- **SoundCloud** adăugat în footer și `sameAs` — doar iconiță, fără pagină,
+  vezi nota de la SoundCloud în tabelul de social media.
+- Card nou de serviciu **„Ungdomsfest"** pe pagina daneză (plus `makesOffer`
+  corespunzător), și câteva cuvinte lucrate natural în text danez
+  (mobildiskotek, lounge, havefest, entertainer, „andre DJs" în FAQ) —
+  potriviri cu termeni de căutare reali, găsite prin Google Business Profile
+  și krak.dk. Toate doar pe pagina daneză; engleza a rămas neatinsă
+  intenționat (pluralul e corect gramatical acolo, vezi convenția de mai jos
+  despre singular/plural).
+- Tagline-ul din `ro/index.html` corectat la singular, ca să fie consecvent
+  cu daneza.
+- Am auditat contrastul de culoare (axe-core, instrumentul din spatele
+  Lighthouse) pe 8 pagini — zero probleme reale găsite. Ce raportase
+  krak.dk era o limitare a scannerului lor (elemente cu fundal degradé sau
+  imagine, unde un instrument riguros cere verificare manuală, nu declară
+  eroare automat).
+
+**Pus pe pauză, nu uitat:**
+
+- **Pagina „Mixuri"** (RO) / „Mixes" (EN) / „Mixtapes" (DA), cu player
+  SoundCommunity încorporat — amânată până proprietarul are abonamentul
+  plătit de SoundCloud (25 kr/lună) și chiar poate încărca mixuri. Când
+  revine subiectul, textele pentru pagină și pentru un banner pe homepage
+  („Cauți inspirație... Ascultă ultimul meu mix") au fost deja discutate și
+  aprobate în conversația din 23-24 septembrie 2026, doar de reluat.
+
+**Rămân, dacă se cer, mai vechi:**
 
 - `geo` (coordonate) în JSON-LD — opțional, inofensiv, ~`55.7144, 10.0115`
   pentru Juelsminde, de confirmat cu proprietarul
 - textul pentru Google Business Profile, unde programul pe zile chiar produce
   „Închis" vizibil sâmbătă seara și duminica. E o decizie a proprietarului,
   în afara repo-ului.
+
+**În afara repo-ului, acțiuni ale proprietarului, nu ale acestui site:**
+
+- Bing Places for Business — cont nou de creat (diferit de Bing Webmaster
+  Tools, deja configurat), rezolvă vizibilitatea zero găsită pe Bing într-un
+  citation-check (Net-tjek krak.dk)
+- Adresa pe Krak/De Gule Sider nu include „Hosby" (spre deosebire de Google
+  Business Profile) — proprietarul a confirmat că formularul Krak nu
+  acceptă acea formă, deci inconsecvența rămâne intenționat neschimbată
