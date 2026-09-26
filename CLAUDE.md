@@ -226,13 +226,18 @@ paginile, în același commit:**
 ```bash
 for f in style.css site.js; do
   old=$(grep -ho "$f?v=[a-f0-9]*" index.html | head -1 | sed 's/.*v=//')
-  new=$(sha1sum $f | cut -c1-8)
+  new=$(shasum "$f" | cut -c1-8)
   [ "$old" = "$new" ] || find . -name '*.html' -not -path './.git/*' \
     -exec sed -i '' "s|$f?v=$old|$f?v=$new|g" {} +
 done
 ```
 
-(`sed -i ''` e forma de pe macOS; pe Linux e `sed -i`.)
+(`shasum`, nu `sha1sum`: macOS nu are `sha1sum`, vine din GNU coreutils.
+`shasum` există pe ambele și dă același hash. La fel, `sed -i ''` e forma de
+pe macOS; pe Linux e `sed -i` fără argument.)
+
+Verificare: `grep -rho '\(style.css\|site.js\)?v=[a-f0-9]*' --include='*.html' .
+| sort | uniq -c` trebuie să arate o singură valoare pentru fiecare fișier.
 
 **Fonturi și Font Awesome, găzduite local, nu de la Google/cdnjs.** Trăiesc
 în `/fonts/`: `fonts.css` (Bebas Neue + Montserrat, doar subseturile latin
@@ -253,9 +258,6 @@ e o obligație. La fel pentru fonturile din `fonts.css`: Bebas Neue și
 Montserrat sunt sub SIL Open Font License 1.1. `LICENSE` le enumeră pe toate
 și le scoate explicit de sub „all rights reserved", ca revendicarea să nu
 acopere ce nu ne aparține.
-
-Verificare: `grep -rho '\(style.css\|site.js\)?v=[a-f0-9]*' --include='*.html' .
-| sort | uniq -c` trebuie să arate o singură valoare pentru fiecare fișier.
 
 ## Date de contact
 
@@ -321,7 +323,34 @@ limbă în alta; daneza și româna au formulări proprii, nu calchiate din engl
 
 ## Deschis acum
 
-Nimic în lucru. Ultima sesiune (24 septembrie 2026) a rezolvat, pe rând, o
+Nimic în lucru.
+
+**Sesiunea din 26 septembrie 2026** (din browser) a plecat de la o întrebare a
+proprietarului: dacă repo-ul public îl expune la ceva. Auditul pe toate cele
+158 de commit-uri n-a găsit nicio cheie, token sau parolă. A găsit doar adresa
+`djradu@icloud.com` în metadatele de autor, lăsată acolo intenționat — e
+probabil deja colectată, iar rescrierea istoricului costă mai mult decât
+câștigă; setarea „Keep my email addresses private" oprește scurgerile
+viitoare. Din discuție au rezultat:
+
+- **`LICENSE`** adăugat: all rights reserved, cu clauză separată pentru
+  fotografii (riscul real nu e copierea CSS-ului, e cineva care își face
+  reclamă cu pozele de la evenimentele lui), cu recenziile excluse fiindcă
+  sunt vorbele autorilor lor, și cu fonturile din `/fonts/` scoase explicit
+  de sub revendicare. Corespondența despre licență merge la `info@`, nu la
+  `booking@`.
+- Nota despre headerul de atribuire Font Awesome, în convenția de mai sus.
+- **Concluzia pe „Fork", dacă subiectul revine:** repo privat nu apără de
+  copiere, fiindcă un site static se descarcă oricum din browserul oricărui
+  vizitator. S-a decis să rămână public. Dacă totuși se dorește privat,
+  varianta corectă nu e planul plătit de GitHub, ci mutarea hosting-ului pe
+  Cloudflare Pages sau Netlify, care servesc dintr-un repo privat pe gratis.
+
+**Rămas de făcut manual de proprietar:** în `Settings` → `Features`, de
+debifat **Wikis** și **Projects**. Nefolosite, deci doar suprafețe de spam.
+Setările de Features nu există în aplicația GitHub de mobil, cer laptop.
+
+Ultima sesiune (24 septembrie 2026) a rezolvat, pe rând, o
 listă de probleme găsite printr-un web-check extern (krak.dk) plus câteva
 cereri separate ale proprietarului:
 
