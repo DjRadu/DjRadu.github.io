@@ -245,6 +245,15 @@ o iconiță Font Awesome nouă, verifică întâi dacă glyph-ul există în
 `fa-solid-900.woff2`/`fa-brands-400.woff2` deja incluse; dacă nu, mai
 trebuie descărcat fișierul corespunzător de pe cdnjs și adăugat în `/fonts/`.
 
+**Headerul de atribuire din `fontawesome.css` nu se șterge.** Comentariul
+`/*! Font Awesome Free 6.7.2 by @fontawesome ... */` de la începutul
+fișierului e cerut de licența CC BY 4.0 a iconițelor. Din momentul în care
+fonturile au ajuns în repo, nu mai e un comentariu de curățat la minificare —
+e o obligație. La fel pentru fonturile din `fonts.css`: Bebas Neue și
+Montserrat sunt sub SIL Open Font License 1.1. `LICENSE` le enumeră pe toate
+și le scoate explicit de sub „all rights reserved", ca revendicarea să nu
+acopere ce nu ne aparține.
+
 Verificare: `grep -rho '\(style.css\|site.js\)?v=[a-f0-9]*' --include='*.html' .
 | sort | uniq -c` trebuie să arate o singură valoare pentru fiecare fișier.
 
