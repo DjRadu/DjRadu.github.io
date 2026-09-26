@@ -49,11 +49,17 @@ and a note of the source. They are not covered by the copyright above, and are
 not free to reuse either.
 
 
-THIRD-PARTY RESOURCES
+THIRD-PARTY MATERIAL HELD IN THIS REPOSITORY
 
-The pages load Font Awesome and Google Fonts from their providers' own CDNs.
-Neither is copied into this repository, and each keeps its own licence. This
-file does not apply to them.
+The /fonts/ directory holds material that is not covered by the copyright
+above, and is not mine to license:
+
+  Bebas Neue, Montserrat     SIL Open Font License 1.1
+  Font Awesome Free 6.7.2    icons CC BY 4.0, fonts SIL OFL 1.1, code MIT
+
+Each keeps its own licence, and those terms govern it instead of this file.
+The attribution header inside fonts/fontawesome.css is required by that
+licence and must stay where it is.
 
 
 PERMISSION
