@@ -350,6 +350,31 @@ viitoare. Din discuție au rezultat:
 debifat **Wikis** și **Projects**. Nefolosite, deci doar suprafețe de spam.
 Setările de Features nu există în aplicația GitHub de mobil, cer laptop.
 
+**27 septembrie 2026** — discuție despre cum se cer recenzii, fără modificări
+în cod. Textele de invitație (email în daneză și engleză, plus o variantă
+scurtă pentru WhatsApp) au rămas în conversație, nu în repo: sunt materiale
+interne, iar orice fișier pus în repo e public pe djradu.com.
+
+Din ea a ieșit un lucru care contează pentru deciziile despre site:
+**clienții vin din social media, aproape niciodată din formularul de
+rezervare.** Proprietarul a confirmat că un singur client a venit vreodată
+prin formular, și chiar și acela a comunicat mai departe pe WhatsApp. Deci nu
+supraevalua formularul când cântărești unde merită investit efort.
+
+Propunerea de a adăuga o bifă de consimțământ în formular, ca să existe
+dreptul scris de a trimite ulterior un email cu cererea de recenzie, a fost
+**respinsă exact din acest motiv** — 56 de pagini modificate pentru un canal
+pe care nu-l folosește nimeni. Nu o repropune. Pe WhatsApp problema juridică
+oricum nu apare: conversația e pornită de client, deci nu e comunicare
+nesolicitată.
+
+Regulile de care să ții cont dacă subiectul revine: nimic oferit în schimbul
+unei recenzii (Trustpilot le șterge și poate marca contul), și fără să ceri
+doar celor mulțumiți — *review gating*, interzis la ambele platforme. Linkurile
+directe de scriere sunt `https://dk.trustpilot.com/evaluate/djradu.com` și
+`https://g.page/r/CZIsHI645K5FEBM/review` (cel din footer, `/review/`, e
+pagina de citit, nu formularul).
+
 Ultima sesiune (24 septembrie 2026) a rezolvat, pe rând, o
 listă de probleme găsite printr-un web-check extern (krak.dk) plus câteva
 cereri separate ale proprietarului:
