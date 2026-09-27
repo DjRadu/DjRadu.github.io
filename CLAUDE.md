@@ -262,11 +262,58 @@ acopere ce nu ne aparține.
 ## Date de contact
 
 Telefon `+4550246280` (și WhatsApp Business, același număr), email
-`booking@djradu.com`, CVR 46538560, adresa Skrænten 21, Hosby, 7130 Juelsminde.
+`booking@djradu.com`, CVR 46538560. Orașul, Juelsminde (cod poștal 7130), e
+public; **strada și numărul (Skrænten 21, Hosby) nu**, vezi "Adresa
+personală" mai jos.
 
 Numărul apare în text vizibil, în linkuri `tel:`, în `telephone` din JSON-LD
 **și în câmpul ascuns `_autoresponse` din formularul de rezervare**, ca să
 ajungă corect în emailul automat. La o schimbare de număr, toate patru.
+
+## Adresa personală
+
+Adresa firmei (Skrænten 21, Hosby, 7130 Juelsminde) e și adresa personală a
+proprietarului, unde locuiește cu familia. Pe 27 septembrie 2026, soția
+proprietarului a ridicat o îngrijorare întemeiată: afișarea publică a
+adresei exacte (mai ales combinată cu poze ale casei sau coordonate GPS
+precise) crește riscul de a atrage un stalker sau alt pericol la adresa
+familiei. S-a decis să nu mai apară strada nicăieri public, doar orașul.
+
+**Ce s-a scos de pe site, în același commit:**
+
+- JSON-LD `LocalBusiness` (`index.html`, `ro/index.html`, `en/index.html`):
+  `streetAddress` eliminat din `address`, blocul `geo` (coordonate exacte,
+  adăugat mai devreme aceeași zi) eliminat complet. A rămas doar
+  `addressLocality: Juelsminde`, `postalCode: 7130`, `addressCountry: DK`.
+- Paginile de contact (`da/kontakt`, `ro/contact`, `en/contact`): rândul de
+  adresă arată doar „7130 Juelsminde" + țara, fără stradă. Link-ul „Deschide
+  în Google Maps" (care ținta exact adresa) a fost șters de tot.
+- `privacy.html`: identificarea operatorului de date (GDPR), în toate trei
+  limbile, arată doar `CVR: 46538560, 7130 Juelsminde`, fără stradă.
+
+**Nu re-adăuga strada sau coordonate GPS precise nicăieri pe site**, chiar
+dacă pare util pentru SEO local (de ex. Rich Results) — beneficiul e mic,
+riscul e pentru familia proprietarului, nu doar pentru el.
+
+**Ce rămâne expus în afara site-ului, discutat dar nerezolvat încă:**
+
+- **CVR-ul** (registrul public danez de firme) arată adresa oricum — nu se
+  poate ascunde pentru o firmă personală fără o adresă de firmă separată
+  (kontorhotel sau serviciu de adresă, ~100–300 kr/lună). Proprietarul poate
+  verifica opțiunile la Erhvervsstyrelsen (72 20 00 30); nu e ceva ce poate
+  rezolva acest repo.
+- **Google Business Profile** arată probabil adresa exactă + pin-ul pe hartă
+  + Street View — cea mai mare expunere, în afara site-ului. Ar trebui
+  convertit la „service area business" (ascunde adresa, arată doar zona
+  deservită), lucru pe care proprietarul trebuie să-l facă din propriul cont
+  Google, cu grijă (afectează poziționarea locală).
+- **Social media** (Facebook, Instagram, TikTok, Krak): de verificat dacă
+  strada apare în vreun câmp „About"/adresă și, dacă da, de scos.
+- **`reklamebeskyttelse`** pe virk.dk (protecție împotriva reclamelor pe
+  adresa CVR) — proprietarul avea „Nej", ar trebui pus „Ja".
+- **Ce se postează**: fără poze cu casa sau mașina în fața casei, fără
+  locație live în story-uri/Snap Map, postează evenimentele după ce a plecat
+  de acolo, nu în timp real.
 
 ## Reguli de lucru
 
@@ -422,11 +469,14 @@ cereri separate ale proprietarului:
   („Cauți inspirație... Ascultă ultimul meu mix") au fost deja discutate și
   aprobate în conversația din 23-24 septembrie 2026, doar de reluat.
 
-**Rezolvat pe 27 septembrie 2026:** `geo` (coordonate) adăugat în JSON-LD-ul
-`LocalBusiness` din `index.html`, `ro/index.html` și `en/index.html` —
-`latitude: 55.749787, longitude: 10.010499`, geocodat pe adresa exactă
-(Skrænten 21, Hosby), nu pe centrul orașului Juelsminde (care ar fi dat
-~`55.7144, 10.0115`, o diferență de ~4 km). Confirmat cu proprietarul.
+**Adăugat și apoi scos, tot pe 27 septembrie 2026:** `geo` (coordonate exacte
+ale casei, `55.749787, 10.010499`) a fost adăugat în JSON-LD-ul
+`LocalBusiness`, apoi eliminat din nou în aceeași zi — soția proprietarului a
+ridicat, pe bună dreptate, o problemă de siguranță a familiei: adresa
+personală (care e și sediul firmei) nu trebuie expusă public, pentru a nu
+atrage un stalker sau alt risc similar la adresa familiei. Nu re-adăuga `geo`
+și nu pune înapoi strada (`Skrænten 21, Hosby`) nicăieri pe site — vezi
+"Adresa personală" mai jos pentru tot ce s-a scos și de ce.
 
 **Rămân, dacă se cer, mai vechi:**
 
