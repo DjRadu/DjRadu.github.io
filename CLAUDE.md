@@ -304,6 +304,18 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   transformând profilul într-un „service area business" — Google arată doar
   zona deservită, nu mai arată adresa/pin-ul/Street View. Modificarea a
   intrat la examinare Google (poate dura), nu e instant ca pe site.
+  **Zona de servicii, extinsă tot pe 27 septembrie 2026:** lista veche avea
+  ~20 de comune/orașe daneze individuale (era deja la plafonul de 20 de zone
+  permise de Google, de-asta era atât de granulară). Înlocuită cu 10 zone
+  mai largi: Danmark (țara întreagă, înlocuiește toate comunele), Schleswig-
+  Holstein, Hamburg, Niedersachsen, Bremen, Mecklenburg-Vorpommern,
+  Brandenburg (toate Germania), Skåne (Suedia, regiunea Malmö), Groningen și
+  Friesland (Olanda). Motivul: proprietarul a verificat pe hartă că
+  Hanovra și Wittenberge (unde a avut deja un eveniment) sunt la ~5h
+  distanță, deci ~6h e raza lui reală de acțiune, care acoperă nordul
+  Germaniei, sud-vestul Suediei și nordul Olandei. La 10 din 20 de zone
+  ocupate, mai e loc de extindere ulterioară dacă apar evenimente reale în
+  alte zone — nu adăuga zone doar teoretic, doar când chiar devine relevant.
 - **Facebook** (pagina DJRaduG) — verificat „Despre" (Date de contact,
   Detalii, Informații juridice): nicio adresă găsită, curat.
 - **Instagram** (@djradudk) — avea „Skrænten 21, Juelsminde 7130" vizibil în
