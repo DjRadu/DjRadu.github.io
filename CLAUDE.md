@@ -323,7 +323,15 @@ limbă în alta; daneza și româna au formulări proprii, nu calchiate din engl
 
 ## Deschis acum
 
-Nimic în lucru.
+**De reținut:** pe cele trei pagini de galerie (`da/galleri`, `ro/galerie`,
+`en/gallery`) există un acordeon „📘 Facebook" (adăugat pe 27 septembrie 2026),
+cu Page Plugin-ul Facebook (tab `timeline`), care afișează un `href` fix spre
+`facebook.com/DJRaduG`. Dacă schimbarea de username în `djradudk` reușește
+(vezi mai jos), actualizează `href`-ul din cele trei iframe-uri la
+`facebook.com/djradudk` — link-urile vechi de username redirecționează de
+obicei o vreme, dar nu garantat permanent.
+
+Nimic altceva în lucru.
 
 **Sesiunea din 26 septembrie 2026** (din browser) a plecat de la o întrebare a
 proprietarului: dacă repo-ul public îl expune la ceva. Auditul pe toate cele
