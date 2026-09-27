@@ -414,10 +414,14 @@ cereri separate ale proprietarului:
   („Cauți inspirație... Ascultă ultimul meu mix") au fost deja discutate și
   aprobate în conversația din 23-24 septembrie 2026, doar de reluat.
 
+**Rezolvat pe 27 septembrie 2026:** `geo` (coordonate) adăugat în JSON-LD-ul
+`LocalBusiness` din `index.html`, `ro/index.html` și `en/index.html` —
+`latitude: 55.749787, longitude: 10.010499`, geocodat pe adresa exactă
+(Skrænten 21, Hosby), nu pe centrul orașului Juelsminde (care ar fi dat
+~`55.7144, 10.0115`, o diferență de ~4 km). Confirmat cu proprietarul.
+
 **Rămân, dacă se cer, mai vechi:**
 
-- `geo` (coordonate) în JSON-LD — opțional, inofensiv, ~`55.7144, 10.0115`
-  pentru Juelsminde, de confirmat cu proprietarul
 - textul pentru Google Business Profile, unde programul pe zile chiar produce
   „Închis" vizibil sâmbătă seara și duminica. E o decizie a proprietarului,
   în afara repo-ului.
