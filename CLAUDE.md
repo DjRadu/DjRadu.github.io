@@ -295,25 +295,41 @@ familiei. S-a decis să nu mai apară strada nicăieri public, doar orașul.
 dacă pare util pentru SEO local (de ex. Rich Results) — beneficiul e mic,
 riscul e pentru familia proprietarului, nu doar pentru el.
 
-**Ce rămâne expus în afara site-ului, discutat dar nerezolvat încă:**
+**Auditul din afara site-ului, făcut pe 27 septembrie 2026:**
 
+- **Google Business Profile** — avea adresa exactă, pin pe hartă și Street
+  View cu poza casei, plus un calcul „Sosești la locație în 18 min" ca la un
+  magazin fizic. Rezolvat: comutatorul „Afișează clienților adresa companiei"
+  a fost dezactivat (business.google.com → Editează informațiile → Locație),
+  transformând profilul într-un „service area business" — Google arată doar
+  zona deservită, nu mai arată adresa/pin-ul/Street View. Modificarea a
+  intrat la examinare Google (poate dura), nu e instant ca pe site.
+- **Facebook** (pagina DJRaduG) — verificat „Despre" (Date de contact,
+  Detalii, Informații juridice): nicio adresă găsită, curat.
+- **Instagram** (@djradudk) — avea „Skrænten 21, Juelsminde 7130" vizibil în
+  bio, sub „Cont profesional → Adresa afacerii". Rezolvat: câmpul de stradă
+  golit, a rămas doar „Juelsminde, 7130".
+- **TikTok** (@djradudk) — verificat, nicio adresă în bio, curat.
+- **Krak.dk** — încă arată adresa exactă („Dj Radu, Skrænten 21, 7130
+  Juelsminde"), sursă probabil CVR. Există un flux de auto-editare
+  (opdater.krak.dk), dar ultimul pas cere verificare (cod SMS/email) —
+  proprietarul trebuie să-l parcurgă singur, nu se poate face din acest
+  repo/sesiune.
 - **CVR-ul** (registrul public danez de firme) arată adresa oricum — nu se
   poate ascunde pentru o firmă personală fără o adresă de firmă separată
-  (kontorhotel sau serviciu de adresă, ~100–300 kr/lună). Proprietarul poate
-  verifica opțiunile la Erhvervsstyrelsen (72 20 00 30); nu e ceva ce poate
-  rezolva acest repo.
-- **Google Business Profile** arată probabil adresa exactă + pin-ul pe hartă
-  + Street View — cea mai mare expunere, în afara site-ului. Ar trebui
-  convertit la „service area business" (ascunde adresa, arată doar zona
-  deservită), lucru pe care proprietarul trebuie să-l facă din propriul cont
-  Google, cu grijă (afectează poziționarea locală).
-- **Social media** (Facebook, Instagram, TikTok, Krak): de verificat dacă
-  strada apare în vreun câmp „About"/adresă și, dacă da, de scos.
+  (kontorhotel sau serviciu de adresă, ~100–300 kr/lună). Proprietarul
+  verifică opțiunile la Erhvervsstyrelsen (72 20 00 30) — pe cont propriu.
 - **`reklamebeskyttelse`** pe virk.dk (protecție împotriva reclamelor pe
-  adresa CVR) — proprietarul avea „Nej", ar trebui pus „Ja".
+  adresa CVR) — proprietarul avea „Nej", ar trebui pus „Ja" — pe cont propriu.
 - **Ce se postează**: fără poze cu casa sau mașina în fața casei, fără
   locație live în story-uri/Snap Map, postează evenimentele după ce a plecat
   de acolo, nu în timp real.
+
+**Observație secundară de pe Google Business Profile:** profilul leagă spre
+`facebook.com/djradudk`, nu spre pagina oficială `facebook.com/DJRaduG` —
+`djradudk` e username-ul eliberat recent de pe profilul personal (vezi mai
+sus, schimbarea de username în lucru). Link-ul ăsta va trebui actualizat
+separat, indiferent de rezultatul schimbării de username a paginii.
 
 ## Reguli de lucru
 
