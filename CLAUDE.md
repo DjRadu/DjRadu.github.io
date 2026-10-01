@@ -197,7 +197,7 @@ paginile pe orașe.
 
 | | |
 |---|---|
-| Facebook | `https://www.facebook.com/DJRaduG/` |
+| Facebook | `https://www.facebook.com/djradudk8` |
 | Instagram | `https://www.instagram.com/djradudk` |
 | Pinterest | `https://dk.pinterest.com/djradudk/` |
 | YouTube | `https://youtube.com/@djradudk` |
@@ -219,9 +219,11 @@ profil și coperta contului Mixcloud (generate aceeași sesiune, din pozele de
 eveniment de pe site) nu sunt în acest repo — sunt asset-uri ale contului,
 nu ale site-ului.
 
-Facebook e singurul rămas pe handle-ul vechi (`DJRaduG`). Restul au migrat pe
-`djradudk`, ales ca să lege identitatea de Danemarca — în România sunt mulți
-DJ Radu.
+**Rezolvat pe 1 octombrie 2026:** Facebook a migrat și el de pe `DJRaduG` pe
+`djradudk8` — restul handle-urilor sunt deja pe `djradudk` (fără „8"), dar
+acela era încă ocupat de profilul personal, deci proprietarul a ales
+`djradudk8` (opt, cifră norocoasă în superstițiile chinezești) în loc să mai
+aștepte dansul de redenumire în 3 pași discutat mai devreme.
 
 **Amprentă de conținut pe CSS și JS.** `style.css` și `site.js` sunt referite
 cu `?v=<primele 8 caractere din sha1>`. Există ca să nu mai servească
@@ -346,10 +348,12 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   locație live în story-uri/Snap Map, postează evenimentele după ce a plecat
   de acolo, nu în timp real.
 
-**Rezolvat pe 1 octombrie 2026:** linkul de Facebook din Google Business
-Profile a fost corectat din `facebook.com/djradudk` (username-ul personal) în
-`facebook.com/DJRaduG` (pagina oficială), direct din panoul Google. Trimis
-spre aprobarea Google (de obicei sub 10 minute).
+**Rezolvat pe 1 octombrie 2026, în doi pași:** linkul de Facebook din Google
+Business Profile a fost corectat întâi din `facebook.com/djradudk`
+(username-ul personal) în `facebook.com/DJRaduG` (pagina oficială de atunci);
+apoi, în aceeași zi, proprietarul a schimbat chiar handle-ul paginii oficiale
+din `DJRaduG` în `djradudk8`, deci linkul din GBP a fost actualizat din nou,
+la a doua valoare. Ambele modificări trimise spre aprobarea Google.
 
 ## Reguli de lucru
 
@@ -406,13 +410,11 @@ limbă în alta; daneza și româna au formulări proprii, nu calchiate din engl
 
 ## Deschis acum
 
-**De reținut:** pe cele trei pagini de galerie (`da/galleri`, `ro/galerie`,
-`en/gallery`) există un acordeon „📘 Facebook" (adăugat pe 27 septembrie 2026),
-cu Page Plugin-ul Facebook (tab `timeline`), care afișează un `href` fix spre
-`facebook.com/DJRaduG`. Dacă schimbarea de username în `djradudk` reușește
-(vezi mai jos), actualizează `href`-ul din cele trei iframe-uri la
-`facebook.com/djradudk` — link-urile vechi de username redirecționează de
-obicei o vreme, dar nu garantat permanent.
+**Rezolvat pe 1 octombrie 2026:** pe cele trei pagini de galerie (`da/galleri`,
+`ro/galerie`, `en/gallery`) există un acordeon „📘 Facebook" (adăugat pe 27
+septembrie 2026), cu Page Plugin-ul Facebook (tab `timeline`). `href`-ul din
+cele trei iframe-uri a fost actualizat de la `facebook.com/DJRaduG` la
+`facebook.com/djradudk8`, odată cu migrarea paginii pe noul handle.
 
 Nimic altceva în lucru.
 
