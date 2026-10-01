@@ -205,12 +205,19 @@ paginile pe orașe.
 | Threads | `https://www.threads.com/@djradudk` |
 | Snapchat | `https://www.snapchat.com/@djradudk` |
 | SoundCloud | `https://soundcloud.com/djradudk` |
+| Mixcloud | `https://www.mixcloud.com/djradudk/` |
 | Trustpilot | `https://www.trustpilot.com/review/djradu.com` |
 
 SoundCloud e doar iconiță în footer + `sameAs`, fără pagină proprie și fără
 conținut încărcat — kontul există, dar upload-ul cere un abonament de 25
 kr/lună, pe care proprietarul nu-l are încă. Nu construi o pagină „Mixuri"
 sau vreun embed de player până nu se confirmă că are conținut de arătat.
+
+Mixcloud (`djradudk`) a fost adăugat pe 1 octombrie 2026, aceeași tratare ca
+SoundCloud — doar iconiță în footer + `sameAs`, fără pagină proprie. Poza de
+profil și coperta contului Mixcloud (generate aceeași sesiune, din pozele de
+eveniment de pe site) nu sunt în acest repo — sunt asset-uri ale contului,
+nu ale site-ului.
 
 Facebook e singurul rămas pe handle-ul vechi (`DJRaduG`). Restul au migrat pe
 `djradudk`, ales ca să lege identitatea de Danemarca — în România sunt mulți
