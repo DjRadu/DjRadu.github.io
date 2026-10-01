@@ -329,11 +329,13 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   bio, sub „Cont profesional → Adresa afacerii". Rezolvat: câmpul de stradă
   golit, a rămas doar „Juelsminde, 7130".
 - **TikTok** (@djradudk) — verificat, nicio adresă în bio, curat.
-- **Krak.dk** — încă arată adresa exactă („Dj Radu, Skrænten 21, 7130
-  Juelsminde"), sursă probabil CVR. Există un flux de auto-editare
-  (opdater.krak.dk), dar ultimul pas cere verificare (cod SMS/email) —
-  proprietarul trebuie să-l parcurgă singur, nu se poate face din acest
-  repo/sesiune.
+- **Krak.dk** — proprietarul a trimis cererea de scoatere a străzii prin
+  opdater.krak.dk pe 1 octombrie 2026 („Gennemført!"). Krak revizuiește
+  manual înainte de publicare, nu e instant — verificat într-un tab curat
+  aceeași zi, adresa exactă încă era vizibilă public, în așteptarea
+  revizuirii lor. De reverificat peste câteva zile dacă subiectul revine.
+  Krak a mai oferit, pe aceeași pagină, serviciul plătit „Robin" (listare pe
+  35 de site-uri) — upsell separat, neacceptat, fără legătură cu adresa.
 - **CVR-ul** (registrul public danez de firme) arată adresa oricum — nu se
   poate ascunde pentru o firmă personală fără o adresă de firmă separată
   (kontorhotel sau serviciu de adresă, ~100–300 kr/lună). Proprietarul
