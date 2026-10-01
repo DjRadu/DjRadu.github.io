@@ -436,9 +436,9 @@ viitoare. Din discuție au rezultat:
   varianta corectă nu e planul plătit de GitHub, ci mutarea hosting-ului pe
   Cloudflare Pages sau Netlify, care servesc dintr-un repo privat pe gratis.
 
-**Rămas de făcut manual de proprietar:** în `Settings` → `Features`, de
-debifat **Wikis** și **Projects**. Nefolosite, deci doar suprafețe de spam.
-Setările de Features nu există în aplicația GitHub de mobil, cer laptop.
+**Rezolvat pe 1 octombrie 2026:** `Wikis` și `Projects` dezactivate din
+`Settings` → `Features` (via `gh repo edit --enable-projects=false`, Wikis
+era deja oprit). Erau nefolosite, deci doar suprafețe de spam.
 
 **27 septembrie 2026** — discuție despre cum se cer recenzii, fără modificări
 în cod. Textele de invitație (email în daneză și engleză, plus o variantă
