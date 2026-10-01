@@ -340,8 +340,8 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   poate ascunde pentru o firmă personală fără o adresă de firmă separată
   (kontorhotel sau serviciu de adresă, ~100–300 kr/lună). Proprietarul
   verifică opțiunile la Erhvervsstyrelsen (72 20 00 30) — pe cont propriu.
-- **`reklamebeskyttelse`** pe virk.dk (protecție împotriva reclamelor pe
-  adresa CVR) — proprietarul avea „Nej", ar trebui pus „Ja" — pe cont propriu.
+- **Rezolvat pe 1 octombrie 2026:** `reklamebeskyttelse` pe virk.dk
+  (protecție împotriva reclamelor pe adresa CVR) pusă pe „Ja" de proprietar.
 - **Ce se postează**: fără poze cu casa sau mașina în fața casei, fără
   locație live în story-uri/Snap Map, postează evenimentele după ce a plecat
   de acolo, nu în timp real.
