@@ -344,11 +344,10 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   locație live în story-uri/Snap Map, postează evenimentele după ce a plecat
   de acolo, nu în timp real.
 
-**Observație secundară de pe Google Business Profile:** profilul leagă spre
-`facebook.com/djradudk`, nu spre pagina oficială `facebook.com/DJRaduG` —
-`djradudk` e username-ul eliberat recent de pe profilul personal (vezi mai
-sus, schimbarea de username în lucru). Link-ul ăsta va trebui actualizat
-separat, indiferent de rezultatul schimbării de username a paginii.
+**Rezolvat pe 1 octombrie 2026:** linkul de Facebook din Google Business
+Profile a fost corectat din `facebook.com/djradudk` (username-ul personal) în
+`facebook.com/DJRaduG` (pagina oficială), direct din panoul Google. Trimis
+spre aprobarea Google (de obicei sub 10 minute).
 
 ## Reguli de lucru
 
@@ -519,11 +518,13 @@ atrage un stalker sau alt risc similar la adresa familiei. Nu re-adăuga `geo`
   „Închis" vizibil sâmbătă seara și duminica. E o decizie a proprietarului,
   în afara repo-ului.
 
+**Rezolvat pe 1 octombrie 2026:** Bing Places for Business creat de
+proprietar, sincronizat automat din Google Business Profile. Listare în
+așteptare de publicare la Bing (ETA 7-12 zile, normal). Rezolvă
+vizibilitatea zero găsită pe Bing într-un citation-check (Net-tjek krak.dk).
+
 **În afara repo-ului, acțiuni ale proprietarului, nu ale acestui site:**
 
-- Bing Places for Business — cont nou de creat (diferit de Bing Webmaster
-  Tools, deja configurat), rezolvă vizibilitatea zero găsită pe Bing într-un
-  citation-check (Net-tjek krak.dk)
 - Adresa pe Krak/De Gule Sider nu include „Hosby" (spre deosebire de Google
   Business Profile) — proprietarul a confirmat că formularul Krak nu
   acceptă acea formă, deci inconsecvența rămâne intenționat neschimbată
