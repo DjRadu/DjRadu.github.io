@@ -422,6 +422,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://djradu.com/da/arrangementer/barnedaab-wittenberge/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/events/barnedaab-wittenberge/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/evenimente/barnedaab-wittenberge/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/barnedaab-wittenberge/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/barnedaab-wittenberge/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://djradu.com/da/arrangementer/dragobete-point-cafe/</loc>
     <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/dragobete-point-cafe/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/dragobete-point-cafe/" />
