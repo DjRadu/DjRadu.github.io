@@ -284,7 +284,7 @@ acopere ce nu ne aparține.
 
 Telefon `+4550246280` (și WhatsApp Business, același număr), email
 `booking@djradu.com`, CVR 46538560. Orașul, Juelsminde (cod poștal 7130), e
-public; **strada și numărul ([strada]) nu**, vezi "Adresa
+public; **strada și numărul nu**, vezi "Adresa
 personală" mai jos.
 
 Numărul apare în text vizibil, în linkuri `tel:`, în `telephone` din JSON-LD
@@ -293,7 +293,12 @@ ajungă corect în emailul automat. La o schimbare de număr, toate patru.
 
 ## Adresa personală
 
-Adresa firmei (7130 Juelsminde) e și adresa personală a
+**`CLAUDE.md` și `llms.txt` sunt publice** (repo public, servite și pe
+djradu.com/CLAUDE.md). Nu scrie în ele strada, coordonate sau alte date private —
+nici măcar ca exemplu de „ce nu trebuie pus”. Pe 14 octombrie 2026 strada și
+coordonatele casei au fost scoase din ambele fișiere și din tot istoricul Git.
+
+Adresa firmei (o stradă din Hosby, 7130 Juelsminde) e și adresa personală a
 proprietarului, unde locuiește cu familia. Pe 27 septembrie 2026, soția
 proprietarului a ridicat o îngrijorare întemeiată: afișarea publică a
 adresei exacte (mai ales combinată cu poze ale casei sau coordonate GPS
@@ -339,7 +344,7 @@ riscul e pentru familia proprietarului, nu doar pentru el.
   alte zone — nu adăuga zone doar teoretic, doar când chiar devine relevant.
 - **Facebook** (pagina DJRaduG) — verificat „Despre" (Date de contact,
   Detalii, Informații juridice): nicio adresă găsită, curat.
-- **Instagram** (@djradudk) — avea „Juelsminde 7130" vizibil în
+- **Instagram** (@djradudk) — avea strada și numărul vizibile în
   bio, sub „Cont profesional → Adresa afacerii". Rezolvat: câmpul de stradă
   golit, a rămas doar „Juelsminde, 7130".
 - **TikTok** (@djradudk) — verificat, nicio adresă în bio, curat.
@@ -520,12 +525,12 @@ cereri separate ale proprietarului:
   aprobate în conversația din 23-24 septembrie 2026, doar de reluat.
 
 **Adăugat și apoi scos, tot pe 27 septembrie 2026:** `geo` (coordonate exacte
-ale casei, `[lat], [lon]`) a fost adăugat în JSON-LD-ul
+ale casei) a fost adăugat în JSON-LD-ul
 `LocalBusiness`, apoi eliminat din nou în aceeași zi — soția proprietarului a
 ridicat, pe bună dreptate, o problemă de siguranță a familiei: adresa
 personală (care e și sediul firmei) nu trebuie expusă public, pentru a nu
 atrage un stalker sau alt risc similar la adresa familiei. Nu re-adăuga `geo`
-și nu pune înapoi strada (`[strada]`) nicăieri pe site — vezi
+și nu pune înapoi strada nicăieri pe site — vezi
 "Adresa personală" mai jos pentru tot ce s-a scos și de ce.
 
 **Rămân, dacă se cer, mai vechi:**
