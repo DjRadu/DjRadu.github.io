@@ -36,7 +36,7 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-59 de pagini HTML: 3 homepage-uri, 45 de subpagini (dintre care 12 sunt
+62 de pagini HTML: 3 homepage-uri, 48 de subpagini (dintre care 15 sunt
 pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
 `privacy.html`, `terms.html`, `thankyou.html`.
 
@@ -88,7 +88,7 @@ redenumit; toate cele 44 de referințe au fost actualizate odată. Dacă mai
 adaugi vreodată o versiune nouă a logo-ului, păstrează dimensiunea sub
 ~150KB — orice PNG cu conținut fotografic (poza cu neon) comprimă prost.
 
-Legătura cu evenimentele: sunt 12 evenimente pe fiecare din cele trei pagini
+Legătura cu evenimentele: sunt 13 evenimente pe fiecare din cele trei pagini
 (`/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`). Cele fără poză au un
 `<img>` **comentat**, cu `alt` scris în limba paginii:
 
@@ -107,7 +107,7 @@ CSS-ul așază cardurile identic cu sau fără imagine.
 ### Pagini de eveniment
 
 Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
-trei limbi, iar cardul devine `<a class="event" href="...">`. Există patru:
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există cinci:
 
 | Eveniment | Slug | Conținut |
 |---|---|---|
@@ -115,6 +115,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există patru:
 | Petrecere de Dragobete, Point Cafe, Horsens | `dragobete-point-cafe` | 1 poză, afișul |
 | Latino Party, Kalkbrænderiet, Vejle | `latino-party-vejle` | 4 poze, 3 filmulețe, text |
 | Petrecere aniversară 40 de ani, Nykøbing Mors | `nykobing-mors-40` | 4 poze, 2 filmulețe, text |
+| Petrecere aniversară, Vejle | `fodselsdag-vejle` | 5 poze, 2 filmulețe, text |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
