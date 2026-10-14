@@ -123,7 +123,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există treispreze
 | Botez, Horsens | `barnedaab-horsens` | 6 poze, 1 reel, 1 filmuleț, text |
 | Friday Fringe, Platform K, Horsens | `friday-fringe-platform-k` | 5 poze, 2 reel-uri, text |
 | Botez, Schloss Sigrön lângă Wittenberge (Germania) | `barnedaab-wittenberge` | 7 poze, 3 filmulețe, text; numele locului cu acordul proprietarului |
-| Petrecere aniversară, Løsning, Hedensted | `fodselsdag-losning` | 10 poze, 1 filmuleț, text + secțiune despre firma sărbătoritei (Festlig og Balloner: Facebook, telefon, email; fără adresa stradală) |
+| Petrecere aniversară, Løsning, Hedensted | `fodselsdag-losning` | 17 poze, 6 filmulețe (doar decor și mâncare, link-uri cu `?v=2` ca să nu apară din cache pozele vechi cu Radu), text + secțiune despre firma sărbătoritei (Festlig og Balloner: Facebook, telefon, email; fără adresa stradală) |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
