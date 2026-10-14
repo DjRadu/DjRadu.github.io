@@ -122,7 +122,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există doisprezec
 | Barber Shop 3rd Anniversary, Point Cafe, Horsens | `barber-shop-point-cafe` | 14 poze (10 mutate din galerie), 2 reel-uri, text |
 | Botez, Horsens | `barnedaab-horsens` | 6 poze, 1 reel, 1 filmuleț, text |
 | Friday Fringe, Platform K, Horsens | `friday-fringe-platform-k` | 5 poze, 2 reel-uri, text |
-| Botez, Wittenberge (Germania) | `barnedaab-wittenberge` | 6 poze, 3 filmulețe, text |
+| Botez, Schloss Sigrön lângă Wittenberge (Germania) | `barnedaab-wittenberge` | 7 poze, 3 filmulețe, text; numele locului cu acordul proprietarului |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
