@@ -36,7 +36,7 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-56 de pagini HTML: 3 homepage-uri, 42 de subpagini (dintre care 9 sunt
+59 de pagini HTML: 3 homepage-uri, 45 de subpagini (dintre care 12 sunt
 pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
 `privacy.html`, `terms.html`, `thankyou.html`.
 
@@ -107,13 +107,14 @@ CSS-ul așază cardurile identic cu sau fără imagine.
 ### Pagini de eveniment
 
 Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
-trei limbi, iar cardul devine `<a class="event" href="...">`. Există trei:
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există patru:
 
 | Eveniment | Slug | Conținut |
 |---|---|---|
 | Petrecere aniversară 40 de ani, Tørring | `torring-40` | 6 poze, 1 video |
 | Petrecere de Dragobete, Point Cafe, Horsens | `dragobete-point-cafe` | 1 poză, afișul |
 | Latino Party, Kalkbrænderiet, Vejle | `latino-party-vejle` | 4 poze, 3 filmulețe, text |
+| Petrecere aniversară 40 de ani, Nykøbing Mors | `nykobing-mors-40` | 4 poze, 2 filmulețe, text |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
@@ -127,6 +128,11 @@ filmulețe): copiază-l, nu construi de la zero.
   ținta 2–4 MB: `ffmpeg -i in.MOV -vf scale=1280:-2 -c:v libx264 -crf 28
   -preset slow -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart out.mp4`.
   Tag-ul `<video>` are `preload="none"`, `poster` și `aria-label`.
+- **Scoate metadatele (GPS!) din tot ce urci.** Filmulețele de pe iPhone au în
+  ele coordonatele locului (`com.apple.quicktime.location.ISO6709`), adică adresa
+  gazdei. La recodificare adaugă `-map_metadata -1`; pozele trec prin `ffmpeg`
+  cu `-map_metadata -1`, care nu scrie EXIF.
+- Fără alte persoane recognoscibile, mai ales copii, decât dacă e acordul lor.
 - Fiecare pagină nouă intră în `sitemap.xml` cu blocul complet de alternative.
 - Textul e la persoana I, scris separat în fiecare limbă, nu tradus.
 
