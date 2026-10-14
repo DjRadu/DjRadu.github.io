@@ -119,7 +119,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există nouă:
 | Botez, Fredericia | `barnedaab-fredericia` | 5 poze, 2 filmulețe, text |
 | Botez, Nykøbing Mors | `barnedaab-nykobing-mors` | 5 poze, 2 filmulețe, text |
 | Romanian Party, Point Cafe, Horsens | `romanian-party-point-cafe` | 6 poze, 3 filmulețe, text |
-| Barber Shop 3rd Anniversary, Point Cafe, Horsens | `barber-shop-point-cafe` | 4 poze, 2 reel-uri, text |
+| Barber Shop 3rd Anniversary, Point Cafe, Horsens | `barber-shop-point-cafe` | 10 poze (6 mutate din galerie), 2 reel-uri, text |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
