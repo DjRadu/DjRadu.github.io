@@ -36,7 +36,7 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-83 de pagini HTML: 3 homepage-uri, 69 de subpagini (dintre care 36 sunt
+86 de pagini HTML: 3 homepage-uri, 72 de subpagini (dintre care 39 sunt
 pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
 `privacy.html`, `terms.html`, `thankyou.html`.
 
@@ -107,7 +107,7 @@ CSS-ul așază cardurile identic cu sau fără imagine.
 ### Pagini de eveniment
 
 Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
-trei limbi, iar cardul devine `<a class="event" href="...">`. Există doisprezece:
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există treisprezece:
 
 | Eveniment | Slug | Conținut |
 |---|---|---|
@@ -123,6 +123,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există doisprezec
 | Botez, Horsens | `barnedaab-horsens` | 6 poze, 1 reel, 1 filmuleț, text |
 | Friday Fringe, Platform K, Horsens | `friday-fringe-platform-k` | 5 poze, 2 reel-uri, text |
 | Botez, Schloss Sigrön lângă Wittenberge (Germania) | `barnedaab-wittenberge` | 7 poze, 3 filmulețe, text; numele locului cu acordul proprietarului |
+| Petrecere aniversară, Løsning, Hedensted | `fodselsdag-losning` | 12 poze, 3 filmulețe, text + secțiune despre firma sărbătoritei (Festlig og Balloner: Facebook, telefon, email; fără adresa stradală) |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +

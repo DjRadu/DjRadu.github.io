@@ -452,6 +452,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://djradu.com/da/arrangementer/fodselsdag-losning/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/events/fodselsdag-losning/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/evenimente/fodselsdag-losning/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fodselsdag-losning/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fodselsdag-losning/" />
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://djradu.com/da/arrangementer/dragobete-point-cafe/</loc>
     <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/dragobete-point-cafe/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/dragobete-point-cafe/" />
