@@ -36,7 +36,7 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-68 de pagini HTML: 3 homepage-uri, 54 de subpagini (dintre care 21 sunt
+71 de pagini HTML: 3 homepage-uri, 57 de subpagini (dintre care 24 sunt
 pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
 `privacy.html`, `terms.html`, `thankyou.html`.
 
@@ -107,7 +107,7 @@ CSS-ul așază cardurile identic cu sau fără imagine.
 ### Pagini de eveniment
 
 Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
-trei limbi, iar cardul devine `<a class="event" href="...">`. Există șapte:
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există opt:
 
 | Eveniment | Slug | Conținut |
 |---|---|---|
@@ -118,6 +118,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există șapte:
 | Petrecere aniversară, Vejle | `fodselsdag-vejle` | 5 poze, 2 filmulețe, text |
 | Botez, Fredericia | `barnedaab-fredericia` | 5 poze, 2 filmulețe, text |
 | Botez, Nykøbing Mors | `barnedaab-nykobing-mors` | 5 poze, 2 filmulețe, text |
+| Romanian Party, Point Cafe, Horsens | `romanian-party-point-cafe` | 6 poze, 3 filmulețe, text |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
@@ -141,6 +142,9 @@ filmulețe): copiază-l, nu construi de la zero.
   și stau în picioare doar prin tag-ul EXIF; dacă scoți EXIF-ul pur și simplu, apar
   rotite. Re-salvează-le prin `ffmpeg` (care aplică rotația) și verifică dimensiunile.
 - Fără alte persoane recognoscibile, mai ales copii, decât dacă e acordul lor.
+  Excepție aprobată de proprietar: la evenimente în locuri publice (cafenea, club)
+  pot apărea grupuri de adulți dansând pe ring sau în horă; nu prim-planuri cu
+  o singură persoană.
 - Fără numele familiei sau al copilului nicăieri (titlu, text, alt, nume de fișier),
   nici pe decoruri vizibile în poze. Titlul e tipul evenimentului + orașul.
 - Fiecare pagină nouă intră în `sitemap.xml` cu blocul complet de alternative.
