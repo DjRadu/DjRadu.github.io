@@ -133,6 +133,11 @@ filmulețe): copiază-l, nu construi de la zero.
   ele coordonatele locului (`com.apple.quicktime.location.ISO6709`), adică adresa
   gazdei. La recodificare adaugă `-map_metadata -1`; pozele trec prin `ffmpeg`
   cu `-map_metadata -1`, care nu scrie EXIF.
+  Pe 14 octombrie 2026 au fost curățate și 15 poze mai vechi care aveau GPS
+  (`IMG_2260`, `IMG_2529/2554/2557`, `IMG_2949/2958/2959/2965`, `latino-party-vejle-*`,
+  `torring-40-fodselsdag*`). Atenție la orientare: unele poze sunt stocate culcate
+  și stau în picioare doar prin tag-ul EXIF; dacă scoți EXIF-ul pur și simplu, apar
+  rotite. Re-salvează-le prin `ffmpeg` (care aplică rotația) și verifică dimensiunile.
 - Fără alte persoane recognoscibile, mai ales copii, decât dacă e acordul lor.
 - Fiecare pagină nouă intră în `sitemap.xml` cu blocul complet de alternative.
 - Textul e la persoana I, scris separat în fiecare limbă, nu tradus.
