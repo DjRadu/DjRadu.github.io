@@ -36,7 +36,7 @@ index.html          homepage DA        /ro/index.html     homepage RO
 /da/<subpagini>                        /en/index.html     homepage EN
 ```
 
-71 de pagini HTML: 3 homepage-uri, 57 de subpagini (dintre care 24 sunt
+74 de pagini HTML: 3 homepage-uri, 60 de subpagini (dintre care 27 sunt
 pagini de eveniment, câte trei limbi), 8 stub-uri de redirect, plus
 `privacy.html`, `terms.html`, `thankyou.html`.
 
@@ -107,7 +107,7 @@ CSS-ul așază cardurile identic cu sau fără imagine.
 ### Pagini de eveniment
 
 Un eveniment cu mai multe poze sau filmulețe primește pagină proprie, în cele
-trei limbi, iar cardul devine `<a class="event" href="...">`. Există opt:
+trei limbi, iar cardul devine `<a class="event" href="...">`. Există nouă:
 
 | Eveniment | Slug | Conținut |
 |---|---|---|
@@ -119,6 +119,7 @@ trei limbi, iar cardul devine `<a class="event" href="...">`. Există opt:
 | Botez, Fredericia | `barnedaab-fredericia` | 5 poze, 2 filmulețe, text |
 | Botez, Nykøbing Mors | `barnedaab-nykobing-mors` | 5 poze, 2 filmulețe, text |
 | Romanian Party, Point Cafe, Horsens | `romanian-party-point-cafe` | 6 poze, 3 filmulețe, text |
+| Barber Shop 3rd Anniversary, Point Cafe, Horsens | `barber-shop-point-cafe` | 4 poze, 2 reel-uri, text |
 
 Slug-urile stau sub `/ro/evenimente/`, `/da/arrangementer/`, `/en/events/`.
 Cel mai complet șablon e `latino-party-vejle` (text de descriere + poze +
@@ -145,6 +146,11 @@ filmulețe): copiază-l, nu construi de la zero.
   Excepție aprobată de proprietar: la evenimente în locuri publice (cafenea, club)
   pot apărea grupuri de adulți dansând pe ring sau în horă; nu prim-planuri cu
   o singură persoană.
+- **Reel-urile montate** (făcute cu Vids sau TikTok Studio, de obicei 13–16 s,
+  cu muzică) se pun pe pagina evenimentului, regulă generală a proprietarului:
+  sunt deja publice pe toate rețelele. Se recunosc după lipsa datelor de cameră
+  (`com.apple.quicktime.model`) și nume ca `copy_<UUID>.mov` / `<UUID>.mov`.
+  Se păstrează sunetul; se scot tot metadatele.
 - Fără numele familiei sau al copilului nicăieri (titlu, text, alt, nume de fișier),
   nici pe decoruri vizibile în poze. Titlul e tipul evenimentului + orașul.
 - Fiecare pagină nouă intră în `sitemap.xml` cu blocul complet de alternative.
