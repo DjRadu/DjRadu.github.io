@@ -211,7 +211,7 @@ function showGalleryImage(i) {
 function openVideoLightbox(videoId, type) {
   galleryIndex = -1;
   lbPrev.classList.remove("show"); lbNext.classList.remove("show");
-  const embedUrl = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0&modestbranding=1";
+  const embedUrl = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&rel=0&modestbranding=1";
   const youtubeUrl = type === "short" ? "https://www.youtube.com/shorts/" + videoId : "https://www.youtube.com/watch?v=" + videoId;
   lightboxContent.innerHTML = '<iframe id="ytFrame" src="' + embedUrl + '" title="DJ Radu video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
   lightboxActions.innerHTML = '<button class="lightbox-action" id="fullscreenBtn" type="button">' + LANG.fullscreen + '</button><a class="lightbox-action" href="' + youtubeUrl + '" target="_blank" rel="noopener noreferrer">' + LANG.openYoutube + '</a>';
@@ -233,6 +233,20 @@ document.querySelectorAll(".video-card").forEach(card => {
   const go = () => openVideoLightbox(card.dataset.videoId, card.dataset.videoType);
   card.addEventListener("click", go);
   card.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+});
+// Click-to-load: no request to YouTube until the visitor presses play.
+document.querySelectorAll(".yt-embed").forEach(box => {
+  const btn = box.querySelector(".yt-facade");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + box.dataset.ytId + "?autoplay=1&rel=0&playsinline=1";
+    f.title = btn.getAttribute("aria-label") || "DJ Radu video";
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.allowFullscreen = true;
+    box.replaceChildren(f);
+  });
 });
 // Sider uden galleri (fx privatlivspolitik) har ingen lightbox i DOM'en.
 if (lightbox && lightboxClose && lbPrev && lbNext) {

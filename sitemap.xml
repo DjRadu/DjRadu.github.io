@@ -721,4 +721,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://djradu.com/da/arrangementer/fiesta-latina-platform-k/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/events/fiesta-latina-platform-k/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/evenimente/fiesta-latina-platform-k/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/events/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/evenimente/fiesta-latina-platform-k/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/arrangementer/fiesta-latina-platform-k/" />
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
