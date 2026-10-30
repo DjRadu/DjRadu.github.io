@@ -602,6 +602,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://djradu.com/da/mixtapes/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/mixtapes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/mixes/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/mixuri/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/mixtapes/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/mixes/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/mixtapes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/mixes/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/mixuri/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/mixtapes/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/mixuri/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/mixtapes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/mixes/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/mixuri/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/mixtapes/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://djradu.com/da/faq/</loc>
     <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/faq/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/faq/" />
