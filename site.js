@@ -457,3 +457,10 @@ if (document.getElementById('cookieBanner')) {
     btn.textContent = open ? btn.dataset.less : btn.dataset.more;
   });
 })();
+
+// Ține minte limba aleasă din butoanele de limbă, ca redirectul de pe pagina principală să o respecte.
+document.querySelectorAll('.lang-btn').forEach(a => a.addEventListener('click', () => {
+  const h = a.getAttribute('href') || '/';
+  const l = h.startsWith('/ro') ? 'ro' : h.startsWith('/en') ? 'en' : 'da';
+  try { localStorage.setItem('djradu_lang', l); } catch (e) {}
+}));

@@ -3,6 +3,23 @@
 <head>
 <!-- Google Tag Manager & Analytics — loaded ONLY after cookie consent, see cookie banner script at bottom of page -->
 <meta charset="utf-8"/>
+<script>
+/* Redirect după limba browserului, doar pe pagina principală daneză (cerut de proprietar, 5 nov 2026):
+   ro → /ro/, da → rămâne, orice altă limbă → /en/. Roboții (Google, Bing, Facebook) nu sunt redirecționați,
+   iar alegerea făcută din butoanele de limbă e ținută minte în localStorage („djradu_lang”). */
+(function(){try{
+  if(/bot|crawl|spider|slurp|google|bing|yandex|duckduck|baidu|facebookexternalhit|lighthouse|preview|headless/i.test(navigator.userAgent))return;
+  var saved=null;try{saved=localStorage.getItem('djradu_lang');}catch(e){}
+  if(saved==='da')return;
+  var t=null;
+  if(saved==='ro'||saved==='en'){t=saved;}else{
+    var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||''];
+    for(var i=0;i<ls.length;i++){var l=(ls[i]||'').toLowerCase();if(l.indexOf('da')===0||l.indexOf('nb')===0||l.indexOf('no')===0)return;if(l.indexOf('ro')===0||l.indexOf('mo')===0){t='ro';break;}}
+    if(!t)t='en';
+  }
+  location.replace('/'+t+'/'+location.search+location.hash);
+}catch(e){}})();
+</script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Fest & Bryllups-DJ i hele Danmark & Nordtyskland</title>
 <noscript><style>.services--collapsed .card{display:block!important;}.services-toggle{display:none!important;}</style></noscript>
