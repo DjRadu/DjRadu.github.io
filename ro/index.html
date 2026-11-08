@@ -32,11 +32,15 @@
 <meta content="https://djradu.com/logo-site.jpg" name="twitter:image"/>
 <meta content="DJ Radu — DJ român pentru petreceri în Danemarca" name="twitter:image:alt"/>
 <!-- Structured data -->
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": [
+        "Organization",
+        "LocalBusiness"
+      ],
       "@id": "https://djradu.com/#business",
       "name": "DJ Radu",
       "url": "https://djradu.com/",
@@ -226,7 +230,8 @@
       }
     }
   ]
-}</script>
+}
+</script>
 <link href="/fonts/fonts.css" rel="stylesheet"/>
 <link href="/fonts/fontawesome.css" rel="stylesheet"/>
 <link href="/style.css?v=f928b368" rel="stylesheet"/>
