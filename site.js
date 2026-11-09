@@ -409,17 +409,68 @@ function loadSocialEmbeds(){
   document.querySelectorAll('iframe[data-src]').forEach(f => { f.src = f.dataset.src; });
 }
 
+// Messengers, Instagrams og Facebooks indbyggede browsere kan blokere
+// localStorage. Sa kaster kaldet en fejl, og hele samtykket gik tabt, sa
+// indlejringerne aldrig blev vist. Valget huskes nu i hvert fald pa siden.
+let memoryConsent = null;
+function readConsent(){
+  try { return localStorage.getItem('djradu_cookie_consent') || memoryConsent; }
+  catch (e) { return memoryConsent; }
+}
+function saveConsent(status){
+  memoryConsent = status;
+  try { localStorage.setItem('djradu_cookie_consent', status); } catch (e) {}
+}
+
+// Teksten "indlaeses forst, nar cookies er accepteret" stod fast i HTML og
+// blev staende, ogsa efter accept. Nu far den en knap og et direkte link, og
+// den forsvinder, nar indholdet er tilladt.
+const EMBED_TEXT = {
+  da: { show: 'Vis indhold', tiktok: 'Se på TikTok', facebook: 'Se på Facebook' },
+  en: { show: 'Show content', tiktok: 'Watch on TikTok', facebook: 'View on Facebook' },
+  ro: { show: 'Afișează conținutul', tiktok: 'Vezi pe TikTok', facebook: 'Vezi pe Facebook' }
+};
+function setupEmbedNotices(){
+  const lang = (document.documentElement.lang || 'da').slice(0, 2);
+  const t = EMBED_TEXT[lang] || EMBED_TEXT.da;
+  document.querySelectorAll('.cookie-embed-notice').forEach(p => {
+    const box = p.parentElement;
+    const isFb = box && box.querySelector('iframe[data-src*="facebook"]');
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cookie-btn cookie-btn-accept';
+    btn.style.cssText = 'margin:10px 6px 0;';
+    btn.textContent = t.show;
+    btn.addEventListener('click', () => setCookieConsent('accepted'));
+    const link = document.createElement('a');
+    link.href = isFb ? 'https://www.facebook.com/djradudk8' : 'https://www.tiktok.com/@djradudk';
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.style.cssText = 'display:inline-block;margin:10px 6px 0;';
+    link.textContent = isFb ? t.facebook : t.tiktok;
+    p.appendChild(document.createElement('br'));
+    p.appendChild(btn);
+    p.appendChild(link);
+  });
+}
+function hideEmbedNotices(){
+  document.querySelectorAll('.cookie-embed-notice').forEach(p => { p.style.display = 'none'; });
+}
+
 function setCookieConsent(status){
-  localStorage.setItem('djradu_cookie_consent', status);
-  document.getElementById('cookieBanner').classList.remove('show');
+  saveConsent(status);
+  const banner = document.getElementById('cookieBanner');
+  if (banner) banner.classList.remove('show');
   if (status === 'accepted') {
     loadAnalytics();
     loadSocialEmbeds();
+    hideEmbedNotices();
   }
 }
 
 function initCookieBanner(){
-  const consent = localStorage.getItem('djradu_cookie_consent');
+  setupEmbedNotices();
+  const consent = readConsent();
   const t = LANG.cookie;
   if (t) {
     document.getElementById('cookieText').innerHTML = t.text;
@@ -432,6 +483,7 @@ function initCookieBanner(){
   } else if (consent === 'accepted') {
     loadAnalytics();
     loadSocialEmbeds();
+    hideEmbedNotices();
   }
 }
 
