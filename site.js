@@ -272,7 +272,7 @@ if (scrollIndicator) {
 }
 
 (function heroParallax(){
-  const content = document.querySelector(".hero-content");
+  const content = document.querySelector(".hero-text") || document.querySelector(".hero-content");
   const hero = document.querySelector(".hero");
   if (!content || !hero) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
