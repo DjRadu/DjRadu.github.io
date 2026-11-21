@@ -292,10 +292,11 @@
 .h2-hint{display:none;}
 @media(min-width:901px){.h2-stage{align-items:center;}}
 @media(max-width:900px){
-.hx .h2-hero{display:block;min-height:0;height:175vh;height:175svh;overflow:visible;}
+.hx .h2-hero{display:block;min-height:0;height:200vh;height:200svh;overflow:visible;}
 .hx .h2-stage{position:sticky;top:0;height:100vh;height:100svh;min-height:0;}
 .hx .h2-shade{opacity:calc(.3 + .7*var(--hp,0));}
-.hx .h2-content{opacity:var(--hp,0);transform:translateY(calc((1 - var(--hp,0))*40px));will-change:opacity,transform;}
+.hx .h2-content>*{--q:clamp(0,calc((var(--hp,0) - var(--d,0))/.55),1);opacity:var(--q);transform:translateY(calc((1 - var(--q))*35vh));filter:blur(calc((1 - var(--q))*7px));will-change:opacity,transform,filter;}
+.hx .h2-content>:nth-child(2){--d:.08;}.hx .h2-content>:nth-child(3){--d:.16;}.hx .h2-content>:nth-child(4){--d:.24;}.hx .h2-content>:nth-child(5){--d:.32;}
 .hx .h2-hero:not(.on) .h2-content{pointer-events:none;}
 .hx .h2-hint{display:block;position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom));z-index:3;width:22px;height:22px;margin-left:-11px;border-right:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(45deg);opacity:calc(1 - 3*var(--hp,0));filter:drop-shadow(0 0 6px rgba(0,217,255,.9));animation:h2b 1.6s ease-in-out infinite;}
 }
@@ -366,7 +367,7 @@
 <div aria-hidden="true" class="h2-hint"></div>
 </div>
 </section>
-<script>(function(){var h=document.querySelector('.h2-hero');if(!h||!document.documentElement.classList.contains('hx'))return;var mq=matchMedia('(max-width:900px)'),q=false;function u(){q=false;if(!mq.matches){h.style.removeProperty('--hp');h.classList.add('on');return;}var vh=innerHeight,d=h.offsetHeight-vh,s=-h.getBoundingClientRect().top,p=Math.min(1,Math.max(0,(s-vh*.04)/(d*.6)));h.style.setProperty('--hp',p.toFixed(3));h.classList.toggle('on',p>.5);}addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(u);}},{passive:true});addEventListener('resize',u);u();})();</script>
+<script>(function(){var h=document.querySelector('.h2-hero');if(!h||!document.documentElement.classList.contains('hx'))return;var mq=matchMedia('(max-width:900px)'),q=false;function u(){q=false;if(!mq.matches){h.style.removeProperty('--hp');h.classList.add('on');return;}var vh=innerHeight,d=h.offsetHeight-vh,s=-h.getBoundingClientRect().top,p=Math.min(1,Math.max(0,(s-vh*.02)/(d*.85)));h.style.setProperty('--hp',p.toFixed(3));h.classList.toggle('on',p>.7);}addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(u);}},{passive:true});addEventListener('resize',u);u();})();</script>
 <section aria-label="Listen to the latest DJ Radu mix" class="reveal" id="ultimul-mix" style="padding-top:40px;padding-bottom:10px;">
 <a href="/en/mixes/" style="display:flex;align-items:center;gap:20px;max-width:820px;margin:0 auto;padding:16px;border:1.5px solid var(--border);border-radius:20px;background:linear-gradient(180deg,var(--card),var(--card-2));box-shadow:var(--shadow);color:inherit;text-decoration:none;flex-wrap:wrap;">
 <img alt="" height="90" loading="lazy" src="/yt-kHHcP99ctmY.jpg" style="width:160px;height:90px;object-fit:cover;border-radius:12px;flex-shrink:0;" width="160"/>
