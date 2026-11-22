@@ -516,3 +516,87 @@ document.querySelectorAll('.lang-btn').forEach(a => a.addEventListener('click', 
   const l = h.startsWith('/ro') ? 'ro' : h.startsWith('/en') ? 'en' : 'da';
   try { localStorage.setItem('djradu_lang', l); } catch (e) {}
 }));
+
+// Tema: luminoasă, întunecată sau după setarea dispozitivului (22 nov 2026).
+// Scriptul din <head> al fiecărei pagini pune data-theme înainte de primul desen;
+// aici sunt butoanele: pe desktop un singur buton lângă limbi, care deschide o
+// listă cu cele trei opțiuni (meniul de sus e deja plin), iar în meniul de pe
+// telefon trei butoane unul lângă altul.
+(function(){
+  const KEY = "djr-theme", DEFAULT = "auto";
+  const root = document.documentElement;
+  const mq = window.matchMedia("(prefers-color-scheme: light)");
+  const T = {
+    ro: { title: "Temă", light: "Luminos", dark: "Întunecat", auto: "Automat (ca telefonul sau calculatorul)" },
+    da: { title: "Tema", light: "Lyst", dark: "Mørkt", auto: "Automatisk (som din telefon eller computer)" },
+    en: { title: "Theme", light: "Light", dark: "Dark", auto: "Auto (match your phone or computer)" }
+  }[root.lang] || { title: "Theme", light: "Light", dark: "Dark", auto: "Auto (match your phone or computer)" };
+  const ICON = { light: "fa-sun", dark: "fa-moon", auto: "fa-circle-half-stroke" };
+  const CHOICES = ["light", "dark", "auto"];
+  function pref(){
+    try { const v = localStorage.getItem(KEY); if (CHOICES.includes(v)) return v; } catch (e) {}
+    return DEFAULT;
+  }
+  function icon(v){ return '<i aria-hidden="true" class="fas ' + ICON[v] + '"></i>'; }
+  function apply(p){
+    root.dataset.theme = p === "auto" ? (mq.matches ? "light" : "dark") : p;
+    document.querySelectorAll("[data-theme-choice]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.themeChoice === p)));
+    document.querySelectorAll(".theme-btn").forEach(b => { b.innerHTML = icon(p); b.title = T.title + ": " + T[p]; b.setAttribute("aria-label", T.title + ": " + T[p]); });
+  }
+  function choose(v){ try { localStorage.setItem(KEY, v); } catch (e) {} apply(v); }
+  function choiceButton(v, withText){
+    const b = document.createElement("button");
+    b.type = "button";
+    b.dataset.themeChoice = v;
+    b.innerHTML = icon(v) + (withText ? "<span>" + T[v] + "</span>" : "");
+    if (!withText) { b.title = T[v]; b.setAttribute("aria-label", T[v]); }
+    return b;
+  }
+  // Desktop: buton + listă
+  const desk = document.querySelector(".nav-right .lang-switcher");
+  if (desk) {
+    const wrap = document.createElement("div");
+    wrap.className = "theme-pick";
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "theme-btn";
+    btn.setAttribute("aria-haspopup", "true");
+    btn.setAttribute("aria-expanded", "false");
+    const menu = document.createElement("div");
+    menu.className = "theme-menu";
+    menu.setAttribute("role", "group");
+    menu.setAttribute("aria-label", T.title);
+    menu.hidden = true;
+    const close = () => { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); };
+    CHOICES.forEach(v => {
+      const b = choiceButton(v, true);
+      b.addEventListener("click", () => { choose(v); close(); btn.focus(); });
+      menu.appendChild(b);
+    });
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const open = menu.hidden;
+      menu.hidden = !open;
+      btn.setAttribute("aria-expanded", String(open));
+      if (open) { const cur = menu.querySelector('[aria-pressed="true"]'); if (cur) cur.focus(); }
+    });
+    document.addEventListener("click", e => { if (!wrap.contains(e.target)) close(); });
+    wrap.addEventListener("keydown", e => { if (e.key === "Escape") { close(); btn.focus(); } });
+    wrap.appendChild(btn);
+    wrap.appendChild(menu);
+    desk.after(wrap);
+  }
+  // Telefon: trei butoane în meniu
+  const mob = document.querySelector(".mobile-menu .mobile-lang");
+  if (mob) {
+    const g = document.createElement("div");
+    g.className = "theme-switch";
+    g.setAttribute("role", "group");
+    g.setAttribute("aria-label", T.title);
+    CHOICES.forEach(v => { const b = choiceButton(v, false); b.addEventListener("click", () => choose(v)); g.appendChild(b); });
+    mob.after(g);
+  }
+  const onChange = () => { if (pref() === "auto") apply("auto"); };
+  if (mq.addEventListener) mq.addEventListener("change", onChange); else if (mq.addListener) mq.addListener(onChange);
+  apply(pref());
+})();
