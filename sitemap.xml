@@ -895,4 +895,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://djradu.com/da/salsainstruktoer-miguel-flores/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/salsa-instructor-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/instructor-salsa-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/en/salsa-instructor-miguel-flores/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/salsa-instructor-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/instructor-salsa-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://djradu.com/ro/instructor-salsa-miguel-flores/</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://djradu.com/en/salsa-instructor-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://djradu.com/ro/instructor-salsa-miguel-flores/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://djradu.com/da/salsainstruktoer-miguel-flores/" />
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
